@@ -17,9 +17,9 @@ by a design linter before it ships.**
 - **A web-app look instead of Power BI defaults**, after [shadcn/ui](https://ui.shadcn.com):
   zinc neutrals, one brand colour, hairline borders, tile slicers drawn as segmented tabs.
 
-| Light | Dark |
-|---|---|
-| ![Light](docs/img/sales-performance.png) | ![Dark](docs/img/sales-performance-dark.png) |
+The same report on the dark variant, built from the same templates:
+
+![The same dashboard on the dark variant](docs/img/sales-performance-dark.png)
 
 ## Use it
 
@@ -43,7 +43,7 @@ reports a missing `visual.json` that is actually there.
 
 ## Make it yours
 
-Requires Node.js 18 or later.
+Requires Node.js 22 or later.
 
 ```bash
 npm install
