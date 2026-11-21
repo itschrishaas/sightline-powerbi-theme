@@ -23,9 +23,10 @@ The same report on the dark variant, built from the same templates:
 
 ## Use it
 
-No build needed. Download [`dist/theme.json`](dist/theme.json) (light) or
-[`dist/theme.dark.json`](dist/theme.dark.json) (dark), then in Power BI Desktop choose
-**View → Themes → Browse for themes**.
+No build needed. Download [`theme.json`](https://github.com/itschrishaas/sightline-powerbi-theme/releases/latest/download/theme.json) (light) or
+[`theme.dark.json`](https://github.com/itschrishaas/sightline-powerbi-theme/releases/latest/download/theme.dark.json) (dark) from the
+[latest release](https://github.com/itschrishaas/sightline-powerbi-theme/releases/latest), then in Power BI
+Desktop choose **View → Themes → Browse for themes**.
 
 The theme sets a 1920×1080 page. Built and tested against report theme schema 2.159 and
 Power BI Desktop 2.159.
