@@ -1,0 +1,320 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "732a6909d357dae18b24",
+  "position": {
+    "x": 8,
+    "y": 104,
+    "z": 6,
+    "height": 712,
+    "width": 1904,
+    "tabOrder": 6
+  },
+  "visual": {
+    "visualType": "ganttChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Projects"
+                    }
+                  },
+                  "Property": "Phase"
+                }
+              },
+              "queryRef": "Projects.Phase",
+              "nativeQueryRef": "Phase"
+            }
+          ]
+        },
+        "Columns": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Projects"
+                    }
+                  },
+                  "Property": "Task Owner"
+                }
+              },
+              "queryRef": "Projects.Task Owner",
+              "nativeQueryRef": "Task Owner",
+              "displayName": "Owner"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Projects"
+                    }
+                  },
+                  "Property": "Task Status"
+                }
+              },
+              "queryRef": "Projects.Task Status",
+              "nativeQueryRef": "Task Status",
+              "displayName": "Status"
+            }
+          ]
+        },
+        "EndDate": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Projects"
+                    }
+                  },
+                  "Property": "Task End"
+                }
+              },
+              "queryRef": "Projects.Task End",
+              "nativeQueryRef": "Task End"
+            }
+          ]
+        },
+        "Progress": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Projects"
+                    }
+                  },
+                  "Property": "Task Progress"
+                }
+              },
+              "queryRef": "Projects.Task Progress",
+              "nativeQueryRef": "Task Progress"
+            }
+          ]
+        },
+        "StartDate": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Projects"
+                    }
+                  },
+                  "Property": "Task Start"
+                }
+              },
+              "queryRef": "Projects.Task Start",
+              "nativeQueryRef": "Task Start"
+            }
+          ]
+        },
+        "Task": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Projects"
+                    }
+                  },
+                  "Property": "Task"
+                }
+              },
+              "queryRef": "Projects.Task",
+              "nativeQueryRef": "Task"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Projects"
+                  }
+                },
+                "Property": "Task Start"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "defaultColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "200D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Theme rollout 2026'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Phases, tasks and milestones (fictional demo data); bar fill shows share complete'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "c96d237bcd8c73c26118",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Projects"
+              }
+            },
+            "Property": "Phase"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "3c94bdd3d69f90723982",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Projects"
+              }
+            },
+            "Property": "Task Owner"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "865b105be9d1f2060acd",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Projects"
+              }
+            },
+            "Property": "Task Status"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "3f0b8e3533db86167dfc",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Projects"
+              }
+            },
+            "Property": "Task End"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "aa7ae130c679794828f1",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Projects"
+              }
+            },
+            "Property": "Task Progress"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "319fa0caaddf235dcd99",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Projects"
+              }
+            },
+            "Property": "Task Start"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "e03af6d7911c88bc48de",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Projects"
+              }
+            },
+            "Property": "Task"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

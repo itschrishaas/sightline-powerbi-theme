@@ -1,0 +1,83 @@
+{
+  "minimal": {
+    "categoryAxis": [
+      {
+        "show": true,
+        "showAxisTitle": false,
+        "preferredCategoryWidth": 40,
+        "maxMarginFactor": 30,
+        "gridlineShow": false,
+        "labelColor": {
+          "solid": {
+            "color": "{{otherColors.text_muted}}"
+          }
+        },
+        "fontSize": "{{font.sizes.xs}}"
+      }
+    ],
+    "valueAxis": [
+      {
+        "show": false,
+        "gridlineShow": false
+      }
+    ],
+    "legend": [
+      {
+        "show": false
+      }
+    ],
+    "labels": [
+      {
+        "show": true,
+        "color": {
+          "solid": {
+            "color": "{{otherColors.text}}"
+          }
+        },
+        "fontSize": "{{font.sizes.xs}}"
+      }
+    ],
+    "categoryAxisPlain": [
+      {
+        "show": true,
+        "showAxisTitle": false,
+        "preferredCategoryWidth": 40,
+        "maxMarginFactor": 30,
+        "labelColor": {
+          "solid": {
+            "color": "{{otherColors.text_muted}}"
+          }
+        },
+        "fontSize": "{{font.sizes.xs}}"
+      }
+    ],
+    "labelsThinned": [
+      {
+        "show": true,
+        "color": {
+          "solid": {
+            "color": "{{otherColors.text}}"
+          }
+        },
+        "fontSize": "{{font.sizes.xs}}",
+        "labelDensity": 50
+      }
+    ],
+    "categoryAxisBars": [
+      {
+        "show": true,
+        "showAxisTitle": false,
+        "preferredCategoryWidth": 40,
+        "maxMarginFactor": 30,
+        "gridlineShow": false,
+        "labelColor": {
+          "solid": {
+            "color": "{{otherColors.text_muted}}"
+          }
+        },
+        "fontSize": "{{font.sizes.xs}}",
+        "innerPadding": 20
+      }
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "columnHeaders": [
+    {
+      "fontColor": {
+        "solid": {
+          "color": "{{otherColors.text_muted}}"
+        }
+      },
+      "backColor": {
+        "solid": {
+          "color": "{{otherColors.white}}"
+        }
+      },
+      "wordWrap": true,
+      "fontFamily": "{{font.semibold.family}}",
+      "bold": false,
+      "alignment": "Auto",
+      "outlineColor": {
+        "solid": {
+          "color": "{{borders.color}}"
+        }
+      },
+      "outlineStyle": 4,
+      "outlineWeight": 1,
+      "autoSizeColumnWidth": true,
+      "columnAdjustment": "growToFit"
+    }
+  ]
+}

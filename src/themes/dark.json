@@ -1,0 +1,163 @@
+{
+  "_comment": "Token overrides for the dark variant. Deep-merged over variables.json by scripts/build.js --variant dark. Structure only needs the keys that differ; everything else is inherited.",
+  "chartPalette": ["#2DD4BF", "#FF8A50", "#B39BFF", "#F06A9B", "#E0B341", "#9CC35A", "#5EB1F2", "#9BA6B5"],
+  "otherColors": {
+    "black": "#FAFAFA",
+    "white": "#18181B",
+    "gray": "#71717A",
+    "light_active": "#27272A",
+    "gray_dark": "#FAFAFA",
+    "gray_light": "#3F3F46",
+    "gray_lighter": "#27272A",
+    "light": "#09090B",
+    "dark": "#FAFAFA",
+    "text": "#FAFAFA",
+    "text_muted": "#A1A1AA"
+  },
+  "darkPanel": {
+    "_comment": "On the dark variant the inverted panel cannot go darker than the page (#12161B) or it disappears. It becomes a raised, slightly teal plane instead.",
+    "surface": "#27272A",
+    "surface_alt": "#3F3F46",
+    "border": "#3F3F46",
+    "text": "#ffffff",
+    "text_muted": "#A1A1AA",
+    "accent": "#2DD4BF"
+  },
+  "borders": {
+    "corners": 12,
+    "controlCorners": 8,
+    "width": 1,
+    "color": "#27272A"
+  },
+  "buttons": {
+    "default": {
+      "value": {
+        "fontFamily": "{{font.semibold.family}}",
+        "fontSize": "{{font.sizes.s}}",
+        "bold": false,
+        "fontColor": "{{otherColors.text}}"
+      },
+      "background": {
+        "color": "{{otherColors.white}}",
+        "transparency": 0
+      },
+      "border": {
+        "color": "#27272A",
+        "width": 1,
+        "transparency": 0
+      }
+    },
+    "hover": {
+      "value": {
+        "fontFamily": "{{font.semibold.family}}",
+        "fontSize": "{{font.sizes.s}}",
+        "bold": false,
+        "fontColor": "{{otherColors.text}}"
+      },
+      "background": {
+        "color": "#27272A",
+        "transparency": 0
+      },
+      "border": {
+        "color": "#3F3F46",
+        "width": 1,
+        "transparency": 0
+      }
+    },
+    "pressed": {
+      "value": {
+        "fontFamily": "{{font.semibold.family}}",
+        "fontSize": "{{font.sizes.s}}",
+        "bold": false,
+        "fontColor": "{{otherColors.text}}"
+      },
+      "background": {
+        "color": "#3F3F46",
+        "transparency": 0
+      },
+      "border": {
+        "color": "#52525B",
+        "width": 1,
+        "transparency": 0
+      }
+    },
+    "selected": {
+      "value": {
+        "fontFamily": "{{font.semibold.family}}",
+        "fontSize": "{{font.sizes.s}}",
+        "bold": false,
+        "fontColor": "#09090B"
+      },
+      "background": {
+        "color": "{{dataColors.primary}}",
+        "transparency": 0
+      },
+      "border": {
+        "color": "{{dataColors.primary}}",
+        "width": 1,
+        "transparency": 0
+      }
+    }
+  },
+  "a11y": {
+    "textOn": "#18181B",
+    "markOn": ["#18181B", "#09090B"],
+    "textTokens": ["otherColors.text", "otherColors.text_muted"],
+    "interactiveBorderTokens": [],
+    "whiteOnFillTokens": [],
+    "darkOnFillTokens": ["dataColors.primary"],
+    "waivers": {}
+  },
+  "dataColors": {
+    "primary": "#2DD4BF",
+    "primary_lighter": "#8FE0D6",
+    "secondary": "#B39BFF",
+    "secondary_lighter": "#D3C6FF",
+    "red": "#FF7676",
+    "yellow": "#FFA94D",
+    "blue": "#5EB1F2",
+    "purple": "#B39BFF",
+    "pink": "#F06A9B",
+    "orange": "#FF8A50",
+    "green": "#55C26F",
+    "teal": "#2DD4BF",
+    "cyan": "#5EB1F2",
+    "indigo": "#B39BFF",
+    "positive": "#55C26F",
+    "neutral": "#9BA6B5",
+    "negative": "#FF7676"
+  },
+  "gridlines": {
+    "gridlineAutoScale": true,
+    "gridlineColor": {
+      "solid": {
+        "color": "{{borders.color}}"
+      }
+    },
+    "gridlineDashCap": "square",
+    "gridlineShow": true,
+    "gridlineStyle": "solid",
+    "gridlineThickness": 1,
+    "gridlineTransparency": 0,
+    "gridlineDashArray": "5 5 5 5"
+  },
+  "surfaces": {
+    "canvas": "#09090B",
+    "card": "#18181B",
+    "sunken": "#09090B"
+  },
+  "semantic": {
+    "positive_fill": "#55C26F",
+    "warning_fill": "#FFA94D",
+    "negative_fill": "#FF7676",
+    "neutral_fill": "#9BA6B5"
+  },
+  "sequential": {
+    "step1": "#0E2B28",
+    "step2": "#11463F",
+    "step3": "#16695F",
+    "step4": "#1E9486",
+    "step5": "#2DD4BF",
+    "step6": "#99EBDF"
+  }
+}

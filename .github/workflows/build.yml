@@ -1,0 +1,33 @@
+name: build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Formatting
+        run: npm run format:check
+
+      # Builds both variants; each one has to pass the schema gate and the design gate.
+      - name: Build and gate
+        run: npm run build
+
+      # The committed theme files must be exactly what the sources produce.
+      - name: dist/ is up to date
+        run: git diff --exit-code -- dist/theme.json dist/theme.dark.json

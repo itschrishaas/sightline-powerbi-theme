@@ -1,0 +1,83 @@
+{
+  "name": "decompositionTreeVisual",
+  "$schema": "https://raw.githubusercontent.com/microsoft/powerbi-desktop-samples/refs/heads/main/Report%20Theme%20JSON%20Schema/reportThemeSchema-2.159.json",
+  "visualStyles": {
+    "decompositionTreeVisual": {
+      "*": {
+        "title": [
+          {
+            "show": false
+          }
+        ],
+        "padding": [
+          {
+            "top": 0,
+            "right": 0,
+            "bottom": 2,
+            "left": 0
+          }
+        ],
+        "dataBars": [
+          {
+            "dataBarScalingType": "parentNode"
+          }
+        ],
+        "dataLabels": [
+          {
+            "dataLabelFontFamily": "{{text.lightLabel.fontFace}}",
+            "dataLabelFontColor": {
+              "solid": {
+                "color": "{{text.lightLabel.color}}"
+              }
+            },
+            "dataLabelFontSize": "{{text.lightLabel.fontSize}}",
+            "dataLabelDisplayUnits": 0,
+            "dataLabelBold": false
+          }
+        ],
+        "levelHeader": [
+          {
+            "levelHeaderBackgroundColor": {
+              "solid": {
+                "color": "{{otherColors.gray_lighter}}"
+              }
+            },
+            "levelTitleFontSize": "{{text.boldLabel.fontSize}}",
+            "levelTitleFontColor": {
+              "solid": {
+                "color": "{{text.boldLabel.color}}"
+              }
+            },
+            "levelTitleFontFamily": "{{text.boldLabel.fontFace}}",
+            "levelSubtitleFontSize": "{{text.label.fontSize}}",
+            "levelSubtitleFontColor": {
+              "solid": {
+                "color": "{{text.label.color}}"
+              }
+            },
+            "levelSubtitleFontFamily": "{{text.label.fontFace}}"
+          }
+        ],
+        "categoryLabels": [
+          {
+            "categoryLabelFontFamily": "{{text.semiboldLabel.fontFace}}",
+            "categoryLabelFontSize": "{{text.semiboldLabel.fontSize}}",
+            "categoryLabelFontColor": {
+              "solid": {
+                "color": "{{text.semiboldLabel.color}}"
+              }
+            },
+            "categoryLabelBold": false
+          }
+        ],
+        "tree": [
+          {
+            "density": "dense",
+            "connectorType": "curve",
+            "responsiveLayout": true
+          }
+        ]
+      }
+    }
+  }
+}

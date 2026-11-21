@@ -1,0 +1,46 @@
+table 'View by'
+	lineageTag: 70aeb60a-781a-4d05-ac8d-81bf87fa83e3
+
+	column 'View by Order'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 9815592d-95a9-4e1a-94d9-40c201068f96
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+	column 'View by Fields'
+		dataType: string
+		isHidden
+		lineageTag: 2c1e8c38-733c-46ea-ad16-bc35eb560086
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'View by Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+	column 'View by'
+		dataType: string
+		lineageTag: dc930cbf-8c10-4aa5-bce7-3a008b683f8e
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'View by Order'
+
+		relatedColumnDetails
+			groupByColumn: 'View by Fields'
+
+	partition 'View by' = calculated
+		mode: import
+		source =
+				{
+				    ("Category", NAMEOF('Sales'[Category]), 0),
+				    ("Subcategory", NAMEOF('Sales'[Subcategory]), 1),
+				    ("Product", NAMEOF('Sales'[Product]), 2),
+				    ("Country", NAMEOF('Sales'[Country]), 3),
+				    ("Segment", NAMEOF('Sales'[Segment]), 4)
+				}
+

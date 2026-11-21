@@ -1,0 +1,44 @@
+{
+  "name": "sightline-powerbi-theme",
+  "version": "1.0.0",
+  "description": "Accessible light and dark Power BI report theme, compiled from design tokens and checked by a schema gate and a design gate.",
+  "keywords": [
+    "powerbi",
+    "power-bi",
+    "theme",
+    "design-system",
+    "design-tokens",
+    "accessibility",
+    "wcag",
+    "shadcn",
+    "dark-mode"
+  ],
+  "author": "Christian Haas (https://github.com/itschrishaas)",
+  "license": "MIT",
+  "homepage": "https://github.com/itschrishaas/sightline-powerbi-theme#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itschrishaas/sightline-powerbi-theme.git"
+  },
+  "bugs": {
+    "url": "https://github.com/itschrishaas/sightline-powerbi-theme/issues"
+  },
+  "private": true,
+  "scripts": {
+    "prebuild": "node scripts/fetch-schema.js",
+    "build": "npm run build:light && npm run build:dark",
+    "build:light": "node scripts/build.js",
+    "build:dark": "node scripts/build.js --variant dark",
+    "validate": "node scripts/fetch-schema.js && node scripts/validate.js && node scripts/validate.js --variant dark",
+    "lint": "node scripts/lint-design.js && node scripts/lint-design.js --variant dark",
+    "format": "prettier --write \"src/**/*.json\" \"scripts/**/*.js\"",
+    "format:check": "prettier --check \"src/**/*.json\" \"scripts/**/*.js\""
+  },
+  "devDependencies": {
+    "ajv": "^8.17.1",
+    "prettier": "^3.6.2"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

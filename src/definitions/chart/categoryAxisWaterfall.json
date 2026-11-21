@@ -1,0 +1,16 @@
+{
+  "categoryAxisWaterfall": [
+    {
+      "show": true,
+      "showAxisTitle": false,
+      "preferredCategoryWidth": 40,
+      "maxMarginFactor": 30,
+      "labelColor": {
+        "solid": {
+          "color": "{{otherColors.text}}"
+        }
+      },
+      "fontSize": "{{font.sizes.xs}}"
+    }
+  ]
+}

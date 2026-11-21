@@ -1,0 +1,66 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/powerbi-desktop-samples/refs/heads/main/Report%20Theme%20JSON%20Schema/reportThemeSchema-2.159.json",
+  "name": "gauge",
+  "visualStyles": {
+    "gauge": {
+      "*": {
+        "title": [
+          {
+            "alignment": "center"
+          }
+        ],
+        "spacing": [
+          {
+            "spaceBelowTitle": 10,
+            "spaceBelowSubTitle": 2,
+            "customizeSpacing": true
+          }
+        ],
+        "padding": [
+          {
+            "bottom": 2
+          }
+        ],
+        "target": [
+          {
+            "fontSize": "{{font.sizes.xs}}",
+            "color": {
+              "solid": {
+                "color": "{{dataColors.secondary}}"
+              }
+            }
+          }
+        ],
+        "labels": [
+          {
+            "fontSize": "{{font.sizes.xs}}"
+          }
+        ],
+        "calloutValue": [
+          {
+            "fontFamily": "{{font.semibold.family}}",
+            "color": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            }
+          }
+        ],
+        "dataPoint": [
+          {
+            "fill": {
+              "solid": {
+                "color": "{{dataColors.primary_lighter}}"
+              }
+            },
+            "target": {
+              "solid": {
+                "color": "{{dataColors.secondary}}"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

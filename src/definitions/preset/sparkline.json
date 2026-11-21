@@ -1,0 +1,26 @@
+{
+  "sparkline": {
+    "categoryAxis": [
+      {
+        "show": false,
+        "gridlineShow": false
+      }
+    ],
+    "valueAxis": [
+      {
+        "show": false,
+        "gridlineShow": false
+      }
+    ],
+    "legend": [
+      {
+        "show": false
+      }
+    ],
+    "labels": [
+      {
+        "show": false
+      }
+    ]
+  }
+}

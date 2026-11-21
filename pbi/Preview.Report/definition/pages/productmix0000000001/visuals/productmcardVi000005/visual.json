@@ -1,0 +1,53 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "productmcardVi000005",
+  "position": {
+    "x": 486,
+    "y": 104,
+    "z": 5,
+    "width": 470,
+    "height": 112,
+    "tabOrder": 5
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Profit per Unit"
+                }
+              },
+              "queryRef": "_Measures.Profit per Unit",
+              "nativeQueryRef": "Profit per Unit",
+              "displayName": "Profit per unit"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "stylePreset": [
+        {
+          "properties": {
+            "name": {
+              "expr": {
+                "Literal": {
+                  "Value": "'KPI Tile'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

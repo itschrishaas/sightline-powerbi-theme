@@ -1,0 +1,58 @@
+{
+  "line": {
+    "straight": [
+      {
+        "strokeWidth": 2,
+        "lineStyle": "solid",
+        "strokeLineJoin": "round",
+        "strokeDashCap": "round",
+        "showMarker": false,
+        "lineChartType": "linear"
+      }
+    ],
+    "markers": [
+      {
+        "strokeWidth": 2,
+        "lineStyle": "solid",
+        "strokeLineJoin": "round",
+        "strokeDashCap": "round",
+        "showMarker": true,
+        "markerShape": "circle",
+        "markerSize": 5,
+        "lineChartType": "linear"
+      }
+    ],
+    "smooth": [
+      {
+        "strokeWidth": 2,
+        "lineStyle": "solid",
+        "strokeLineJoin": "round",
+        "strokeDashCap": "round",
+        "showMarker": false,
+        "lineChartType": "smooth",
+        "interpolationSmooth": "monotoneX"
+      }
+    ],
+    "step": [
+      {
+        "strokeWidth": 2,
+        "lineStyle": "solid",
+        "strokeLineJoin": "miter",
+        "strokeDashCap": "square",
+        "showMarker": false,
+        "lineChartType": "step",
+        "interpolationStep": "center"
+      }
+    ],
+    "sparkline": [
+      {
+        "strokeWidth": 2,
+        "lineStyle": "solid",
+        "strokeLineJoin": "round",
+        "strokeDashCap": "round",
+        "showMarker": false,
+        "lineChartType": "linear"
+      }
+    ]
+  }
+}

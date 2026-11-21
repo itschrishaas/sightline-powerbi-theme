@@ -1,0 +1,47 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/powerbi-desktop-samples/refs/heads/main/Report%20Theme%20JSON%20Schema/reportThemeSchema-2.159.json",
+  "name": "lineChart",
+  "visualStyles": {
+    "lineChart": {
+      "*": {
+        "labels": "{{def.chart.labels}}",
+        "lineStyles": "{{def.preset.line.straight}}"
+      },
+      "Markers": {
+        "categoryAxis": "{{def.chart.categoryAxis}}",
+        "legend": "{{def.chart.legend}}",
+        "valueAxis": "{{def.chart.valueAxis}}",
+        "labels": "{{def.chart.labels}}",
+        "lineStyles": "{{def.preset.line.markers}}"
+      },
+      "Smooth": {
+        "categoryAxis": "{{def.chart.categoryAxis}}",
+        "legend": "{{def.chart.legend}}",
+        "valueAxis": "{{def.chart.valueAxis}}",
+        "labels": "{{def.chart.labels}}",
+        "lineStyles": "{{def.preset.line.smooth}}"
+      },
+      "Step": {
+        "categoryAxis": "{{def.chart.categoryAxis}}",
+        "legend": "{{def.chart.legend}}",
+        "valueAxis": "{{def.chart.valueAxis}}",
+        "labels": "{{def.chart.labels}}",
+        "lineStyles": "{{def.preset.line.step}}"
+      },
+      "Labelled": {
+        "categoryAxis": "{{def.preset.labelled.categoryAxis}}",
+        "legend": "{{def.preset.labelled.legend}}",
+        "valueAxis": "{{def.preset.labelled.valueAxis}}",
+        "labels": "{{def.preset.labelled.labelsThinned}}",
+        "lineStyles": "{{def.preset.line.markers}}"
+      },
+      "Sparkline": {
+        "categoryAxis": "{{def.preset.sparkline.categoryAxis}}",
+        "legend": "{{def.preset.sparkline.legend}}",
+        "valueAxis": "{{def.preset.sparkline.valueAxis}}",
+        "labels": "{{def.preset.sparkline.labels}}",
+        "lineStyles": "{{def.preset.line.sparkline}}"
+      }
+    }
+  }
+}

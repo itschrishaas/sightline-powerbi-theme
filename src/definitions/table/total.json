@@ -1,0 +1,18 @@
+{
+  "total": [
+    {
+      "backColor": {
+        "solid": {
+          "color": "{{otherColors.light}}"
+        }
+      },
+      "fontColor": {
+        "solid": {
+          "color": "{{otherColors.text}}"
+        }
+      },
+      "bold": false,
+      "fontFamily": "{{font.semibold.family}}"
+    }
+  ]
+}

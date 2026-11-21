@@ -1,0 +1,181 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/powerbi-desktop-samples/refs/heads/main/Report%20Theme%20JSON%20Schema/reportThemeSchema-2.159.json",
+  "name": "pageNavigator",
+  "visualStyles": {
+    "pageNavigator": {
+      "*": {
+        "title": [
+          {
+            "show": false
+          }
+        ],
+        "background": [
+          {
+            "show": false
+          }
+        ],
+        "border": [
+          {
+            "show": false
+          }
+        ],
+        "outline": [
+          {
+            "$id": "default",
+            "lineColor": {
+              "solid": {
+                "color": "{{buttons.default.border.color}}"
+              }
+            },
+            "weight": "{{buttons.default.border.width}}",
+            "transparency": "{{buttons.default.border.transparency}}"
+          },
+          {
+            "$id": "hover",
+            "lineColor": {
+              "solid": {
+                "color": "{{buttons.hover.border.color}}"
+              }
+            },
+            "weight": "{{buttons.hover.border.width}}",
+            "transparency": "{{buttons.hover.border.transparency}}"
+          },
+          {
+            "$id": "press",
+            "lineColor": {
+              "solid": {
+                "color": "{{buttons.pressed.border.color}}"
+              }
+            },
+            "weight": "{{buttons.pressed.border.width}}",
+            "transparency": "{{buttons.pressed.border.transparency}}"
+          },
+          {
+            "$id": "selected",
+            "lineColor": {
+              "solid": {
+                "color": "{{buttons.selected.border.color}}"
+              }
+            },
+            "weight": "{{buttons.selected.border.width}}",
+            "transparency": "{{buttons.selected.border.transparency}}"
+          }
+        ],
+        "layout": [
+          {
+            "cellPadding": 0,
+            "columnCount": 3,
+            "orientation": 0,
+            "rowCount": 1
+          }
+        ],
+        "fill": [
+          {
+            "$id": "default",
+            "fillColor": {
+              "solid": {
+                "color": "{{buttons.default.background.color}}"
+              }
+            },
+            "transparency": "{{buttons.default.background.transparency}}"
+          },
+          {
+            "$id": "hover",
+            "fillColor": {
+              "solid": {
+                "color": "{{buttons.hover.background.color}}"
+              }
+            },
+            "transparency": "{{buttons.hover.background.transparency}}"
+          },
+          {
+            "$id": "press",
+            "fillColor": {
+              "solid": {
+                "color": "{{buttons.pressed.background.color}}"
+              }
+            },
+            "transparency": "{{buttons.pressed.background.transparency}}"
+          },
+          {
+            "$id": "selected",
+            "fillColor": {
+              "solid": {
+                "color": "{{buttons.selected.background.color}}"
+              }
+            },
+            "transparency": "{{buttons.selected.background.transparency}}"
+          }
+        ],
+        "text": [
+          {
+            "$id": "default",
+            "fontColor": {
+              "solid": {
+                "color": "{{buttons.default.value.fontColor}}"
+              }
+            },
+            "bold": "{{buttons.default.value.bold}}",
+            "fontFamily": "{{buttons.default.value.fontFamily}}",
+            "fontSize": "{{buttons.default.value.fontSize}}",
+            "horizontalAlignment": "center",
+            "verticalAlignment": "middle"
+          },
+          {
+            "$id": "hover",
+            "fontColor": {
+              "solid": {
+                "color": "{{buttons.hover.value.fontColor}}"
+              }
+            },
+            "bold": "{{buttons.hover.value.bold}}",
+            "fontFamily": "{{buttons.hover.value.fontFamily}}",
+            "fontSize": "{{buttons.hover.value.fontSize}}",
+            "horizontalAlignment": "center",
+            "verticalAlignment": "middle"
+          },
+          {
+            "$id": "press",
+            "fontColor": {
+              "solid": {
+                "color": "{{buttons.pressed.value.fontColor}}"
+              }
+            },
+            "bold": "{{buttons.pressed.value.bold}}",
+            "fontFamily": "{{buttons.pressed.value.fontFamily}}",
+            "fontSize": "{{buttons.pressed.value.fontSize}}",
+            "horizontalAlignment": "center",
+            "verticalAlignment": "middle"
+          },
+          {
+            "$id": "selected",
+            "fontColor": {
+              "solid": {
+                "color": "{{buttons.selected.value.fontColor}}"
+              }
+            },
+            "bold": "{{buttons.selected.value.bold}}",
+            "fontFamily": "{{buttons.selected.value.fontFamily}}",
+            "fontSize": "{{buttons.selected.value.fontSize}}",
+            "horizontalAlignment": "center",
+            "verticalAlignment": "middle"
+          }
+        ],
+        "padding": [
+          {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          }
+        ],
+        "shape": [
+          {
+            "tileShape": "rectangleRoundedByPixel",
+            "rectangleRoundedCurve": "{{borders.controlCorners}}"
+          }
+        ]
+      }
+    }
+  }
+}

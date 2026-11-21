@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="948" height="904" viewBox="0 0 948 904">
+  <!-- Sightline cover illustration. Original artwork, released under the repository's MIT licence. -->
+  <rect x="0" y="0" width="948" height="904" rx="6" fill="#F4F4F5"/>
+  <circle cx="860" cy="70" r="150" fill="#B8E0DB" opacity="0.45"/>
+  <circle cx="70" cy="860" r="120" fill="#B8E0DB" opacity="0.35"/>
+
+  <!-- KPI tiles -->
+  <g>
+    <rect x="40" y="40" width="272" height="150" rx="12" fill="#ffffff" stroke="#E7E7EA"/>
+    <rect x="64" y="68" width="90" height="10" rx="5" fill="#D4D4D8"/>
+    <rect x="64" y="96" width="150" height="30" rx="6" fill="#09090B"/>
+    <rect x="64" y="144" width="64" height="22" rx="11" fill="#B8E0DB"/>
+    <polyline points="210,160 226,150 242,154 258,138 274,142 290,124" fill="none" stroke="#0F766E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g>
+    <rect x="338" y="40" width="272" height="150" rx="12" fill="#ffffff" stroke="#E7E7EA"/>
+    <rect x="362" y="68" width="110" height="10" rx="5" fill="#D4D4D8"/>
+    <rect x="362" y="96" width="120" height="30" rx="6" fill="#09090B"/>
+    <rect x="362" y="144" width="64" height="22" rx="11" fill="#F6D3C3"/>
+    <polyline points="508,128 524,136 540,132 556,146 572,142 588,156" fill="none" stroke="#D9480F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g>
+    <rect x="636" y="40" width="272" height="150" rx="12" fill="#ffffff" stroke="#E7E7EA"/>
+    <rect x="660" y="68" width="80" height="10" rx="5" fill="#D4D4D8"/>
+    <rect x="660" y="96" width="140" height="30" rx="6" fill="#09090B"/>
+    <rect x="660" y="144" width="64" height="22" rx="11" fill="#DDD3F5"/>
+    <polyline points="806,156 822,148 838,150 854,136 870,132 886,120" fill="none" stroke="#7B4FD6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Column chart with target line -->
+  <g>
+    <rect x="40" y="214" width="868" height="360" rx="12" fill="#ffffff" stroke="#E7E7EA"/>
+    <rect x="68" y="242" width="200" height="14" rx="7" fill="#09090B"/>
+    <rect x="68" y="266" width="130" height="9" rx="4.5" fill="#D4D4D8"/>
+    <g stroke="#A1A1AA" stroke-opacity="0.4" stroke-dasharray="5 5">
+      <line x1="68" y1="320" x2="880" y2="320"/>
+      <line x1="68" y1="390" x2="880" y2="390"/>
+      <line x1="68" y1="460" x2="880" y2="460"/>
+    </g>
+    <line x1="68" y1="530" x2="880" y2="530" stroke="#D4D4D8"/>
+    <g fill="#0F766E">
+      <rect x="92"  y="400" width="44" height="130" rx="3"/>
+      <rect x="170" y="372" width="44" height="158" rx="3"/>
+      <rect x="248" y="388" width="44" height="142" rx="3"/>
+      <rect x="326" y="350" width="44" height="180" rx="3"/>
+      <rect x="404" y="364" width="44" height="166" rx="3"/>
+      <rect x="482" y="412" width="44" height="118" rx="3"/>
+      <rect x="560" y="340" width="44" height="190" rx="3"/>
+      <rect x="638" y="326" width="44" height="204" rx="3"/>
+      <rect x="716" y="344" width="44" height="186" rx="3"/>
+      <rect x="794" y="306" width="44" height="224" rx="3"/>
+    </g>
+    <polyline points="114,392 192,380 270,378 348,366 426,360 504,384 582,352 660,340 738,334 816,316" fill="none" stroke="#5F6B7A" stroke-width="3" stroke-dasharray="8 6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Donut -->
+  <g>
+    <rect x="40" y="598" width="328" height="266" rx="12" fill="#ffffff" stroke="#E7E7EA"/>
+    <rect x="68" y="626" width="120" height="12" rx="6" fill="#09090B"/>
+    <g transform="rotate(-90 204 756)" fill="none" stroke-width="30">
+      <circle cx="204" cy="756" r="70" stroke="#0F766E" stroke-dasharray="167 273"/>
+      <circle cx="204" cy="756" r="70" stroke="#D9480F" stroke-dasharray="0 169 101 170"/>
+      <circle cx="204" cy="756" r="70" stroke="#7B4FD6" stroke-dasharray="0 272 70 98"/>
+      <circle cx="204" cy="756" r="70" stroke="#5F6B7A" stroke-dasharray="0 344 94 2"/>
+    </g>
+  </g>
+
+  <!-- Line chart -->
+  <g>
+    <rect x="392" y="598" width="516" height="266" rx="12" fill="#ffffff" stroke="#E7E7EA"/>
+    <rect x="420" y="626" width="160" height="12" rx="6" fill="#09090B"/>
+    <g stroke="#A1A1AA" stroke-opacity="0.4" stroke-dasharray="5 5">
+      <line x1="420" y1="690" x2="880" y2="690"/>
+      <line x1="420" y1="750" x2="880" y2="750"/>
+    </g>
+    <line x1="420" y1="830" x2="880" y2="830" stroke="#D4D4D8"/>
+    <polygon points="430,790 490,770 550,780 610,740 670,750 730,712 790,720 860,682 860,830 430,830" fill="#0F766E" fill-opacity="0.12"/>
+    <polyline points="430,790 490,770 550,780 610,740 670,750 730,712 790,720 860,682" fill="none" stroke="#0F766E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <polyline points="430,806 490,796 550,800 610,786 670,770 730,774 790,756 860,748" fill="none" stroke="#D9480F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <g fill="#ffffff" stroke-width="3">
+      <circle cx="860" cy="682" r="5" stroke="#0F766E"/>
+      <circle cx="860" cy="748" r="5" stroke="#D9480F"/>
+    </g>
+  </g>
+</svg>

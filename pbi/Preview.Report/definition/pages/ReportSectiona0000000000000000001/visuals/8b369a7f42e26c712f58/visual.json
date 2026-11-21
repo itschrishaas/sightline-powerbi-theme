@@ -1,0 +1,32 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "8b369a7f42e26c712f58",
+  "position": {
+    "x": 8,
+    "y": 104,
+    "z": 1,
+    "height": 56,
+    "width": 1904,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "This report shows every visual type styled by the custom Power BI theme, using sample data and zero visual-level formatting. All styling — colors, borders, typography, card radius — comes exclusively from the registered custom theme."
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

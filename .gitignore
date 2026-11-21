@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+
+# Logs
+npm-debug.log*
+*.log
+
+# OS / editor artifacts
+.DS_Store
+Thumbs.db
+desktop.ini
+*~
+.vscode/
+.idea/
+
+# Theme JSON schema: downloaded on build by scripts/fetch-schema.js, never committed
+dist/schema.json
+
+# Power BI Desktop local state (Microsoft's recommended PBIP ignores).
+# .pbi/editorSettings.json is shared on purpose and stays tracked.
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
+
+# Exported binaries: the preview report lives in pbi/ as PBIP source
+*.pbix
+
+# Claude Code: personal settings and notes (shared .claude/ settings may be committed)
+.claude/settings.local.json
+CLAUDE.local.md

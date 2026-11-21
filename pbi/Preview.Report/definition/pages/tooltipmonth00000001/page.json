@@ -1,0 +1,15 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "tooltipmonth00000001",
+  "displayName": "Tooltip · Month",
+  "displayOption": "ActualSize",
+  "height": 400,
+  "width": 520,
+  "pageBinding": {
+    "name": "tooltipmonth00000001Bind",
+    "type": "Tooltip",
+    "parameters": []
+  },
+  "visibility": "HiddenInViewMode",
+  "type": "Tooltip"
+}

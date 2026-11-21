@@ -1,0 +1,20 @@
+{
+  "grid": [
+    {
+      "outlineColor": {
+        "solid": {
+          "color": "{{otherColors.white}}"
+        }
+      },
+      "gridVertical": false,
+      "gridHorizontal": true,
+      "gridHorizontalColor": {
+        "solid": {
+          "color": "{{borders.color}}"
+        }
+      },
+      "rowPadding": 8,
+      "textSize": "{{font.sizes.s}}"
+    }
+  ]
+}

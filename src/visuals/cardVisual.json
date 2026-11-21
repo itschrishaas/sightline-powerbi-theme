@@ -1,0 +1,1229 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/powerbi-desktop-samples/refs/heads/main/Report%20Theme%20JSON%20Schema/reportThemeSchema-2.159.json",
+  "name": "cardVisual",
+  "visualStyles": {
+    "cardVisual": {
+      "*": {
+        "title": [
+          {
+            "show": false
+          }
+        ],
+        "padding": [
+          {
+            "$id": "default",
+            "paddingSelection": "Custom",
+            "paddingIndividual": true,
+            "leftMargin": "{{margin}}",
+            "rightMargin": "{{margin}}",
+            "topMargin": "{{margin}}",
+            "bottomMargin": "{{margin}}",
+            "top": 0,
+            "bottom": 0,
+            "right": 0,
+            "left": 0
+          }
+        ],
+        "referenceLabel": [
+          {
+            "$id": "default",
+            "backgroundShow": true,
+            "backgroundColor": {
+              "solid": {
+                "color": "{{otherColors.white}}"
+              }
+            }
+          }
+        ],
+        "referenceLabelDetail": [
+          {
+            "$id": "default",
+            "show": false,
+            "detailFontColor": {
+              "solid": {
+                "color": "{{dataColors.secondary}}"
+              }
+            },
+            "detailFontSize": "{{font.sizes.xs}}",
+            "detailFontFamily": "{{font.family}}",
+            "detailUnderline": false,
+            "detailBold": false,
+            "detailItalic": true,
+            "showBlankAs": "0"
+          }
+        ],
+        "referenceLabelTitle": [
+          {
+            "$id": "default",
+            "show": true,
+            "titleFontColor": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            },
+            "titleFontSize": "{{font.sizes.s}}",
+            "titleFontFamily": "{{font.family}}"
+          }
+        ],
+        "referenceLabelValue": [
+          {
+            "$id": "default",
+            "show": true,
+            "valueFontColor": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            },
+            "valueFontSize": "{{font.sizes.s}}",
+            "valueFontFamily": "{{font.semibold.family}}",
+            "showBlankAs": "0"
+          }
+        ],
+        "value": [
+          {
+            "$id": "default",
+            "show": true,
+            "fontColor": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            },
+            "fontFamily": "{{font.semibold.family}}",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "fontSize": "{{font.sizes.xxl}}"
+          }
+        ],
+        "label": [
+          {
+            "$id": "default",
+            "show": true,
+            "fontColor": {
+              "solid": {
+                "color": "{{otherColors.text_muted}}"
+              }
+            },
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "fontSize": "{{font.sizes.s}}",
+            "transparency": 0,
+            "textWrap": true,
+            "alignBaselines": true,
+            "horizontalAlignment": "left",
+            "position": "aboveValue"
+          }
+        ],
+        "outline": [
+          {
+            "$id": "default",
+            "lineColor": {
+              "solid": {
+                "color": "{{borders.color}}"
+              }
+            },
+            "show": true
+          }
+        ],
+        "cardImage": [
+          {
+            "imageHeight": 20
+          }
+        ],
+        "shapeCustomRectangle": [
+          {
+            "$id": "default",
+            "rectangleRoundedCurve": 6,
+            "tileShape": "rectangleRoundedByPixel"
+          }
+        ]
+      },
+      "KPI Card": {
+        "title": [
+          {
+            "show": false
+          }
+        ],
+        "border": [
+          {
+            "show": false
+          }
+        ],
+        "background": [
+          {
+            "show": false,
+            "transparency": 100
+          }
+        ],
+        "cardImage": [
+          {
+            "$id": "default",
+            "show": false,
+            "paddingIndividual": false,
+            "backgroundTransparency": 100,
+            "backgroundFillColor": {
+              "solid": {
+                "color": "{{dataColors.red}}"
+              }
+            }
+          }
+        ],
+        "fillCustom": [
+          {},
+          {
+            "$id": "default",
+            "show": true,
+            "fillColor": {
+              "solid": {
+                "color": "{{otherColors.white}}"
+              }
+            }
+          }
+        ],
+        "grid": [
+          {
+            "show": false
+          }
+        ],
+        "smallMultiplesLayout": [{}],
+        "smallMultiplesGrid": [{}],
+        "value": [
+          {
+            "$id": "default"
+          }
+        ],
+        "cardCalloutArea": [
+          {
+            "show": true
+          },
+          {
+            "$id": "default",
+            "paddingUniform": 0,
+            "backgroundTransparency": 0,
+            "backgroundFillColor": {
+              "solid": {
+                "color": "{{otherColors.white}}"
+              }
+            }
+          }
+        ],
+        "image": [
+          {
+            "$id": "default",
+            "show": true,
+            "position": "Bottom",
+            "imageAreaSize": 25
+          }
+        ],
+        "referenceLabelLayout": [
+          {
+            "$id": "default",
+            "position": "below"
+          }
+        ],
+        "smallMultiplesBorder": [
+          {
+            "gridlineColor": {
+              "solid": {
+                "color": "{{borders.color}}"
+              }
+            }
+          }
+        ],
+        "smallMultiplesCellBackGround": [
+          {
+            "backgroundShow": false,
+            "backgroundTransparency": 100
+          }
+        ],
+        "spacing": [
+          {
+            "$id": "default",
+            "verticalSpacing": 2
+          }
+        ],
+        "label": [
+          {
+            "$id": "default",
+            "position": "aboveValue"
+          }
+        ],
+        "padding": [
+          {
+            "$id": "default",
+            "paddingSelection": "Custom",
+            "paddingIndividual": true,
+            "top": 0,
+            "bottom": 0,
+            "right": 0,
+            "left": 0
+          }
+        ],
+        "accentBar": [
+          {
+            "$id": "default",
+            "position": "Top",
+            "show": true,
+            "width": 4,
+            "color": {
+              "solid": {
+                "color": "{{dataColors.primary}}"
+              }
+            }
+          }
+        ],
+        "visualHeader": [
+          {
+            "showTooltipButton": true
+          }
+        ],
+        "divider": [
+          {
+            "$id": "default",
+            "show": true,
+            "dividerColor": {
+              "solid": {
+                "color": "{{borders.color}}"
+              }
+            },
+            "dividerWidth": 1,
+            "dividerIgnorePadding": true
+          }
+        ]
+      },
+      "KPI Card 2": {
+        "title": [
+          {
+            "show": false
+          }
+        ],
+        "border": [
+          {
+            "show": false
+          }
+        ],
+        "background": [
+          {
+            "show": false
+          }
+        ],
+        "fillCustom": [
+          {
+            "$id": "default",
+            "show": true,
+            "fillColor": {
+              "solid": {
+                "color": "{{otherColors.white}}"
+              }
+            }
+          }
+        ],
+        "image": [
+          {
+            "$id": "default",
+            "imageAreaSize": 25
+          }
+        ],
+        "smallMultiplesBorder": [
+          {
+            "gridlineColor": {
+              "solid": {
+                "color": "{{borders.color}}"
+              }
+            }
+          }
+        ],
+        "spacing": [
+          {
+            "$id": "default",
+            "verticalSpacing": 5
+          }
+        ],
+        "padding": [
+          {
+            "$id": "default",
+            "paddingSelection": "Custom",
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          }
+        ],
+        "accentBar": [
+          {
+            "$id": "default",
+            "position": "Top",
+            "show": true,
+            "width": 8,
+            "color": {
+              "solid": {
+                "color": "{{otherColors.gray_light}}"
+              }
+            }
+          }
+        ],
+        "visualHeader": [
+          {
+            "showTooltipButton": true
+          }
+        ],
+        "divider": [
+          {
+            "$id": "default",
+            "show": true,
+            "dividerColor": {
+              "solid": {
+                "color": "{{borders.color}}"
+              }
+            },
+            "dividerWidth": 1,
+            "dividerIgnorePadding": true
+          }
+        ],
+        "referenceLabel": [
+          {
+            "$id": "default",
+            "backgroundShow": true,
+            "backgroundColor": {
+              "solid": {
+                "color": "{{otherColors.gray_lighter}}"
+              }
+            }
+          }
+        ]
+      },
+      "KPI Tile": {
+        "title": [
+          {
+            "show": false
+          }
+        ],
+        "border": [
+          {
+            "show": false
+          }
+        ],
+        "background": [
+          {
+            "show": false,
+            "transparency": 100
+          }
+        ],
+        "cardImage": [
+          {
+            "$id": "default",
+            "show": false,
+            "paddingIndividual": false,
+            "backgroundTransparency": 100,
+            "backgroundFillColor": {
+              "solid": {
+                "color": "{{dataColors.red}}"
+              }
+            }
+          }
+        ],
+        "fillCustom": [
+          {},
+          {
+            "$id": "default",
+            "show": true,
+            "fillColor": {
+              "solid": {
+                "color": "{{otherColors.white}}"
+              }
+            }
+          }
+        ],
+        "grid": [
+          {
+            "show": false
+          }
+        ],
+        "smallMultiplesLayout": [{}],
+        "smallMultiplesGrid": [{}],
+        "value": [
+          {
+            "$id": "default",
+            "show": true,
+            "fontFamily": "{{font.semibold.family}}",
+            "fontSize": "{{font.sizes.xxl}}",
+            "bold": false,
+            "fontColor": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            },
+            "horizontalAlignment": "left"
+          }
+        ],
+        "cardCalloutArea": [
+          {
+            "show": true
+          },
+          {
+            "$id": "default",
+            "paddingUniform": 0,
+            "backgroundTransparency": 100
+          }
+        ],
+        "image": [
+          {
+            "$id": "default",
+            "show": true,
+            "position": "Bottom",
+            "imageAreaSize": 25
+          }
+        ],
+        "referenceLabelLayout": [
+          {
+            "$id": "default",
+            "position": "below",
+            "arrangement": "rows",
+            "style": "tabular"
+          }
+        ],
+        "smallMultiplesBorder": [
+          {
+            "gridlineColor": {
+              "solid": {
+                "color": "{{borders.color}}"
+              }
+            }
+          }
+        ],
+        "smallMultiplesCellBackGround": [
+          {
+            "backgroundShow": false,
+            "backgroundTransparency": 100
+          }
+        ],
+        "spacing": [
+          {
+            "$id": "default",
+            "verticalSpacing": 4
+          }
+        ],
+        "label": [
+          {
+            "$id": "default",
+            "show": true,
+            "position": "aboveValue",
+            "fontSize": "{{font.sizes.s}}",
+            "bold": false,
+            "fontColor": {
+              "solid": {
+                "color": "{{otherColors.text_muted}}"
+              }
+            },
+            "horizontalAlignment": "left",
+            "textWrap": false
+          }
+        ],
+        "padding": [
+          {
+            "$id": "default",
+            "paddingSelection": "Custom",
+            "paddingIndividual": true,
+            "leftMargin": 24,
+            "rightMargin": 24,
+            "topMargin": 24,
+            "bottomMargin": 16,
+            "top": 0,
+            "bottom": 0,
+            "right": 0,
+            "left": 0
+          }
+        ],
+        "accentBar": [
+          {
+            "$id": "default",
+            "show": false
+          }
+        ],
+        "visualHeader": [
+          {
+            "showTooltipButton": true
+          }
+        ],
+        "divider": [
+          {
+            "$id": "default",
+            "show": false
+          }
+        ],
+        "referenceLabelTitle": [
+          {
+            "$id": "default",
+            "show": true,
+            "titleFontFamily": "{{font.family}}",
+            "titleFontSize": "{{font.sizes.xs}}",
+            "titleFontColor": {
+              "solid": {
+                "color": "{{otherColors.text_muted}}"
+              }
+            }
+          }
+        ],
+        "referenceLabelValue": [
+          {
+            "$id": "default",
+            "show": true,
+            "valueFontFamily": "{{font.semibold.family}}",
+            "valueFontSize": "{{font.sizes.xs}}",
+            "valueFontColor": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            },
+            "showBlankAs": "–"
+          }
+        ],
+        "referenceLabelDetail": [
+          {
+            "$id": "default",
+            "show": true,
+            "detailFontFamily": "{{font.semibold.family}}",
+            "detailFontSize": "{{font.sizes.xs}}",
+            "detailFontColor": {
+              "solid": {
+                "color": "{{otherColors.text_muted}}"
+              }
+            },
+            "detailItalic": false,
+            "detailBold": false,
+            "showBlankAs": " ",
+            "detailBackgroundColor": {
+              "solid": {
+                "color": "{{otherColors.white}}"
+              }
+            }
+          }
+        ]
+      },
+      "Record View": {
+        "title": [
+          {
+            "show": true
+          }
+        ],
+        "border": [
+          {
+            "show": true
+          }
+        ],
+        "background": [
+          {
+            "show": true
+          },
+          {
+            "$id": "default",
+            "show": false
+          }
+        ],
+        "fillCustom": [
+          {
+            "show": false
+          },
+          {
+            "$id": "default",
+            "show": false
+          }
+        ],
+        "smallMultiplesBorder": [
+          {
+            "gridlineShow": false
+          }
+        ],
+        "smallMultiplesLayout": [
+          {
+            "columnPadding": 0,
+            "rowPadding": 0
+          }
+        ],
+        "smallMultiplesCellBackGround": [
+          {
+            "backgroundShow": false
+          }
+        ],
+        "grid": [
+          {
+            "show": false
+          }
+        ],
+        "layout": [
+          {
+            "style": "Cards",
+            "orientation": 1,
+            "contentOrder": "callout_image_referenceLabel",
+            "calloutSize": 80,
+            "alignment": "left",
+            "rowPadding": 0,
+            "showFixedSize": true,
+            "fixedHeight": 54
+          },
+          {
+            "$id": "default",
+            "paddingIndividual": false,
+            "paddingUniform": 0
+          }
+        ],
+        "padding": [
+          {
+            "top": "{{margin}}",
+            "right": "{{margin}}",
+            "bottom": "{{margin}}",
+            "left": "{{margin}}"
+          },
+          {
+            "$id": "default",
+            "paddingSelection": "Custom",
+            "paddingIndividual": true,
+            "topMargin": 3,
+            "rightMargin": 8,
+            "bottomMargin": 3,
+            "leftMargin": 8
+          }
+        ],
+        "spacing": [
+          {
+            "$id": "default",
+            "verticalSpacing": 2
+          }
+        ],
+        "value": [
+          {
+            "$id": "default",
+            "fontFamily": "{{font.semibold.family}}",
+            "bold": false,
+            "fontSize": "{{font.sizes.m}}",
+            "textWrap": false,
+            "showBlankAs": "n/a"
+          }
+        ],
+        "label": [
+          {
+            "$id": "default",
+            "fontSize": "{{font.sizes.xs}}",
+            "position": "aboveValue",
+            "fontColor": {
+              "solid": {
+                "color": "{{otherColors.text_muted}}"
+              }
+            },
+            "bold": false
+          }
+        ],
+        "outline": [
+          {
+            "$id": "default",
+            "show": false
+          }
+        ],
+        "image": [
+          {
+            "$id": "default",
+            "show": true,
+            "position": "Left",
+            "imageType": "imageUrl",
+            "imageAreaSize": 24,
+            "rectangleRoundedCurveCustomStyle": false,
+            "rectangleRoundedCurve": 0,
+            "imageEffects": false
+          }
+        ],
+        "cardCalloutArea": [
+          {
+            "show": true
+          },
+          {
+            "$id": "default",
+            "paddingUniform": 0,
+            "backgroundTransparency": 100
+          }
+        ],
+        "referenceLabelLayout": [
+          {
+            "position": "below"
+          }
+        ],
+        "overFlow": [
+          {
+            "overFlowDirection": 0
+          }
+        ],
+        "accentBar": [
+          {
+            "$id": "default",
+            "show": true,
+            "position": "Top",
+            "width": 1,
+            "color": {
+              "solid": {
+                "color": "{{borders.color}}"
+              }
+            }
+          }
+        ],
+        "glowCustom": [
+          {
+            "show": false
+          }
+        ],
+        "shadowCustom": [
+          {
+            "show": false
+          }
+        ],
+        "divider": [
+          {
+            "$id": "default",
+            "show": true,
+            "dividerColor": {
+              "solid": {
+                "color": "{{borders.color}}"
+              }
+            },
+            "dividerWidth": 1,
+            "dividerIgnorePadding": true
+          }
+        ]
+      },
+      "Info Panel": {
+        "title": [
+          {
+            "show": true
+          }
+        ],
+        "border": [
+          {
+            "show": true
+          }
+        ],
+        "background": [
+          {
+            "show": true
+          },
+          {
+            "$id": "default",
+            "show": false
+          }
+        ],
+        "fillCustom": [
+          {
+            "show": false
+          },
+          {
+            "$id": "default",
+            "show": false
+          }
+        ],
+        "smallMultiplesBorder": [
+          {
+            "gridlineShow": false
+          }
+        ],
+        "smallMultiplesLayout": [
+          {
+            "columnPadding": 0
+          }
+        ],
+        "cardCalloutArea": [
+          {
+            "paddingUniform": 0
+          }
+        ],
+        "layout": [
+          {
+            "style": "Cards",
+            "orientation": 0,
+            "columnCount": 2,
+            "contentOrder": "callout_image_referenceLabel",
+            "autoGrid": true
+          },
+          {
+            "$id": "default",
+            "maxTiles": 6,
+            "paddingIndividual": false,
+            "paddingUniform": 3,
+            "calloutSize": 60,
+            "alignment": "left"
+          }
+        ],
+        "smallMultiplesCellBackGround": [
+          {
+            "backgroundShow": false
+          }
+        ],
+        "grid": [
+          {
+            "show": false
+          }
+        ],
+        "value": [
+          {
+            "$id": "default",
+            "fontSize": "{{font.sizes.m}}",
+            "textWrap": false,
+            "showBlankAs": "n/a"
+          }
+        ],
+        "label": [
+          {
+            "$id": "default",
+            "fontSize": "{{font.sizes.s}}",
+            "position": "aboveValue",
+            "fontColor": {
+              "solid": {
+                "color": "{{otherColors.text_muted}}"
+              }
+            },
+            "bold": false
+          }
+        ],
+        "outline": [
+          {
+            "$id": "default",
+            "show": false
+          }
+        ],
+        "spacing": [
+          {
+            "$id": "default",
+            "verticalSpacing": 2
+          }
+        ],
+        "padding": [
+          {
+            "top": "{{margin}}",
+            "right": "{{margin}}",
+            "bottom": "{{margin}}",
+            "left": "{{margin}}"
+          },
+          {
+            "$id": "default",
+            "paddingSelection": "Custom",
+            "paddingIndividual": true,
+            "topMargin": 10,
+            "rightMargin": 0,
+            "bottomMargin": 0,
+            "leftMargin": 0
+          }
+        ],
+        "image": [
+          {
+            "$id": "default",
+            "show": true,
+            "position": "Left",
+            "size": 32,
+            "padding": 10,
+            "imageType": "imageUrl",
+            "imageAreaSize": 18,
+            "rectangleRoundedCurveCustomStyle": false,
+            "rectangleRoundedCurve": 0,
+            "imageEffects": false
+          }
+        ],
+        "referenceLabelLayout": [
+          {
+            "position": "below"
+          }
+        ],
+        "overFlow": [
+          {
+            "overFlowDirection": 0
+          }
+        ],
+        "glowCustom": [
+          {
+            "show": false
+          }
+        ],
+        "shadowCustom": [
+          {
+            "show": false
+          }
+        ],
+        "accentBar": [
+          {
+            "show": false
+          }
+        ],
+        "divider": [
+          {
+            "show": false
+          }
+        ]
+      },
+      "Dark KPI Card": {
+        "title": [
+          {
+            "show": false,
+            "fontColor": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            }
+          }
+        ],
+        "subTitle": [
+          {
+            "fontColor": {
+              "solid": {
+                "color": "{{otherColors.text_muted}}"
+              }
+            },
+            "fontSize": "{{font.chrome.body}}"
+          }
+        ],
+        "border": [
+          {
+            "show": false
+          }
+        ],
+        "background": [
+          {
+            "show": false,
+            "transparency": 100
+          }
+        ],
+        "grid": [
+          {
+            "show": false
+          }
+        ],
+        "fillCustom": [
+          {
+            "$id": "default",
+            "show": true,
+            "fillColor": {
+              "solid": {
+                "color": "{{darkPanel.surface}}"
+              }
+            },
+            "transparency": 0
+          }
+        ],
+        "shapeCustomRectangle": [
+          {
+            "$id": "default",
+            "tileShape": "rectangleRoundedByPixel",
+            "rectangleRoundedCurve": "{{borders.corners}}"
+          }
+        ],
+        "outline": [
+          {
+            "$id": "default",
+            "show": false
+          }
+        ],
+        "glowCustom": [
+          {
+            "$id": "default",
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "{{darkPanel.accent}}"
+              }
+            },
+            "transparency": 82,
+            "shadowBlur": 26,
+            "glowSpread": 2,
+            "glowPositionPreset": "topLeft",
+            "position": "Inner"
+          }
+        ],
+        "shadowCustom": [
+          {
+            "$id": "default",
+            "show": false
+          }
+        ],
+        "cardCalloutArea": [
+          {
+            "show": true
+          },
+          {
+            "$id": "default",
+            "paddingUniform": 0,
+            "backgroundTransparency": 100
+          }
+        ],
+        "padding": [
+          {
+            "$id": "default",
+            "paddingSelection": "Custom",
+            "paddingIndividual": true,
+            "top": 0,
+            "bottom": 0,
+            "right": 0,
+            "left": 0
+          }
+        ],
+        "spacing": [
+          {
+            "$id": "default",
+            "verticalSpacing": 4
+          }
+        ],
+        "label": [
+          {
+            "$id": "default",
+            "show": true,
+            "position": "aboveValue",
+            "fontColor": {
+              "solid": {
+                "color": "{{darkPanel.text_muted}}"
+              }
+            },
+            "fontFamily": "{{font.semibold.family}}",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "fontSize": "{{font.sizes.s}}",
+            "textWrap": true,
+            "horizontalAlignment": "left"
+          }
+        ],
+        "value": [
+          {
+            "$id": "default",
+            "show": true,
+            "fontColor": {
+              "solid": {
+                "color": "{{darkPanel.text}}"
+              }
+            },
+            "fontFamily": "{{font.semibold.family}}",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "fontSize": "{{font.sizes.xxl}}"
+          }
+        ],
+        "referenceLabelLayout": [
+          {
+            "$id": "default",
+            "position": "below"
+          }
+        ],
+        "referenceLabel": [
+          {
+            "$id": "default",
+            "backgroundShow": true,
+            "backgroundColor": {
+              "solid": {
+                "color": "{{darkPanel.surface_alt}}"
+              }
+            },
+            "backgroundTransparency": 0,
+            "rectangleRoundedCurve": 4,
+            "paddingIndividual": true,
+            "paddingLeft": 8,
+            "paddingRight": 8,
+            "paddingTop": 4,
+            "paddingBottom": 4
+          }
+        ],
+        "referenceLabelTitle": [
+          {
+            "$id": "default",
+            "show": true,
+            "titleFontColor": {
+              "solid": {
+                "color": "{{darkPanel.text_muted}}"
+              }
+            },
+            "titleFontSize": "{{font.sizes.xs}}",
+            "titleFontFamily": "{{font.family}}"
+          }
+        ],
+        "referenceLabelValue": [
+          {
+            "$id": "default",
+            "show": true,
+            "valueFontColor": {
+              "solid": {
+                "color": "{{darkPanel.text}}"
+              }
+            },
+            "valueFontSize": "{{font.sizes.xs}}",
+            "valueFontFamily": "{{font.semibold.family}}",
+            "showBlankAs": "0"
+          }
+        ],
+        "referenceLabelDetail": [
+          {
+            "$id": "default",
+            "show": false,
+            "detailFontColor": {
+              "solid": {
+                "color": "{{darkPanel.text_muted}}"
+              }
+            },
+            "detailFontSize": "{{font.sizes.xs}}",
+            "detailFontFamily": "{{font.family}}",
+            "detailUnderline": false,
+            "detailBold": false,
+            "detailItalic": false,
+            "showBlankAs": "0"
+          }
+        ],
+        "accentBar": [
+          {
+            "$id": "default",
+            "show": true,
+            "position": "Top",
+            "width": 4,
+            "color": {
+              "solid": {
+                "color": "{{darkPanel.accent}}"
+              }
+            }
+          }
+        ],
+        "divider": [
+          {
+            "$id": "default",
+            "show": true,
+            "dividerColor": {
+              "solid": {
+                "color": "{{darkPanel.border}}"
+              }
+            },
+            "dividerWidth": 1,
+            "dividerIgnorePadding": true
+          }
+        ],
+        "smallMultiplesBorder": [
+          {
+            "gridlineColor": {
+              "solid": {
+                "color": "{{darkPanel.border}}"
+              }
+            }
+          }
+        ],
+        "smallMultiplesCellBackGround": [
+          {
+            "backgroundShow": false,
+            "backgroundTransparency": 100
+          }
+        ],
+        "image": [
+          {
+            "$id": "default",
+            "show": true,
+            "position": "Bottom",
+            "imageAreaSize": 25
+          }
+        ],
+        "visualHeader": [
+          {
+            "showTooltipButton": true
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "categoryAxisFunnel": [
+    {
+      "show": true,
+      "color": {
+        "solid": {
+          "color": "{{otherColors.text}}"
+        }
+      },
+      "fontSize": "{{font.sizes.xs}}"
+    }
+  ]
+}

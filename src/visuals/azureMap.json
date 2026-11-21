@@ -1,0 +1,47 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/powerbi-desktop-samples/refs/heads/main/Report%20Theme%20JSON%20Schema/reportThemeSchema-2.159.json",
+  "name": "azureMap",
+  "visualStyles": {
+    "azureMap": {
+      "*": {
+        "title": [
+          {
+            "show": false
+          }
+        ],
+        "padding": [
+          {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          }
+        ],
+        "mapControls": [
+          {
+            "defaultStyle": "grayscale_light",
+            "showStylePicker": false,
+            "showNavigationControls": false,
+            "showSelectionControl": false,
+            "showLabels": true,
+            "worldWrap": false,
+            "autoZoom": true
+          }
+        ],
+        "bubbleLayer": [
+          {
+            "borderShow": true,
+            "autoStrokeColor": false,
+            "strokeColor": {
+              "solid": {
+                "color": "{{otherColors.white}}"
+              }
+            },
+            "bubbleStrokeWidth": 1,
+            "mapTransparency": 10
+          }
+        ]
+      }
+    }
+  }
+}

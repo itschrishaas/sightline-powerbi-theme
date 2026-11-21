@@ -1,0 +1,22 @@
+{
+  "valueAxis": [
+    {
+      "show": true,
+      "showAxisTitle": false,
+      "gridlineAutoScale": "{{gridlines.gridlineAutoScale}}",
+      "gridlineColor": "{{gridlines.gridlineColor}}",
+      "gridlineDashCap": "{{gridlines.gridlineDashCap}}",
+      "gridlineShow": "{{gridlines.gridlineShow}}",
+      "gridlineStyle": "{{gridlines.gridlineStyle}}",
+      "gridlineThickness": "{{gridlines.gridlineThickness}}",
+      "gridlineTransparency": "{{gridlines.gridlineTransparency}}",
+      "gridlineDashArray": "{{gridlines.gridlineDashArray}}",
+      "labelColor": {
+        "solid": {
+          "color": "{{otherColors.text_muted}}"
+        }
+      },
+      "fontSize": "{{font.sizes.xs}}"
+    }
+  ]
+}

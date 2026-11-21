@@ -1,0 +1,34 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/powerbi-desktop-samples/refs/heads/main/Report%20Theme%20JSON%20Schema/reportThemeSchema-2.159.json",
+  "name": "scatterChart",
+  "visualStyles": {
+    "scatterChart": {
+      "*": {},
+      "Labelled": {
+        "valueAxis": "{{def.preset.labelled.valueAxis}}",
+        "legend": "{{def.preset.labelled.legend}}",
+        "categoryAxis": "{{def.preset.labelled.categoryAxis}}"
+      },
+      "Minimal": {
+        "valueAxis": "{{def.preset.minimal.valueAxis}}",
+        "legend": "{{def.preset.minimal.legend}}",
+        "categoryAxis": "{{def.preset.minimal.categoryAxis}}"
+      },
+      "Dense": {
+        "valueAxis": "{{def.preset.dense.valueAxis}}",
+        "legend": "{{def.preset.dense.legend}}",
+        "categoryAxis": "{{def.preset.dense.categoryAxis}}"
+      },
+      "Presentation": {
+        "valueAxis": "{{def.preset.presentation.valueAxis}}",
+        "legend": "{{def.preset.presentation.legend}}",
+        "categoryAxis": "{{def.preset.presentation.categoryAxis}}"
+      },
+      "Comparison": {
+        "valueAxis": "{{def.preset.comparison.valueAxis}}",
+        "legend": "{{def.preset.comparison.legend}}",
+        "categoryAxis": "{{def.preset.comparison.categoryAxis}}"
+      }
+    }
+  }
+}

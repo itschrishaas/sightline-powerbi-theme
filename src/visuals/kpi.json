@@ -1,0 +1,77 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/powerbi-desktop-samples/refs/heads/main/Report%20Theme%20JSON%20Schema/reportThemeSchema-2.159.json",
+  "name": "kpi",
+  "visualStyles": {
+    "kpi": {
+      "*": {
+        "indicator": [
+          {
+            "fontFamily": "{{font.bold.family}}",
+            "fontSize": "{{font.sizes.xxl}}",
+            "bold": true,
+            "fontColor": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            }
+          }
+        ],
+        "goals": [
+          {
+            "fontSize": "{{font.sizes.s}}",
+            "goalFontFamily": "{{font.family}}",
+            "goalFontColor": {
+              "solid": {
+                "color": "{{otherColors.text_muted}}"
+              }
+            },
+            "titleFontSize": "{{font.sizes.s}}",
+            "distanceFontFamily": "{{font.family}}",
+            "distanceFontColor": {
+              "solid": {
+                "color": "{{otherColors.text_muted}}"
+              }
+            }
+          }
+        ],
+        "status": [
+          {
+            "goodColor": {
+              "solid": {
+                "color": "{{dataColors.positive}}"
+              }
+            },
+            "neutralColor": {
+              "solid": {
+                "color": "{{dataColors.neutral}}"
+              }
+            },
+            "badColor": {
+              "solid": {
+                "color": "{{dataColors.negative}}"
+              }
+            }
+          }
+        ],
+        "trendline": [
+          {
+            "show": true,
+            "transparency": 40
+          }
+        ],
+        "lastDate": [
+          {
+            "show": true,
+            "fontSize": "{{font.sizes.xs}}",
+            "lastDateFontFamily": "{{font.family}}",
+            "lastDateFontColor": {
+              "solid": {
+                "color": "{{otherColors.text_muted}}"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/powerbi-desktop-samples/refs/heads/main/Report%20Theme%20JSON%20Schema/reportThemeSchema-2.159.json",
+  "name": "pieChart",
+  "visualStyles": {
+    "pieChart": {
+      "*": {
+        "labels": "{{def.chart.labels}}"
+      },
+      "Labelled": {
+        "legend": "{{def.preset.labelled.legend}}",
+        "labels": "{{def.preset.labelled.labels}}"
+      },
+      "Minimal": {
+        "legend": "{{def.preset.minimal.legend}}",
+        "labels": "{{def.preset.minimal.labels}}"
+      },
+      "Presentation": {
+        "legend": "{{def.preset.presentation.legend}}",
+        "labels": "{{def.preset.presentation.labels}}"
+      }
+    }
+  }
+}

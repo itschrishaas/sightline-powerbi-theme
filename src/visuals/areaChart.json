@@ -1,0 +1,40 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/powerbi-desktop-samples/refs/heads/main/Report%20Theme%20JSON%20Schema/reportThemeSchema-2.159.json",
+  "name": "areaChart",
+  "visualStyles": {
+    "areaChart": {
+      "*": {
+        "labels": "{{def.chart.labels}}",
+        "lineStyles": "{{def.preset.line.straight}}"
+      },
+      "Labelled": {
+        "valueAxis": "{{def.preset.labelled.valueAxis}}",
+        "legend": "{{def.preset.labelled.legend}}",
+        "categoryAxis": "{{def.preset.labelled.categoryAxis}}",
+        "labels": "{{def.preset.labelled.labels}}",
+        "lineStyles": "{{def.preset.line.straight}}"
+      },
+      "Minimal": {
+        "valueAxis": "{{def.preset.minimal.valueAxis}}",
+        "legend": "{{def.preset.minimal.legend}}",
+        "categoryAxis": "{{def.preset.minimal.categoryAxis}}",
+        "labels": "{{def.preset.minimal.labels}}",
+        "lineStyles": "{{def.preset.line.straight}}"
+      },
+      "Presentation": {
+        "valueAxis": "{{def.preset.presentation.valueAxis}}",
+        "legend": "{{def.preset.presentation.legend}}",
+        "categoryAxis": "{{def.preset.presentation.categoryAxis}}",
+        "labels": "{{def.preset.presentation.labels}}",
+        "lineStyles": "{{def.preset.line.straight}}"
+      },
+      "Smooth": {
+        "valueAxis": "{{def.chart.valueAxis}}",
+        "legend": "{{def.chart.legend}}",
+        "categoryAxis": "{{def.chart.categoryAxis}}",
+        "labels": "{{def.chart.labels}}",
+        "lineStyles": "{{def.preset.line.smooth}}"
+      }
+    }
+  }
+}

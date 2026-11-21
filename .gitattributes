@@ -1,0 +1,17 @@
+# Normalise line endings in the repo; check out LF everywhere so diffs are stable
+# across Windows (where Power BI Desktop runs) and macOS/Linux.
+* text=auto eol=lf
+
+# Power BI writes these; keep them diffable as text
+*.pbip   text eol=lf
+*.pbir   text eol=lf
+*.pbism  text eol=lf
+*.tmdl   text eol=lf
+*.platform text eol=lf
+
+# Binary assets
+*.png  binary
+*.jpg  binary
+*.gif  binary
+*.abf  binary
+*.pbix binary

@@ -1,0 +1,47 @@
+{
+  "name": "columnChart",
+  "$schema": "https://raw.githubusercontent.com/microsoft/powerbi-desktop-samples/refs/heads/main/Report%20Theme%20JSON%20Schema/reportThemeSchema-2.159.json",
+  "visualStyles": {
+    "columnChart": {
+      "*": {
+        "labels": "{{def.chart.labels}}",
+        "totals": "{{def.chart.totals}}"
+      },
+      "Labelled": {
+        "valueAxis": "{{def.preset.labelled.valueAxis}}",
+        "categoryAxis": "{{def.preset.labelled.categoryAxisBars}}",
+        "labels": "{{def.preset.labelled.labels}}",
+        "totals": "{{def.chart.totals}}",
+        "legend": "{{def.preset.labelled.legend}}"
+      },
+      "Minimal": {
+        "valueAxis": "{{def.preset.minimal.valueAxis}}",
+        "categoryAxis": "{{def.preset.minimal.categoryAxisBars}}",
+        "labels": "{{def.preset.minimal.labels}}",
+        "totals": "{{def.chart.totals}}",
+        "legend": "{{def.preset.minimal.legend}}"
+      },
+      "Dense": {
+        "valueAxis": "{{def.preset.dense.valueAxis}}",
+        "categoryAxis": "{{def.preset.dense.categoryAxisBars}}",
+        "labels": "{{def.preset.dense.labels}}",
+        "totals": "{{def.chart.totals}}",
+        "legend": "{{def.preset.dense.legend}}"
+      },
+      "Presentation": {
+        "valueAxis": "{{def.preset.presentation.valueAxis}}",
+        "categoryAxis": "{{def.preset.presentation.categoryAxisBars}}",
+        "labels": "{{def.preset.presentation.labels}}",
+        "totals": "{{def.chart.totals}}",
+        "legend": "{{def.preset.presentation.legend}}"
+      },
+      "Comparison": {
+        "valueAxis": "{{def.preset.comparison.valueAxis}}",
+        "categoryAxis": "{{def.preset.comparison.categoryAxisBars}}",
+        "labels": "{{def.preset.comparison.labels}}",
+        "totals": "{{def.chart.totals}}",
+        "legend": "{{def.preset.comparison.legend}}"
+      }
+    }
+  }
+}

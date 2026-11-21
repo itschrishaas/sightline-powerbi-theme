@@ -1,0 +1,15 @@
+{
+  "legend": [
+    {
+      "show": true,
+      "position": "Top",
+      "showTitle": false,
+      "fontSize": "{{font.sizes.xs}}",
+      "labelColor": {
+        "solid": {
+          "color": "{{otherColors.text}}"
+        }
+      }
+    }
+  ]
+}

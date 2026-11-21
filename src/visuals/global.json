@@ -1,0 +1,169 @@
+{
+  "name": "Global",
+  "$schema": "https://raw.githubusercontent.com/microsoft/powerbi-desktop-samples/refs/heads/main/Report%20Theme%20JSON%20Schema/reportThemeSchema-2.159.json",
+  "visualStyles": {
+    "*": {
+      "*": {
+        "title": [
+          {
+            "show": true,
+            "fontFamily": "{{text.header.fontFace}}",
+            "fontSize": "{{text.header.fontSize}}",
+            "fontColor": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            }
+          }
+        ],
+        "subTitle": [
+          {
+            "show": false,
+            "fontFamily": "{{font.family}}",
+            "fontSize": "{{font.sizes.xs}}",
+            "fontColor": {
+              "solid": {
+                "color": "{{otherColors.text_muted}}"
+              }
+            }
+          }
+        ],
+        "spacing": [
+          {
+            "spaceBelowTitle": 6,
+            "spaceBelowSubTitle": 4,
+            "customizeSpacing": true
+          }
+        ],
+        "padding": [
+          {
+            "top": "{{margin}}",
+            "right": "{{margin}}",
+            "bottom": "{{margin}}",
+            "left": "{{margin}}"
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "{{borders.color}}"
+              }
+            },
+            "radius": "{{borders.corners}}"
+          }
+        ],
+        "visualHeader": [
+          {
+            "show": true,
+            "background": {
+              "solid": {
+                "color": "{{otherColors.white}}"
+              }
+            },
+            "transparency": 0,
+            "border": {
+              "solid": {
+                "color": "{{borders.color}}"
+              }
+            },
+            "foreground": {
+              "solid": {
+                "color": "{{otherColors.text_muted}}"
+              }
+            }
+          }
+        ],
+        "visualHeaderTooltip": [
+          {
+            "fontFamily": "{{font.family}}",
+            "fontSize": "{{font.sizes.xs}}",
+            "titleFontColor": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            },
+            "themedTitleFontColor": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            },
+            "background": {
+              "solid": {
+                "color": "{{otherColors.white}}"
+              }
+            },
+            "themedBackground": {
+              "solid": {
+                "color": "{{otherColors.white}}"
+              }
+            },
+            "transparency": 0
+          }
+        ],
+        "visualTooltip": [
+          {
+            "fontFamily": "{{font.family}}",
+            "fontSize": "{{font.sizes.xs}}",
+            "titleFontColor": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            },
+            "valueFontColor": {
+              "solid": {
+                "color": "{{otherColors.text_muted}}"
+              }
+            },
+            "background": {
+              "solid": {
+                "color": "{{otherColors.white}}"
+              }
+            },
+            "themedTitleFontColor": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            },
+            "themedValueFontColor": {
+              "solid": {
+                "color": "{{otherColors.text_muted}}"
+              }
+            },
+            "themedBackground": {
+              "solid": {
+                "color": "{{otherColors.white}}"
+              }
+            },
+            "actionFontColor": {
+              "solid": {
+                "color": "{{dataColors.primary}}"
+              }
+            },
+            "transparency": 0
+          }
+        ],
+        "*": [
+          {
+            "fontFamily": "{{font.family}}"
+          }
+        ],
+        "categoryAxis": "{{def.chart.categoryAxis}}",
+        "valueAxis": "{{def.chart.valueAxis}}",
+        "legend": "{{def.chart.legend}}",
+        "background": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "{{surfaces.card}}"
+              }
+            },
+            "transparency": 0
+          }
+        ]
+      }
+    }
+  }
+}

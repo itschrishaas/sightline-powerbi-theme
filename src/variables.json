@@ -1,0 +1,262 @@
+{
+  "surfaces": {
+    "canvas": "#FAFAFA",
+    "card": "#ffffff",
+    "sunken": "#F4F4F5"
+  },
+  "chartPalette": ["#0F766E", "#D9480F", "#7B4FD6", "#C2255C", "#9A6B00", "#5C7F1E", "#2F7CB8", "#5F6B7A"],
+  "dataColors": {
+    "primary": "#0F766E",
+    "primary_lighter": "#99D5CE",
+    "secondary": "#7B4FD6",
+    "secondary_lighter": "#C9B8F0",
+    "red": "#C92A2A",
+    "yellow": "#B35C00",
+    "blue": "#2F7CB8",
+    "purple": "#7B4FD6",
+    "pink": "#C2255C",
+    "orange": "#D9480F",
+    "green": "#2B8A3E",
+    "teal": "#0F766E",
+    "cyan": "#2F7CB8",
+    "indigo": "#7B4FD6",
+    "positive": "#2B8A3E",
+    "neutral": "#5F6B7A",
+    "negative": "#C92A2A"
+  },
+  "otherColors": {
+    "black": "#09090B",
+    "white": "#ffffff",
+    "gray": "#A1A1AA",
+    "light_active": "#F4F4F5",
+    "gray_dark": "#27272A",
+    "gray_light": "#E4E4E7",
+    "gray_lighter": "#F4F4F5",
+    "light": "#FAFAFA",
+    "dark": "#09090B",
+    "text": "#09090B",
+    "text_muted": "#6B6B73"
+  },
+  "darkPanel": {
+    "_comment": "Inverted panel tokens. Used ONLY by the opt-in dark styles (cardVisual -> 'Dark KPI Card', shape -> 'Dark Panel'). They do not touch the default '*' look.",
+    "surface": "#18181B",
+    "surface_alt": "#27272A",
+    "border": "#27272A",
+    "text": "#ffffff",
+    "text_muted": "#A1A1AA",
+    "accent": "#2DD4BF"
+  },
+  "borders": {
+    "corners": 12,
+    "controlCorners": 8,
+    "width": 1,
+    "color": "#E7E7EA"
+  },
+  "margin": 10,
+  "font": {
+    "sizes": {
+      "xs": 11,
+      "s": 13,
+      "m": 16,
+      "l": 19,
+      "xl": 23,
+      "xxl": 28,
+      "xxxl": 36
+    },
+    "chrome": {
+      "title": 12,
+      "header": 11,
+      "body": 11
+    },
+    "family": "Segoe UI",
+    "size": "{{font.sizes.s}}",
+    "smaller": {
+      "family": "Segoe UI",
+      "weight": "normal"
+    },
+    "semibold": {
+      "family": "'Segoe UI Semibold', wf_segoe-ui_semibold",
+      "weight": "normal"
+    },
+    "bold": {
+      "family": "'Segoe UI Bold', wf_segoe-ui_Bold",
+      "weight": "normal"
+    }
+  },
+  "gridlines": {
+    "gridlineAutoScale": true,
+    "gridlineColor": {
+      "solid": {
+        "color": "{{borders.color}}"
+      }
+    },
+    "gridlineDashCap": "square",
+    "gridlineShow": true,
+    "gridlineStyle": "solid",
+    "gridlineThickness": 1,
+    "gridlineTransparency": 0,
+    "gridlineDashArray": "5 5 5 5"
+  },
+  "buttons": {
+    "default": {
+      "value": {
+        "fontFamily": "{{font.semibold.family}}",
+        "fontSize": "{{font.sizes.s}}",
+        "bold": false,
+        "fontColor": "{{otherColors.text}}"
+      },
+      "background": {
+        "color": "{{otherColors.white}}",
+        "transparency": 0
+      },
+      "border": {
+        "color": "#E7E7EA",
+        "width": 1,
+        "transparency": 0
+      }
+    },
+    "hover": {
+      "value": {
+        "fontFamily": "{{font.semibold.family}}",
+        "fontSize": "{{font.sizes.s}}",
+        "bold": false,
+        "fontColor": "{{otherColors.text}}"
+      },
+      "background": {
+        "color": "#F4F4F5",
+        "transparency": 0
+      },
+      "border": {
+        "color": "#E7E7EA",
+        "width": 1,
+        "transparency": 0
+      }
+    },
+    "pressed": {
+      "value": {
+        "fontFamily": "{{font.semibold.family}}",
+        "fontSize": "{{font.sizes.s}}",
+        "bold": false,
+        "fontColor": "{{otherColors.text}}"
+      },
+      "background": {
+        "color": "#E7E7EA",
+        "transparency": 0
+      },
+      "border": {
+        "color": "#D4D4D8",
+        "width": 1,
+        "transparency": 0
+      }
+    },
+    "selected": {
+      "value": {
+        "fontFamily": "{{font.semibold.family}}",
+        "fontSize": "{{font.sizes.s}}",
+        "bold": false,
+        "fontColor": "{{otherColors.white}}"
+      },
+      "background": {
+        "color": "{{dataColors.primary}}",
+        "transparency": 0
+      },
+      "border": {
+        "color": "{{dataColors.primary}}",
+        "width": 1,
+        "transparency": 0
+      }
+    },
+    "secondary": {
+      "default": {
+        "value": {
+          "fontFamily": "{{font.semibold.family}}",
+          "fontSize": "{{font.sizes.s}}",
+          "bold": false,
+          "fontColor": "{{dataColors.primary}}"
+        },
+        "background": {
+          "color": "{{otherColors.white}}",
+          "transparency": 100
+        },
+        "border": {
+          "color": "{{dataColors.primary}}",
+          "width": 1,
+          "transparency": 0
+        }
+      },
+      "hover": {
+        "value": {
+          "fontFamily": "{{font.semibold.family}}",
+          "fontSize": "{{font.sizes.s}}",
+          "bold": false,
+          "fontColor": "{{dataColors.primary}}"
+        },
+        "background": {
+          "color": "#F4F4F5",
+          "transparency": 0
+        },
+        "border": {
+          "color": "#99D5CE",
+          "width": 1,
+          "transparency": 0
+        }
+      },
+      "pressed": {
+        "value": {
+          "fontFamily": "{{font.semibold.family}}",
+          "fontSize": "{{font.sizes.s}}",
+          "bold": false,
+          "fontColor": "#0B524C"
+        },
+        "background": {
+          "color": "#E7E7EA",
+          "transparency": 0
+        },
+        "border": {
+          "color": "#99D5CE",
+          "width": 1,
+          "transparency": 0
+        }
+      },
+      "selected": {
+        "value": {
+          "fontFamily": "{{font.semibold.family}}",
+          "fontSize": "{{font.sizes.s}}",
+          "bold": false,
+          "fontColor": "{{otherColors.white}}"
+        },
+        "background": {
+          "color": "{{dataColors.primary}}",
+          "transparency": 0
+        },
+        "border": {
+          "color": "{{dataColors.primary}}",
+          "width": 1,
+          "transparency": 0
+        }
+      }
+    }
+  },
+  "a11y": {
+    "textOn": "#ffffff",
+    "markOn": ["#ffffff", "#FAFAFA"],
+    "textTokens": ["otherColors.text", "otherColors.text_muted"],
+    "interactiveBorderTokens": [],
+    "whiteOnFillTokens": ["dataColors.primary"],
+    "waivers": {}
+  },
+  "semantic": {
+    "positive_fill": "#2B8A3E",
+    "warning_fill": "#B35C00",
+    "negative_fill": "#C92A2A",
+    "neutral_fill": "#5F6B7A"
+  },
+  "sequential": {
+    "step1": "#E6F4F2",
+    "step2": "#B8E0DB",
+    "step3": "#7FC6BD",
+    "step4": "#3FA397",
+    "step5": "#0F766E",
+    "step6": "#0B524C"
+  }
+}

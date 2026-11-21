@@ -1,0 +1,269 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/powerbi-desktop-samples/refs/heads/main/Report%20Theme%20JSON%20Schema/reportThemeSchema-2.159.json",
+  "name": "shape",
+  "visualStyles": {
+    "shape": {
+      "*": {
+        "fill": [
+          {
+            "$id": "default",
+            "show": false,
+            "fillColor": {
+              "solid": {
+                "color": "{{otherColors.white}}"
+              }
+            },
+            "transparency": 100
+          }
+        ],
+        "shape": [
+          {
+            "roundEdge": 0
+          }
+        ],
+        "shadow": [
+          {
+            "$id": "default",
+            "show": false
+          }
+        ],
+        "background": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "{{otherColors.white}}"
+              }
+            }
+          }
+        ],
+        "border": [
+          {
+            "color": {
+              "solid": {
+                "color": "{{borders.color}}"
+              }
+            },
+            "radius": "{{borders.corners}}",
+            "show": true
+          }
+        ],
+        "dropShadow": [
+          {
+            "show": false
+          }
+        ],
+        "outline": [
+          {
+            "show": false,
+            "lineColor": {
+              "solid": {
+                "color": "{{borders.color}}"
+              }
+            }
+          }
+        ]
+      },
+      "Page Header": {
+        "title": [
+          {
+            "fontSize": "{{font.sizes.xxl}}",
+            "fontColor": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            },
+            "text": "Page Title"
+          }
+        ],
+        "subTitle": [
+          {
+            "fontSize": "{{font.sizes.m}}",
+            "fontColor": {
+              "solid": {
+                "color": "{{otherColors.text_muted}}"
+              }
+            }
+          }
+        ],
+        "spacing": [
+          {
+            "customizeSpacing": true,
+            "spaceBelowTitle": 4,
+            "spaceBelowSubTitle": 0,
+            "spaceBelowTitleArea": 0
+          }
+        ],
+        "padding": [
+          {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          }
+        ],
+        "fill": [
+          {
+            "$id": "default",
+            "show": false,
+            "fillColor": {
+              "solid": {
+                "color": "{{otherColors.white}}"
+              }
+            },
+            "transparency": 100
+          }
+        ],
+        "shape": [
+          {
+            "roundEdge": 0
+          }
+        ],
+        "shadow": [
+          {
+            "$id": "default",
+            "show": false
+          }
+        ],
+        "background": [
+          {
+            "show": false
+          }
+        ],
+        "border": [
+          {
+            "show": false
+          }
+        ],
+        "dropShadow": [
+          {
+            "show": false
+          }
+        ],
+        "outline": [
+          {
+            "show": false
+          }
+        ]
+      },
+      "Dark Panel": {
+        "fill": [
+          {
+            "$id": "default",
+            "show": true,
+            "fillColor": {
+              "solid": {
+                "color": "{{darkPanel.surface}}"
+              }
+            },
+            "transparency": 0
+          }
+        ],
+        "shape": [
+          {
+            "tileShape": "rectangleRoundedByPixel",
+            "rectangleRoundedCurve": "{{borders.corners}}",
+            "roundEdge": 0
+          }
+        ],
+        "outline": [
+          {
+            "$id": "default",
+            "show": true,
+            "lineColor": {
+              "solid": {
+                "color": "{{darkPanel.border}}"
+              }
+            },
+            "weight": 1,
+            "transparency": 0
+          }
+        ],
+        "glow": [
+          {
+            "show": false
+          }
+        ],
+        "shadow": [
+          {
+            "$id": "default",
+            "show": false
+          }
+        ],
+        "text": [
+          {
+            "show": true,
+            "fontFamily": "{{font.semibold.family}}",
+            "fontSize": "{{font.sizes.m}}",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "fontColor": {
+              "solid": {
+                "color": "{{darkPanel.text}}"
+              }
+            },
+            "verticalAlignment": "middle",
+            "horizontalAlignment": "left",
+            "leftMargin": 16,
+            "rightMargin": 16,
+            "topMargin": 12,
+            "bottomMargin": 12
+          }
+        ],
+        "title": [
+          {
+            "fontFamily": "{{font.bold.family}}",
+            "fontSize": "{{font.sizes.l}}",
+            "fontColor": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            }
+          }
+        ],
+        "subTitle": [
+          {
+            "fontSize": "{{font.sizes.s}}",
+            "fontColor": {
+              "solid": {
+                "color": "{{otherColors.text_muted}}"
+              }
+            }
+          }
+        ],
+        "spacing": [
+          {
+            "customizeSpacing": true,
+            "spaceBelowTitle": 4,
+            "spaceBelowSubTitle": 0,
+            "spaceBelowTitleArea": 0
+          }
+        ],
+        "padding": [
+          {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          }
+        ],
+        "background": [
+          {
+            "show": false
+          }
+        ],
+        "border": [
+          {
+            "show": false
+          }
+        ],
+        "dropShadow": [
+          {
+            "show": false
+          }
+        ]
+      }
+    }
+  }
+}

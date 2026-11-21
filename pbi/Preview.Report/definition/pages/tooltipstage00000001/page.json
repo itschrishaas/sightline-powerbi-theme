@@ -1,0 +1,15 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "tooltipstage00000001",
+  "displayName": "Tooltip · Pipeline stage",
+  "displayOption": "ActualSize",
+  "height": 168,
+  "width": 520,
+  "pageBinding": {
+    "name": "tooltipstage00000001Bind",
+    "type": "Tooltip",
+    "parameters": []
+  },
+  "visibility": "HiddenInViewMode",
+  "type": "Tooltip"
+}

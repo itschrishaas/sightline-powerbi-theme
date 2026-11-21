@@ -1,0 +1,186 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/powerbi-desktop-samples/refs/heads/main/Report%20Theme%20JSON%20Schema/reportThemeSchema-2.159.json",
+  "name": "waterfallChart",
+  "visualStyles": {
+    "waterfallChart": {
+      "*": {
+        "categoryAxis": "{{def.chart.categoryAxisWaterfall}}",
+        "labels": "{{def.chart.labels}}",
+        "sentimentColors": [
+          {
+            "increaseFill": {
+              "solid": {
+                "color": "{{dataColors.positive}}"
+              }
+            },
+            "decreaseFill": {
+              "solid": {
+                "color": "{{dataColors.negative}}"
+              }
+            },
+            "totalFill": {
+              "solid": {
+                "color": "{{dataColors.neutral}}"
+              }
+            },
+            "otherFill": {
+              "solid": {
+                "color": "{{otherColors.gray}}"
+              }
+            }
+          }
+        ]
+      },
+      "Labelled": {
+        "valueAxis": "{{def.preset.labelled.valueAxis}}",
+        "legend": "{{def.preset.labelled.legend}}",
+        "categoryAxis": "{{def.preset.labelled.categoryAxisPlain}}",
+        "labels": "{{def.preset.labelled.labels}}",
+        "sentimentColors": [
+          {
+            "increaseFill": {
+              "solid": {
+                "color": "{{dataColors.positive}}"
+              }
+            },
+            "decreaseFill": {
+              "solid": {
+                "color": "{{dataColors.negative}}"
+              }
+            },
+            "totalFill": {
+              "solid": {
+                "color": "{{dataColors.neutral}}"
+              }
+            },
+            "otherFill": {
+              "solid": {
+                "color": "{{otherColors.gray}}"
+              }
+            }
+          }
+        ]
+      },
+      "Minimal": {
+        "valueAxis": "{{def.preset.minimal.valueAxis}}",
+        "legend": "{{def.preset.minimal.legend}}",
+        "categoryAxis": "{{def.preset.minimal.categoryAxisPlain}}",
+        "labels": "{{def.preset.minimal.labels}}",
+        "sentimentColors": [
+          {
+            "increaseFill": {
+              "solid": {
+                "color": "{{dataColors.positive}}"
+              }
+            },
+            "decreaseFill": {
+              "solid": {
+                "color": "{{dataColors.negative}}"
+              }
+            },
+            "totalFill": {
+              "solid": {
+                "color": "{{dataColors.neutral}}"
+              }
+            },
+            "otherFill": {
+              "solid": {
+                "color": "{{otherColors.gray}}"
+              }
+            }
+          }
+        ]
+      },
+      "Dense": {
+        "valueAxis": "{{def.preset.dense.valueAxis}}",
+        "legend": "{{def.preset.dense.legend}}",
+        "categoryAxis": "{{def.preset.dense.categoryAxisPlain}}",
+        "labels": "{{def.preset.dense.labels}}",
+        "sentimentColors": [
+          {
+            "increaseFill": {
+              "solid": {
+                "color": "{{dataColors.positive}}"
+              }
+            },
+            "decreaseFill": {
+              "solid": {
+                "color": "{{dataColors.negative}}"
+              }
+            },
+            "totalFill": {
+              "solid": {
+                "color": "{{dataColors.neutral}}"
+              }
+            },
+            "otherFill": {
+              "solid": {
+                "color": "{{otherColors.gray}}"
+              }
+            }
+          }
+        ]
+      },
+      "Presentation": {
+        "valueAxis": "{{def.preset.presentation.valueAxis}}",
+        "legend": "{{def.preset.presentation.legend}}",
+        "categoryAxis": "{{def.preset.presentation.categoryAxisPlain}}",
+        "labels": "{{def.preset.presentation.labels}}",
+        "sentimentColors": [
+          {
+            "increaseFill": {
+              "solid": {
+                "color": "{{dataColors.positive}}"
+              }
+            },
+            "decreaseFill": {
+              "solid": {
+                "color": "{{dataColors.negative}}"
+              }
+            },
+            "totalFill": {
+              "solid": {
+                "color": "{{dataColors.neutral}}"
+              }
+            },
+            "otherFill": {
+              "solid": {
+                "color": "{{otherColors.gray}}"
+              }
+            }
+          }
+        ]
+      },
+      "Comparison": {
+        "valueAxis": "{{def.preset.comparison.valueAxis}}",
+        "legend": "{{def.preset.comparison.legend}}",
+        "categoryAxis": "{{def.preset.comparison.categoryAxisPlain}}",
+        "labels": "{{def.preset.comparison.labels}}",
+        "sentimentColors": [
+          {
+            "increaseFill": {
+              "solid": {
+                "color": "{{dataColors.positive}}"
+              }
+            },
+            "decreaseFill": {
+              "solid": {
+                "color": "{{dataColors.negative}}"
+              }
+            },
+            "totalFill": {
+              "solid": {
+                "color": "{{dataColors.neutral}}"
+              }
+            },
+            "otherFill": {
+              "solid": {
+                "color": "{{otherColors.gray}}"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,623 @@
+table Sales
+	lineageTag: b631c13b-5d9e-4c62-95cf-556ddb743338
+
+	/// Order date at monthly grain
+	column OrderDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 6d163114-aaf0-47a1-bcd3-a589ca3be877
+		sourceColumn: OrderDate
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: eaa866da-b580-465b-9a06-c41cae68b85f
+		summarizeBy: none
+		sourceColumn: Year
+
+	column Quarter
+		dataType: string
+		lineageTag: e302b3b8-b22f-49fe-8bc0-e0630fa2e574
+		sourceColumn: Quarter
+
+	/// Hidden sort helper for MonthName
+	column MonthNumber
+		dataType: int64
+		isHidden
+		lineageTag: 3456b80f-44c5-4112-a064-da407b029c9a
+		summarizeBy: none
+		sourceColumn: MonthNumber
+
+	column MonthName
+		dataType: string
+		lineageTag: e58acb29-0e41-4fc3-b2db-532dca19364e
+		sourceColumn: MonthName
+		sortByColumn: MonthNumber
+
+	column Category
+		dataType: string
+		lineageTag: 08629222-2566-4043-b500-b4ce83ccd777
+		sourceColumn: Category
+
+	column Subcategory
+		dataType: string
+		lineageTag: 95949724-f773-44e4-9b2e-aa2fa1069f37
+		sourceColumn: Subcategory
+
+	column Product
+		dataType: string
+		lineageTag: 4567f5aa-b851-4d34-85d4-c68a7c59e415
+		sourceColumn: Product
+
+	column Country
+		dataType: string
+		lineageTag: 5772f2b2-2246-48e0-899e-16850ed2af04
+		dataCategory: Country
+		sourceColumn: Country
+
+	column Region
+		dataType: string
+		lineageTag: 6a21e09c-0088-48cd-a688-40cd89dd1158
+		sourceColumn: Region
+
+	column Segment
+		dataType: string
+		lineageTag: 8bea3247-7169-4867-9aa1-b9e77fa74f73
+		sourceColumn: Segment
+
+	column Sales
+		dataType: decimal
+		formatString: € #,##0
+		lineageTag: 8adc9b1a-941b-4069-b74d-c84700c0e9a0
+		summarizeBy: sum
+		sourceColumn: Sales
+
+	column Cost
+		dataType: decimal
+		formatString: € #,##0
+		lineageTag: 362d2f9e-0497-40a5-a4b3-6c715c4a2ac6
+		summarizeBy: sum
+		sourceColumn: Cost
+
+	column Units
+		dataType: int64
+		formatString: #,##0
+		lineageTag: edcaa425-1c04-4fc3-9117-b0d049266548
+		summarizeBy: sum
+		sourceColumn: Units
+
+	column SatisfactionScore
+		dataType: double
+		formatString: #,##0.0
+		lineageTag: 7b925408-c69c-417b-a6cc-08a1302f8717
+		summarizeBy: average
+		sourceColumn: SatisfactionScore
+
+	column Target
+		dataType: decimal
+		formatString: € #,##0
+		lineageTag: bfe3a489-107f-403f-98e5-ed246189ecac
+		summarizeBy: sum
+		sourceColumn: Target
+
+	hierarchy 'Category Hierarchy'
+		lineageTag: 06e6890a-6b0a-4205-a2e8-85f00a6ae13d
+
+		level Category
+			lineageTag: 042bfdd6-dcd9-4f24-b5f6-fe029c044157
+			column: Category
+
+		level Subcategory
+			lineageTag: 6116cccd-449f-485d-bfe7-cf6d9717a2ee
+			column: Subcategory
+
+		level Product
+			lineageTag: b31298f6-3ce0-4830-bd1f-4fdd9b06c4bc
+			column: Product
+
+	partition Sales = m
+		mode: import
+		source =
+				let
+					Source = #table(
+						{"OrderDate","Year","Quarter","MonthNumber","MonthName","Category","Subcategory","Product","Country","Region","Segment","Sales","Cost","Units","SatisfactionScore","Target"},
+						{
+							{#date(2024,1,15), 2024, "Q1", 1, "Jan", "Software Licenses", "ERP", "ERP Analytics Add-on", "Italy", "Western Europe", "Enterprise", 26969, 15781, 21, 99, 27219},
+							{#date(2024,1,15), 2024, "Q1", 1, "Jan", "Software Licenses", "Collaboration", "Secure File Share", "Czechia", "Central & Eastern Europe", "Mid-Market", 29721, 21406, 32, 74.6, 26264},
+							{#date(2024,1,15), 2024, "Q1", 1, "Jan", "Software Licenses", "ERP", "ERP Core License", "Czechia", "Central & Eastern Europe", "Mid-Market", 14137, 8858, 12, 94.2, 12288},
+							{#date(2024,1,15), 2024, "Q1", 1, "Jan", "Software Licenses", "Collaboration", "Secure File Share", "France", "Western Europe", "Mid-Market", 19342, 13130, 16, 75.3, 17258},
+							{#date(2024,1,15), 2024, "Q1", 1, "Jan", "Software Licenses", "Collaboration", "Secure File Share", "Czechia", "Central & Eastern Europe", "Enterprise", 46952, 34801, 41, 70.3, 50154},
+							{#date(2024,1,15), 2024, "Q1", 1, "Jan", "Software Licenses", "BI Tools", "BI Suite Standard", "Poland", "Central & Eastern Europe", "Small Business", 9511, 6662, 7, 96.8, 8784},
+							{#date(2024,1,15), 2024, "Q1", 1, "Jan", "Software Licenses", "Collaboration", "Secure File Share", "Hungary", "Central & Eastern Europe", "Mid-Market", 17695, 11511, 13, 81.3, 18596},
+							{#date(2024,1,15), 2024, "Q1", 1, "Jan", "Training", "Onsite", "Onsite Certification", "Hungary", "Central & Eastern Europe", "Enterprise", 36921, 26597, 31, 68.6, 31896},
+							{#date(2024,1,15), 2024, "Q1", 1, "Jan", "Managed Services", "Support", "Premium Support Plan", "Germany", "DACH", "Small Business", 13702, 8700, 13, 99, 14368},
+							{#date(2024,1,15), 2024, "Q1", 1, "Jan", "Training", "Onsite", "Onsite Certification", "Switzerland", "DACH", "Mid-Market", 49954, 28950, 38, 98.8, 55027},
+							{#date(2024,1,15), 2024, "Q1", 1, "Jan", "Training", "Onsite", "Onsite Workshop", "Austria", "DACH", "Small Business", 19833, 11864, 28, 90, 21743},
+							{#date(2024,1,15), 2024, "Q1", 1, "Jan", "Software Licenses", "ERP", "ERP Analytics Add-on", "Switzerland", "DACH", "Enterprise", 48445, 34649, 44, 84.6, 42072},
+							{#date(2024,1,15), 2024, "Q1", 1, "Jan", "Managed Services", "Support", "Standard Support Plan", "Poland", "Central & Eastern Europe", "Enterprise", 13222, 9361, 24, 88.6, 11916},
+							{#date(2024,1,15), 2024, "Q1", 1, "Jan", "Managed Services", "Hosting", "Cloud Hosting Enterprise", "Austria", "DACH", "Enterprise", 78890, 58679, 98, 80.5, 78203},
+							{#date(2024,1,15), 2024, "Q1", 1, "Jan", "Consulting", "Strategy", "Operating Model Redesign", "Poland", "Central & Eastern Europe", "Small Business", 15105, 11286, 42, 68.4, 12891},
+							{#date(2024,1,15), 2024, "Q1", 1, "Jan", "Consulting", "Implementation", "Process Automation", "Switzerland", "DACH", "Enterprise", 65444, 36666, 60, 99, 64594},
+							{#date(2024,1,15), 2024, "Q1", 1, "Jan", "Managed Services", "Hosting", "Cloud Hosting Enterprise", "Switzerland", "DACH", "Enterprise", 24831, 15000, 19, 89.4, 25571},
+							{#date(2024,1,15), 2024, "Q1", 1, "Jan", "Consulting", "Implementation", "ERP Rollout", "Czechia", "Central & Eastern Europe", "Enterprise", 33896, 23271, 30, 82.1, 33970},
+							{#date(2024,1,15), 2024, "Q1", 1, "Jan", "Software Licenses", "BI Tools", "BI Suite Standard", "France", "Western Europe", "Mid-Market", 36234, 23126, 72, 80.3, 32746},
+							{#date(2024,1,15), 2024, "Q1", 1, "Jan", "Managed Services", "Support", "Standard Support Plan", "Poland", "Central & Eastern Europe", "Small Business", 16189, 9509, 12, 78.5, 18336},
+							{#date(2024,1,15), 2024, "Q1", 1, "Jan", "Consulting", "Strategy", "Operating Model Redesign", "Switzerland", "DACH", "Small Business", 25293, 18477, 19, 89.6, 22995},
+							{#date(2024,2,15), 2024, "Q1", 2, "Feb", "Training", "E-Learning", "E-Learning Single Course", "Italy", "Western Europe", "Enterprise", 28639, 20012, 81, 85.9, 24639},
+							{#date(2024,2,15), 2024, "Q1", 2, "Feb", "Consulting", "Implementation", "Process Automation", "Switzerland", "DACH", "Small Business", 20172, 11455, 47, 99, 20632},
+							{#date(2024,2,15), 2024, "Q1", 2, "Feb", "Training", "Onsite", "Onsite Certification", "Switzerland", "DACH", "Enterprise", 40849, 22659, 61, 87.8, 36610},
+							{#date(2024,2,15), 2024, "Q1", 2, "Feb", "Training", "Onsite", "Onsite Workshop", "Switzerland", "DACH", "Small Business", 20394, 12417, 19, 99, 17628},
+							{#date(2024,2,15), 2024, "Q1", 2, "Feb", "Training", "Onsite", "Onsite Certification", "Austria", "DACH", "Enterprise", 54513, 33655, 40, 80.9, 55059},
+							{#date(2024,2,15), 2024, "Q1", 2, "Feb", "Managed Services", "Support", "Premium Support Plan", "Hungary", "Central & Eastern Europe", "Enterprise", 41591, 31135, 53, 75.4, 47229},
+							{#date(2024,2,15), 2024, "Q1", 2, "Feb", "Training", "E-Learning", "E-Learning Bundle", "Italy", "Western Europe", "Small Business", 9524, 6761, 15, 94.9, 10757},
+							{#date(2024,2,15), 2024, "Q1", 2, "Feb", "Training", "Onsite", "Onsite Certification", "France", "Western Europe", "Enterprise", 25408, 15588, 36, 79, 28526},
+							{#date(2024,2,15), 2024, "Q1", 2, "Feb", "Training", "Onsite", "Onsite Workshop", "Hungary", "Central & Eastern Europe", "Small Business", 10713, 6416, 18, 85.1, 10241},
+							{#date(2024,2,15), 2024, "Q1", 2, "Feb", "Consulting", "Strategy", "Operating Model Redesign", "Switzerland", "DACH", "Enterprise", 34679, 21460, 31, 94.6, 35366},
+							{#date(2024,2,15), 2024, "Q1", 2, "Feb", "Managed Services", "Support", "Premium Support Plan", "France", "Western Europe", "Small Business", 16079, 9565, 15, 99, 16941},
+							{#date(2024,2,15), 2024, "Q1", 2, "Feb", "Consulting", "Strategy", "Strategic Roadmap", "Italy", "Western Europe", "Enterprise", 47548, 28907, 125, 94.3, 43027},
+							{#date(2024,2,15), 2024, "Q1", 2, "Feb", "Software Licenses", "BI Tools", "BI Suite Standard", "Switzerland", "DACH", "Mid-Market", 35844, 24170, 35, 77.7, 34206},
+							{#date(2024,2,15), 2024, "Q1", 2, "Feb", "Consulting", "Strategy", "Operating Model Redesign", "Hungary", "Central & Eastern Europe", "Mid-Market", 14953, 11212, 12, 77.6, 15044},
+							{#date(2024,2,15), 2024, "Q1", 2, "Feb", "Managed Services", "Support", "Standard Support Plan", "Italy", "Western Europe", "Mid-Market", 18702, 11312, 33, 99, 17729},
+							{#date(2024,2,15), 2024, "Q1", 2, "Feb", "Software Licenses", "BI Tools", "BI Suite Standard", "Poland", "Central & Eastern Europe", "Small Business", 4901, 3018, 12, 92.5, 5080},
+							{#date(2024,2,15), 2024, "Q1", 2, "Feb", "Training", "Onsite", "Onsite Certification", "Italy", "Western Europe", "Enterprise", 70277, 38813, 117, 82.8, 72330},
+							{#date(2024,2,15), 2024, "Q1", 2, "Feb", "Managed Services", "Support", "Premium Support Plan", "Germany", "DACH", "Mid-Market", 26509, 17249, 29, 82.1, 30019},
+							{#date(2024,2,15), 2024, "Q1", 2, "Feb", "Software Licenses", "ERP", "ERP Analytics Add-on", "Germany", "DACH", "Enterprise", 25371, 14038, 24, 99, 23149},
+							{#date(2024,3,15), 2024, "Q1", 3, "Mar", "Training", "E-Learning", "E-Learning Bundle", "Austria", "DACH", "Small Business", 28272, 15605, 26, 82.3, 29324},
+							{#date(2024,3,15), 2024, "Q1", 3, "Mar", "Software Licenses", "Collaboration", "Team Workspace", "Switzerland", "DACH", "Mid-Market", 27634, 15269, 26, 90.1, 23721},
+							{#date(2024,3,15), 2024, "Q1", 3, "Mar", "Software Licenses", "ERP", "ERP Analytics Add-on", "France", "Western Europe", "Small Business", 20061, 11604, 21, 92, 19123},
+							{#date(2024,3,15), 2024, "Q1", 3, "Mar", "Managed Services", "Support", "Standard Support Plan", "France", "Western Europe", "Enterprise", 52942, 34532, 76, 77.2, 55167},
+							{#date(2024,3,15), 2024, "Q1", 3, "Mar", "Training", "E-Learning", "E-Learning Single Course", "Hungary", "Central & Eastern Europe", "Small Business", 9892, 6152, 7, 80.7, 11029},
+							{#date(2024,3,15), 2024, "Q1", 3, "Mar", "Consulting", "Implementation", "Process Automation", "Austria", "DACH", "Small Business", 7491, 4262, 14, 95.8, 8002},
+							{#date(2024,3,15), 2024, "Q1", 3, "Mar", "Consulting", "Implementation", "ERP Rollout", "Austria", "DACH", "Enterprise", 83864, 49895, 65, 94.9, 76113},
+							{#date(2024,3,15), 2024, "Q1", 3, "Mar", "Software Licenses", "ERP", "ERP Core License", "Czechia", "Central & Eastern Europe", "Mid-Market", 24523, 14489, 27, 99, 21761},
+							{#date(2024,3,15), 2024, "Q1", 3, "Mar", "Managed Services", "Hosting", "Cloud Hosting Basic", "Poland", "Central & Eastern Europe", "Small Business", 9043, 6675, 8, 72.5, 8236},
+							{#date(2024,3,15), 2024, "Q1", 3, "Mar", "Software Licenses", "Collaboration", "Secure File Share", "Austria", "DACH", "Enterprise", 31082, 21724, 39, 76.6, 33498},
+							{#date(2024,3,15), 2024, "Q1", 3, "Mar", "Training", "E-Learning", "E-Learning Bundle", "France", "Western Europe", "Small Business", 18230, 12741, 31, 87.6, 16658},
+							{#date(2024,3,15), 2024, "Q1", 3, "Mar", "Software Licenses", "BI Tools", "BI Suite Premium", "Hungary", "Central & Eastern Europe", "Small Business", 9986, 6929, 8, 74.4, 8851},
+							{#date(2024,3,15), 2024, "Q1", 3, "Mar", "Training", "Onsite", "Onsite Workshop", "Italy", "Western Europe", "Mid-Market", 32340, 23485, 40, 71.9, 35606},
+							{#date(2024,3,15), 2024, "Q1", 3, "Mar", "Software Licenses", "BI Tools", "BI Suite Standard", "Italy", "Western Europe", "Enterprise", 42730, 31184, 62, 70.8, 42234},
+							{#date(2024,3,15), 2024, "Q1", 3, "Mar", "Consulting", "Strategy", "Operating Model Redesign", "Poland", "Central & Eastern Europe", "Enterprise", 50898, 35311, 69, 89.1, 44537},
+							{#date(2024,3,15), 2024, "Q1", 3, "Mar", "Managed Services", "Hosting", "Cloud Hosting Enterprise", "France", "Western Europe", "Mid-Market", 40610, 22464, 36, 99, 36460},
+							{#date(2024,3,15), 2024, "Q1", 3, "Mar", "Managed Services", "Support", "Premium Support Plan", "Hungary", "Central & Eastern Europe", "Mid-Market", 22059, 15969, 29, 74.1, 20004},
+							{#date(2024,3,15), 2024, "Q1", 3, "Mar", "Consulting", "Strategy", "Operating Model Redesign", "Austria", "DACH", "Small Business", 28797, 19501, 81, 92, 31487},
+							{#date(2024,3,15), 2024, "Q1", 3, "Mar", "Managed Services", "Support", "Standard Support Plan", "Switzerland", "DACH", "Enterprise", 27144, 17149, 54, 78.4, 30130},
+							{#date(2024,3,15), 2024, "Q1", 3, "Mar", "Training", "E-Learning", "E-Learning Bundle", "Hungary", "Central & Eastern Europe", "Enterprise", 34746, 19572, 73, 84.3, 39738},
+							{#date(2024,4,15), 2024, "Q2", 4, "Apr", "Software Licenses", "Collaboration", "Secure File Share", "Austria", "DACH", "Small Business", 7879, 5560, 6, 86.7, 7656},
+							{#date(2024,4,15), 2024, "Q2", 4, "Apr", "Managed Services", "Support", "Standard Support Plan", "Switzerland", "DACH", "Small Business", 10499, 6823, 17, 78.9, 9091},
+							{#date(2024,4,15), 2024, "Q2", 4, "Apr", "Training", "E-Learning", "E-Learning Single Course", "Hungary", "Central & Eastern Europe", "Small Business", 6534, 3771, 7, 91.3, 5998},
+							{#date(2024,4,15), 2024, "Q2", 4, "Apr", "Managed Services", "Hosting", "Cloud Hosting Enterprise", "Czechia", "Central & Eastern Europe", "Enterprise", 17884, 13282, 21, 93.1, 18061},
+							{#date(2024,4,15), 2024, "Q2", 4, "Apr", "Training", "Onsite", "Onsite Workshop", "Switzerland", "DACH", "Enterprise", 64461, 37163, 67, 91, 69852},
+							{#date(2024,4,15), 2024, "Q2", 4, "Apr", "Software Licenses", "BI Tools", "BI Suite Premium", "Hungary", "Central & Eastern Europe", "Small Business", 6508, 3953, 5, 99, 6290},
+							{#date(2024,4,15), 2024, "Q2", 4, "Apr", "Software Licenses", "Collaboration", "Team Workspace", "Austria", "DACH", "Small Business", 8451, 5329, 9, 98.8, 9654},
+							{#date(2024,4,15), 2024, "Q2", 4, "Apr", "Training", "E-Learning", "E-Learning Bundle", "Hungary", "Central & Eastern Europe", "Enterprise", 37918, 25299, 30, 84.4, 41197},
+							{#date(2024,4,15), 2024, "Q2", 4, "Apr", "Managed Services", "Hosting", "Cloud Hosting Basic", "Czechia", "Central & Eastern Europe", "Small Business", 6417, 4468, 6, 84.9, 6093},
+							{#date(2024,4,15), 2024, "Q2", 4, "Apr", "Consulting", "Strategy", "Operating Model Redesign", "Czechia", "Central & Eastern Europe", "Small Business", 9209, 5091, 12, 94.9, 8294},
+							{#date(2024,4,15), 2024, "Q2", 4, "Apr", "Software Licenses", "Collaboration", "Team Workspace", "Switzerland", "DACH", "Enterprise", 22670, 13159, 38, 77.1, 22581},
+							{#date(2024,4,15), 2024, "Q2", 4, "Apr", "Software Licenses", "BI Tools", "BI Suite Standard", "France", "Western Europe", "Small Business", 16276, 11646, 28, 90, 16347},
+							{#date(2024,4,15), 2024, "Q2", 4, "Apr", "Training", "E-Learning", "E-Learning Single Course", "Germany", "DACH", "Small Business", 19342, 13713, 38, 71.3, 18689},
+							{#date(2024,4,15), 2024, "Q2", 4, "Apr", "Managed Services", "Support", "Standard Support Plan", "Germany", "DACH", "Enterprise", 53156, 31628, 69, 78, 55879},
+							{#date(2024,4,15), 2024, "Q2", 4, "Apr", "Software Licenses", "ERP", "ERP Core License", "France", "Western Europe", "Enterprise", 32573, 19871, 49, 76.4, 34720},
+							{#date(2024,4,15), 2024, "Q2", 4, "Apr", "Consulting", "Implementation", "Process Automation", "Italy", "Western Europe", "Small Business", 11472, 7312, 9, 78.1, 10574},
+							{#date(2024,4,15), 2024, "Q2", 4, "Apr", "Software Licenses", "Collaboration", "Team Workspace", "Czechia", "Central & Eastern Europe", "Small Business", 17080, 10465, 13, 88.9, 17609},
+							{#date(2024,4,15), 2024, "Q2", 4, "Apr", "Consulting", "Strategy", "Strategic Roadmap", "Germany", "DACH", "Small Business", 32988, 21044, 28, 84.1, 29142},
+							{#date(2024,4,15), 2024, "Q2", 4, "Apr", "Managed Services", "Hosting", "Cloud Hosting Enterprise", "Italy", "Western Europe", "Mid-Market", 37492, 26292, 94, 84.8, 42822},
+							{#date(2024,4,15), 2024, "Q2", 4, "Apr", "Training", "E-Learning", "E-Learning Bundle", "France", "Western Europe", "Enterprise", 34331, 20813, 45, 90.8, 37888},
+							{#date(2024,4,15), 2024, "Q2", 4, "Apr", "Software Licenses", "BI Tools", "BI Suite Premium", "France", "Western Europe", "Small Business", 8564, 4843, 24, 85.7, 7566},
+							{#date(2024,5,15), 2024, "Q2", 5, "May", "Software Licenses", "Collaboration", "Team Workspace", "Germany", "DACH", "Mid-Market", 19634, 11955, 22, 81.4, 18958},
+							{#date(2024,5,15), 2024, "Q2", 5, "May", "Software Licenses", "BI Tools", "BI Suite Standard", "Austria", "DACH", "Small Business", 13211, 8357, 10, 84.2, 13228},
+							{#date(2024,5,15), 2024, "Q2", 5, "May", "Software Licenses", "ERP", "ERP Analytics Add-on", "France", "Western Europe", "Small Business", 19442, 13520, 21, 90.7, 16631},
+							{#date(2024,5,15), 2024, "Q2", 5, "May", "Consulting", "Implementation", "ERP Rollout", "France", "Western Europe", "Mid-Market", 25983, 15397, 28, 99, 23179},
+							{#date(2024,5,15), 2024, "Q2", 5, "May", "Consulting", "Strategy", "Strategic Roadmap", "Poland", "Central & Eastern Europe", "Small Business", 16561, 9916, 19, 87, 15134},
+							{#date(2024,5,15), 2024, "Q2", 5, "May", "Consulting", "Implementation", "Process Automation", "France", "Western Europe", "Small Business", 5234, 3094, 14, 83.3, 5073},
+							{#date(2024,5,15), 2024, "Q2", 5, "May", "Training", "E-Learning", "E-Learning Single Course", "Italy", "Western Europe", "Mid-Market", 22664, 15720, 19, 96.2, 22617},
+							{#date(2024,5,15), 2024, "Q2", 5, "May", "Software Licenses", "ERP", "ERP Analytics Add-on", "Germany", "DACH", "Small Business", 17790, 11680, 19, 94.5, 19608},
+							{#date(2024,5,15), 2024, "Q2", 5, "May", "Managed Services", "Support", "Standard Support Plan", "Germany", "DACH", "Mid-Market", 16477, 11942, 24, 77.8, 16460},
+							{#date(2024,5,15), 2024, "Q2", 5, "May", "Consulting", "Implementation", "Process Automation", "Hungary", "Central & Eastern Europe", "Small Business", 12450, 7334, 35, 87.5, 12697},
+							{#date(2024,5,15), 2024, "Q2", 5, "May", "Managed Services", "Hosting", "Cloud Hosting Basic", "Germany", "DACH", "Enterprise", 43993, 29492, 38, 75.7, 38830},
+							{#date(2024,5,15), 2024, "Q2", 5, "May", "Managed Services", "Support", "Premium Support Plan", "Italy", "Western Europe", "Small Business", 6181, 3925, 11, 90.6, 6563},
+							{#date(2024,5,15), 2024, "Q2", 5, "May", "Software Licenses", "Collaboration", "Secure File Share", "Austria", "DACH", "Mid-Market", 23282, 16597, 48, 69.7, 20952},
+							{#date(2024,5,15), 2024, "Q2", 5, "May", "Consulting", "Strategy", "Operating Model Redesign", "Switzerland", "DACH", "Mid-Market", 30667, 21545, 66, 82.7, 30934},
+							{#date(2024,5,15), 2024, "Q2", 5, "May", "Training", "E-Learning", "E-Learning Bundle", "Italy", "Western Europe", "Small Business", 18677, 13732, 22, 67.2, 18219},
+							{#date(2024,5,15), 2024, "Q2", 5, "May", "Managed Services", "Support", "Standard Support Plan", "Poland", "Central & Eastern Europe", "Mid-Market", 20564, 13176, 22, 76.6, 20382},
+							{#date(2024,5,15), 2024, "Q2", 5, "May", "Software Licenses", "ERP", "ERP Core License", "Austria", "DACH", "Enterprise", 61443, 44292, 56, 89, 63594},
+							{#date(2024,5,15), 2024, "Q2", 5, "May", "Training", "E-Learning", "E-Learning Single Course", "Hungary", "Central & Eastern Europe", "Enterprise", 30437, 18883, 35, 90.5, 31205},
+							{#date(2024,5,15), 2024, "Q2", 5, "May", "Training", "Onsite", "Onsite Workshop", "Austria", "DACH", "Small Business", 26781, 19535, 39, 74.4, 29347},
+							{#date(2024,5,15), 2024, "Q2", 5, "May", "Managed Services", "Support", "Standard Support Plan", "Poland", "Central & Eastern Europe", "Enterprise", 22882, 14271, 18, 79.5, 21502},
+							{#date(2024,5,15), 2024, "Q2", 5, "May", "Consulting", "Strategy", "Strategic Roadmap", "France", "Western Europe", "Mid-Market", 23694, 14774, 21, 90.7, 20559},
+							{#date(2024,5,15), 2024, "Q2", 5, "May", "Consulting", "Strategy", "Strategic Roadmap", "Italy", "Western Europe", "Enterprise", 54313, 38566, 51, 69, 55414},
+							{#date(2024,5,15), 2024, "Q2", 5, "May", "Consulting", "Implementation", "ERP Rollout", "Austria", "DACH", "Enterprise", 17149, 9654, 43, 95, 16241},
+							{#date(2024,6,15), 2024, "Q2", 6, "Jun", "Training", "E-Learning", "E-Learning Bundle", "Italy", "Western Europe", "Enterprise", 38916, 28580, 44, 68.2, 35741},
+							{#date(2024,6,15), 2024, "Q2", 6, "Jun", "Software Licenses", "ERP", "ERP Analytics Add-on", "Austria", "DACH", "Enterprise", 57545, 31938, 72, 97.9, 51204},
+							{#date(2024,6,15), 2024, "Q2", 6, "Jun", "Consulting", "Strategy", "Strategic Roadmap", "France", "Western Europe", "Enterprise", 57393, 31625, 114, 79.2, 51114},
+							{#date(2024,6,15), 2024, "Q2", 6, "Jun", "Software Licenses", "Collaboration", "Secure File Share", "France", "Western Europe", "Enterprise", 44393, 26058, 71, 99, 48212},
+							{#date(2024,6,15), 2024, "Q2", 6, "Jun", "Software Licenses", "BI Tools", "BI Suite Standard", "Germany", "DACH", "Mid-Market", 46256, 29198, 43, 97.2, 39863},
+							{#date(2024,6,15), 2024, "Q2", 6, "Jun", "Software Licenses", "Collaboration", "Team Workspace", "Austria", "DACH", "Enterprise", 51506, 33831, 39, 73.9, 53339},
+							{#date(2024,6,15), 2024, "Q2", 6, "Jun", "Software Licenses", "ERP", "ERP Core License", "Austria", "DACH", "Small Business", 19810, 11103, 49, 81.5, 18202},
+							{#date(2024,6,15), 2024, "Q2", 6, "Jun", "Software Licenses", "Collaboration", "Secure File Share", "Germany", "DACH", "Small Business", 22733, 13257, 32, 93.3, 20072},
+							{#date(2024,6,15), 2024, "Q2", 6, "Jun", "Consulting", "Implementation", "Process Automation", "Germany", "DACH", "Enterprise", 75887, 47219, 82, 86.3, 80770},
+							{#date(2024,6,15), 2024, "Q2", 6, "Jun", "Training", "E-Learning", "E-Learning Single Course", "Germany", "DACH", "Small Business", 27886, 17339, 25, 98.9, 28545},
+							{#date(2024,6,15), 2024, "Q2", 6, "Jun", "Training", "Onsite", "Onsite Workshop", "Switzerland", "DACH", "Enterprise", 25645, 15604, 19, 77, 27742},
+							{#date(2024,6,15), 2024, "Q2", 6, "Jun", "Software Licenses", "ERP", "ERP Core License", "Hungary", "Central & Eastern Europe", "Mid-Market", 19282, 13193, 55, 73.3, 21332},
+							{#date(2024,6,15), 2024, "Q2", 6, "Jun", "Managed Services", "Hosting", "Cloud Hosting Enterprise", "Czechia", "Central & Eastern Europe", "Mid-Market", 19913, 12556, 19, 97.6, 21530},
+							{#date(2024,6,15), 2024, "Q2", 6, "Jun", "Training", "Onsite", "Onsite Certification", "Hungary", "Central & Eastern Europe", "Enterprise", 34659, 20296, 53, 95, 31058},
+							{#date(2024,6,15), 2024, "Q2", 6, "Jun", "Software Licenses", "Collaboration", "Secure File Share", "Poland", "Central & Eastern Europe", "Small Business", 7116, 4460, 9, 79.6, 8069},
+							{#date(2024,6,15), 2024, "Q2", 6, "Jun", "Consulting", "Implementation", "Process Automation", "Czechia", "Central & Eastern Europe", "Mid-Market", 23705, 16482, 20, 91.3, 22535},
+							{#date(2024,6,15), 2024, "Q2", 6, "Jun", "Managed Services", "Support", "Standard Support Plan", "Austria", "DACH", "Small Business", 22537, 14974, 51, 76.5, 24199},
+							{#date(2024,6,15), 2024, "Q2", 6, "Jun", "Managed Services", "Hosting", "Cloud Hosting Enterprise", "Austria", "DACH", "Enterprise", 43927, 32218, 40, 74.5, 43914},
+							{#date(2024,6,15), 2024, "Q2", 6, "Jun", "Training", "Onsite", "Onsite Certification", "Germany", "DACH", "Mid-Market", 46031, 33225, 34, 93.6, 46523},
+							{#date(2024,6,15), 2024, "Q2", 6, "Jun", "Training", "Onsite", "Onsite Certification", "Germany", "DACH", "Enterprise", 71625, 48334, 62, 78.3, 68320},
+							{#date(2024,7,15), 2024, "Q3", 7, "Jul", "Consulting", "Implementation", "ERP Rollout", "Czechia", "Central & Eastern Europe", "Enterprise", 38781, 26255, 41, 75.7, 36909},
+							{#date(2024,7,15), 2024, "Q3", 7, "Jul", "Managed Services", "Support", "Premium Support Plan", "Germany", "DACH", "Enterprise", 69613, 41369, 65, 99, 65873},
+							{#date(2024,7,15), 2024, "Q3", 7, "Jul", "Training", "Onsite", "Onsite Certification", "Italy", "Western Europe", "Mid-Market", 30774, 20738, 41, 82.5, 34265},
+							{#date(2024,7,15), 2024, "Q3", 7, "Jul", "Managed Services", "Support", "Premium Support Plan", "Switzerland", "DACH", "Mid-Market", 40173, 27459, 83, 93.4, 38859},
+							{#date(2024,7,15), 2024, "Q3", 7, "Jul", "Consulting", "Strategy", "Operating Model Redesign", "Italy", "Western Europe", "Small Business", 17420, 9802, 47, 88.6, 18194},
+							{#date(2024,7,15), 2024, "Q3", 7, "Jul", "Managed Services", "Hosting", "Cloud Hosting Basic", "Czechia", "Central & Eastern Europe", "Enterprise", 24473, 17309, 29, 72.4, 21169},
+							{#date(2024,7,15), 2024, "Q3", 7, "Jul", "Software Licenses", "BI Tools", "BI Suite Standard", "Austria", "DACH", "Enterprise", 73578, 48591, 96, 91.5, 75551},
+							{#date(2024,7,15), 2024, "Q3", 7, "Jul", "Software Licenses", "BI Tools", "BI Suite Standard", "France", "Western Europe", "Mid-Market", 24026, 15147, 20, 80.5, 26024},
+							{#date(2024,7,15), 2024, "Q3", 7, "Jul", "Training", "E-Learning", "E-Learning Bundle", "Poland", "Central & Eastern Europe", "Enterprise", 43249, 29950, 46, 89.7, 39259},
+							{#date(2024,7,15), 2024, "Q3", 7, "Jul", "Software Licenses", "BI Tools", "BI Suite Standard", "Italy", "Western Europe", "Mid-Market", 37059, 21668, 59, 81, 37302},
+							{#date(2024,7,15), 2024, "Q3", 7, "Jul", "Training", "E-Learning", "E-Learning Bundle", "France", "Western Europe", "Mid-Market", 15472, 10896, 31, 91.7, 15646},
+							{#date(2024,7,15), 2024, "Q3", 7, "Jul", "Consulting", "Implementation", "ERP Rollout", "Italy", "Western Europe", "Mid-Market", 28458, 21106, 24, 75.4, 32708},
+							{#date(2024,7,15), 2024, "Q3", 7, "Jul", "Software Licenses", "Collaboration", "Secure File Share", "Germany", "DACH", "Small Business", 19913, 14159, 17, 85.6, 22418},
+							{#date(2024,7,15), 2024, "Q3", 7, "Jul", "Consulting", "Implementation", "Process Automation", "Poland", "Central & Eastern Europe", "Enterprise", 16308, 10287, 20, 94.2, 17030},
+							{#date(2024,7,15), 2024, "Q3", 7, "Jul", "Software Licenses", "BI Tools", "BI Suite Standard", "Hungary", "Central & Eastern Europe", "Mid-Market", 13493, 9958, 24, 67.9, 14193},
+							{#date(2024,7,15), 2024, "Q3", 7, "Jul", "Training", "Onsite", "Onsite Certification", "Austria", "DACH", "Small Business", 14177, 10001, 24, 84.9, 12274},
+							{#date(2024,7,15), 2024, "Q3", 7, "Jul", "Training", "Onsite", "Onsite Workshop", "Germany", "DACH", "Mid-Market", 24190, 13804, 25, 79.4, 27117},
+							{#date(2024,7,15), 2024, "Q3", 7, "Jul", "Consulting", "Strategy", "Strategic Roadmap", "Italy", "Western Europe", "Enterprise", 20765, 13079, 20, 90.1, 19232},
+							{#date(2024,7,15), 2024, "Q3", 7, "Jul", "Training", "E-Learning", "E-Learning Single Course", "Italy", "Western Europe", "Small Business", 16227, 10209, 38, 86, 15678},
+							{#date(2024,8,15), 2024, "Q3", 8, "Aug", "Software Licenses", "Collaboration", "Secure File Share", "Czechia", "Central & Eastern Europe", "Mid-Market", 14517, 8577, 38, 89.6, 12885},
+							{#date(2024,8,15), 2024, "Q3", 8, "Aug", "Consulting", "Strategy", "Strategic Roadmap", "Austria", "DACH", "Enterprise", 61240, 38468, 168, 83.5, 68266},
+							{#date(2024,8,15), 2024, "Q3", 8, "Aug", "Software Licenses", "BI Tools", "BI Suite Premium", "Italy", "Western Europe", "Enterprise", 20685, 15298, 53, 73.3, 22834},
+							{#date(2024,8,15), 2024, "Q3", 8, "Aug", "Consulting", "Implementation", "Process Automation", "Switzerland", "DACH", "Small Business", 19879, 14240, 17, 89.1, 19996},
+							{#date(2024,8,15), 2024, "Q3", 8, "Aug", "Consulting", "Implementation", "Process Automation", "Germany", "DACH", "Mid-Market", 41668, 24689, 98, 84.5, 46739},
+							{#date(2024,8,15), 2024, "Q3", 8, "Aug", "Software Licenses", "BI Tools", "BI Suite Standard", "Hungary", "Central & Eastern Europe", "Mid-Market", 6006, 3634, 14, 78.3, 5233},
+							{#date(2024,8,15), 2024, "Q3", 8, "Aug", "Software Licenses", "ERP", "ERP Core License", "Germany", "DACH", "Small Business", 22444, 16282, 36, 89.4, 25625},
+							{#date(2024,8,15), 2024, "Q3", 8, "Aug", "Training", "Onsite", "Onsite Certification", "Italy", "Western Europe", "Mid-Market", 12255, 7240, 20, 87.2, 12295},
+							{#date(2024,8,15), 2024, "Q3", 8, "Aug", "Training", "E-Learning", "E-Learning Bundle", "Czechia", "Central & Eastern Europe", "Mid-Market", 18891, 11777, 35, 81.6, 20116},
+							{#date(2024,8,15), 2024, "Q3", 8, "Aug", "Software Licenses", "BI Tools", "BI Suite Standard", "Switzerland", "DACH", "Mid-Market", 33083, 19356, 83, 98.2, 35494},
+							{#date(2024,8,15), 2024, "Q3", 8, "Aug", "Software Licenses", "BI Tools", "BI Suite Premium", "Czechia", "Central & Eastern Europe", "Enterprise", 26573, 19867, 23, 91.8, 28406},
+							{#date(2024,8,15), 2024, "Q3", 8, "Aug", "Training", "E-Learning", "E-Learning Bundle", "Poland", "Central & Eastern Europe", "Enterprise", 34781, 21728, 32, 87.9, 34726},
+							{#date(2024,8,15), 2024, "Q3", 8, "Aug", "Software Licenses", "ERP", "ERP Analytics Add-on", "Hungary", "Central & Eastern Europe", "Small Business", 9719, 5471, 9, 82.4, 9074},
+							{#date(2024,8,15), 2024, "Q3", 8, "Aug", "Training", "Onsite", "Onsite Workshop", "Hungary", "Central & Eastern Europe", "Small Business", 12899, 9121, 15, 76.1, 12734},
+							{#date(2024,8,15), 2024, "Q3", 8, "Aug", "Consulting", "Implementation", "ERP Rollout", "Czechia", "Central & Eastern Europe", "Mid-Market", 20945, 15359, 22, 77.3, 19815},
+							{#date(2024,8,15), 2024, "Q3", 8, "Aug", "Consulting", "Strategy", "Operating Model Redesign", "Germany", "DACH", "Small Business", 11071, 7218, 23, 76.1, 11544},
+							{#date(2024,8,15), 2024, "Q3", 8, "Aug", "Consulting", "Implementation", "ERP Rollout", "France", "Western Europe", "Mid-Market", 33612, 24939, 36, 88.3, 34604},
+							{#date(2024,8,15), 2024, "Q3", 8, "Aug", "Training", "Onsite", "Onsite Certification", "Austria", "DACH", "Small Business", 12221, 6962, 21, 80.8, 11007},
+							{#date(2024,8,15), 2024, "Q3", 8, "Aug", "Managed Services", "Hosting", "Cloud Hosting Basic", "Germany", "DACH", "Enterprise", 80794, 50618, 134, 93.6, 77887},
+							{#date(2024,8,15), 2024, "Q3", 8, "Aug", "Software Licenses", "BI Tools", "BI Suite Premium", "France", "Western Europe", "Mid-Market", 27070, 16070, 74, 99, 23219},
+							{#date(2024,9,15), 2024, "Q3", 9, "Sep", "Training", "Onsite", "Onsite Workshop", "Czechia", "Central & Eastern Europe", "Mid-Market", 24274, 17019, 23, 77.6, 26120},
+							{#date(2024,9,15), 2024, "Q3", 9, "Sep", "Software Licenses", "Collaboration", "Team Workspace", "Switzerland", "DACH", "Enterprise", 53285, 38909, 60, 92.8, 48802},
+							{#date(2024,9,15), 2024, "Q3", 9, "Sep", "Consulting", "Implementation", "Process Automation", "Hungary", "Central & Eastern Europe", "Mid-Market", 8996, 5276, 14, 95, 10208},
+							{#date(2024,9,15), 2024, "Q3", 9, "Sep", "Training", "Onsite", "Onsite Certification", "Switzerland", "DACH", "Small Business", 24628, 17131, 47, 77, 21833},
+							{#date(2024,9,15), 2024, "Q3", 9, "Sep", "Training", "E-Learning", "E-Learning Single Course", "Poland", "Central & Eastern Europe", "Enterprise", 17829, 10184, 22, 94.4, 15174},
+							{#date(2024,9,15), 2024, "Q3", 9, "Sep", "Managed Services", "Support", "Premium Support Plan", "France", "Western Europe", "Mid-Market", 39664, 24284, 34, 99, 39066},
+							{#date(2024,9,15), 2024, "Q3", 9, "Sep", "Software Licenses", "BI Tools", "BI Suite Premium", "Austria", "DACH", "Mid-Market", 34309, 19820, 43, 97.1, 30817},
+							{#date(2024,9,15), 2024, "Q3", 9, "Sep", "Software Licenses", "Collaboration", "Secure File Share", "Poland", "Central & Eastern Europe", "Small Business", 5427, 3048, 7, 83.7, 5100},
+							{#date(2024,9,15), 2024, "Q3", 9, "Sep", "Training", "Onsite", "Onsite Certification", "France", "Western Europe", "Enterprise", 69393, 42811, 109, 99, 59818},
+							{#date(2024,9,15), 2024, "Q3", 9, "Sep", "Software Licenses", "BI Tools", "BI Suite Premium", "France", "Western Europe", "Mid-Market", 23409, 16851, 17, 92.5, 20785},
+							{#date(2024,9,15), 2024, "Q3", 9, "Sep", "Software Licenses", "BI Tools", "BI Suite Premium", "Germany", "DACH", "Mid-Market", 23439, 16723, 43, 83.1, 22900},
+							{#date(2024,9,15), 2024, "Q3", 9, "Sep", "Training", "E-Learning", "E-Learning Single Course", "France", "Western Europe", "Small Business", 20060, 14913, 17, 78.9, 17511},
+							{#date(2024,9,15), 2024, "Q3", 9, "Sep", "Managed Services", "Support", "Standard Support Plan", "Switzerland", "DACH", "Mid-Market", 16026, 11799, 13, 92.5, 13794},
+							{#date(2024,9,15), 2024, "Q3", 9, "Sep", "Training", "E-Learning", "E-Learning Single Course", "Germany", "DACH", "Mid-Market", 48723, 32265, 123, 90.8, 55898},
+							{#date(2024,9,15), 2024, "Q3", 9, "Sep", "Managed Services", "Hosting", "Cloud Hosting Enterprise", "France", "Western Europe", "Small Business", 11600, 8213, 19, 78.4, 13329},
+							{#date(2024,9,15), 2024, "Q3", 9, "Sep", "Consulting", "Implementation", "Process Automation", "Austria", "DACH", "Enterprise", 53348, 38110, 116, 85.8, 47670},
+							{#date(2024,9,15), 2024, "Q3", 9, "Sep", "Software Licenses", "Collaboration", "Secure File Share", "Hungary", "Central & Eastern Europe", "Small Business", 9532, 5246, 21, 82.6, 9494},
+							{#date(2024,9,15), 2024, "Q3", 9, "Sep", "Training", "E-Learning", "E-Learning Bundle", "Czechia", "Central & Eastern Europe", "Enterprise", 37462, 26494, 98, 84.1, 40880},
+							{#date(2024,10,15), 2024, "Q4", 10, "Oct", "Consulting", "Implementation", "Process Automation", "Germany", "DACH", "Enterprise", 74129, 47349, 130, 92.1, 83010},
+							{#date(2024,10,15), 2024, "Q4", 10, "Oct", "Software Licenses", "ERP", "ERP Core License", "Italy", "Western Europe", "Mid-Market", 14810, 8968, 25, 94.1, 15848},
+							{#date(2024,10,15), 2024, "Q4", 10, "Oct", "Training", "Onsite", "Onsite Certification", "Hungary", "Central & Eastern Europe", "Mid-Market", 25299, 17821, 30, 72, 23331},
+							{#date(2024,10,15), 2024, "Q4", 10, "Oct", "Software Licenses", "Collaboration", "Secure File Share", "Hungary", "Central & Eastern Europe", "Small Business", 11421, 6849, 8, 76.9, 12507},
+							{#date(2024,10,15), 2024, "Q4", 10, "Oct", "Software Licenses", "ERP", "ERP Analytics Add-on", "Switzerland", "DACH", "Enterprise", 44525, 31784, 121, 72.7, 50976},
+							{#date(2024,10,15), 2024, "Q4", 10, "Oct", "Software Licenses", "BI Tools", "BI Suite Premium", "Italy", "Western Europe", "Enterprise", 22195, 15420, 22, 89.8, 22803},
+							{#date(2024,10,15), 2024, "Q4", 10, "Oct", "Consulting", "Strategy", "Operating Model Redesign", "Hungary", "Central & Eastern Europe", "Small Business", 5243, 3428, 10, 86.4, 4917},
+							{#date(2024,10,15), 2024, "Q4", 10, "Oct", "Training", "E-Learning", "E-Learning Bundle", "France", "Western Europe", "Enterprise", 42614, 23483, 31, 83.8, 42626},
+							{#date(2024,10,15), 2024, "Q4", 10, "Oct", "Managed Services", "Hosting", "Cloud Hosting Enterprise", "France", "Western Europe", "Mid-Market", 43264, 28274, 60, 83, 44512},
+							{#date(2024,10,15), 2024, "Q4", 10, "Oct", "Software Licenses", "BI Tools", "BI Suite Standard", "Czechia", "Central & Eastern Europe", "Small Business", 10789, 6885, 13, 89.3, 11877},
+							{#date(2024,10,15), 2024, "Q4", 10, "Oct", "Software Licenses", "BI Tools", "BI Suite Standard", "Italy", "Western Europe", "Small Business", 10102, 5637, 9, 78.3, 10556},
+							{#date(2024,10,15), 2024, "Q4", 10, "Oct", "Software Licenses", "ERP", "ERP Analytics Add-on", "Hungary", "Central & Eastern Europe", "Small Business", 13292, 8361, 12, 77.7, 13647},
+							{#date(2024,10,15), 2024, "Q4", 10, "Oct", "Training", "E-Learning", "E-Learning Bundle", "Hungary", "Central & Eastern Europe", "Enterprise", 21770, 13416, 19, 86.4, 19334},
+							{#date(2024,10,15), 2024, "Q4", 10, "Oct", "Software Licenses", "BI Tools", "BI Suite Standard", "Czechia", "Central & Eastern Europe", "Enterprise", 36427, 22758, 57, 95.5, 38195},
+							{#date(2024,10,15), 2024, "Q4", 10, "Oct", "Managed Services", "Hosting", "Cloud Hosting Enterprise", "France", "Western Europe", "Enterprise", 76298, 53588, 77, 72.2, 70990},
+							{#date(2024,10,15), 2024, "Q4", 10, "Oct", "Consulting", "Implementation", "ERP Rollout", "Czechia", "Central & Eastern Europe", "Mid-Market", 27412, 16734, 47, 91.6, 28697},
+							{#date(2024,10,15), 2024, "Q4", 10, "Oct", "Software Licenses", "Collaboration", "Team Workspace", "Czechia", "Central & Eastern Europe", "Mid-Market", 12909, 7744, 21, 89.6, 12969},
+							{#date(2024,10,15), 2024, "Q4", 10, "Oct", "Software Licenses", "Collaboration", "Secure File Share", "Czechia", "Central & Eastern Europe", "Mid-Market", 10894, 6833, 8, 97.8, 11183},
+							{#date(2024,10,15), 2024, "Q4", 10, "Oct", "Consulting", "Implementation", "Process Automation", "Czechia", "Central & Eastern Europe", "Small Business", 8927, 6260, 12, 88.8, 8033},
+							{#date(2024,10,15), 2024, "Q4", 10, "Oct", "Software Licenses", "ERP", "ERP Analytics Add-on", "Switzerland", "DACH", "Small Business", 13919, 9365, 13, 84.8, 15693},
+							{#date(2024,10,15), 2024, "Q4", 10, "Oct", "Training", "Onsite", "Onsite Workshop", "Italy", "Western Europe", "Enterprise", 37536, 26600, 51, 73.1, 40209},
+							{#date(2024,11,15), 2024, "Q4", 11, "Nov", "Consulting", "Strategy", "Strategic Roadmap", "France", "Western Europe", "Small Business", 11854, 7189, 20, 96.5, 10412},
+							{#date(2024,11,15), 2024, "Q4", 11, "Nov", "Training", "Onsite", "Onsite Certification", "Germany", "DACH", "Small Business", 14842, 9761, 12, 85.2, 12881},
+							{#date(2024,11,15), 2024, "Q4", 11, "Nov", "Managed Services", "Hosting", "Cloud Hosting Enterprise", "Czechia", "Central & Eastern Europe", "Mid-Market", 27203, 19133, 20, 82.3, 28971},
+							{#date(2024,11,15), 2024, "Q4", 11, "Nov", "Managed Services", "Support", "Standard Support Plan", "Czechia", "Central & Eastern Europe", "Enterprise", 18370, 11020, 21, 94.2, 16781},
+							{#date(2024,11,15), 2024, "Q4", 11, "Nov", "Managed Services", "Support", "Premium Support Plan", "Poland", "Central & Eastern Europe", "Mid-Market", 27371, 18986, 45, 76.3, 26232},
+							{#date(2024,11,15), 2024, "Q4", 11, "Nov", "Consulting", "Implementation", "ERP Rollout", "Germany", "DACH", "Mid-Market", 58938, 40650, 77, 74.3, 54499},
+							{#date(2024,11,15), 2024, "Q4", 11, "Nov", "Training", "Onsite", "Onsite Workshop", "Germany", "DACH", "Mid-Market", 53545, 31519, 63, 79.8, 57276},
+							{#date(2024,11,15), 2024, "Q4", 11, "Nov", "Training", "Onsite", "Onsite Workshop", "Germany", "DACH", "Small Business", 29956, 18746, 22, 93.6, 33249},
+							{#date(2024,11,15), 2024, "Q4", 11, "Nov", "Managed Services", "Hosting", "Cloud Hosting Basic", "France", "Western Europe", "Enterprise", 39511, 29132, 32, 67.6, 41616},
+							{#date(2024,11,15), 2024, "Q4", 11, "Nov", "Software Licenses", "ERP", "ERP Core License", "Italy", "Western Europe", "Enterprise", 30605, 22852, 26, 69.5, 26819},
+							{#date(2024,11,15), 2024, "Q4", 11, "Nov", "Software Licenses", "BI Tools", "BI Suite Premium", "Hungary", "Central & Eastern Europe", "Mid-Market", 7510, 5361, 14, 86.4, 6643},
+							{#date(2024,11,15), 2024, "Q4", 11, "Nov", "Consulting", "Implementation", "Process Automation", "Czechia", "Central & Eastern Europe", "Enterprise", 44217, 25079, 44, 77.2, 42623},
+							{#date(2024,11,15), 2024, "Q4", 11, "Nov", "Software Licenses", "Collaboration", "Team Workspace", "Czechia", "Central & Eastern Europe", "Enterprise", 44817, 28230, 40, 90.3, 43303},
+							{#date(2024,11,15), 2024, "Q4", 11, "Nov", "Software Licenses", "ERP", "ERP Analytics Add-on", "France", "Western Europe", "Small Business", 26551, 18901, 31, 69.5, 28963},
+							{#date(2024,11,15), 2024, "Q4", 11, "Nov", "Training", "E-Learning", "E-Learning Single Course", "Czechia", "Central & Eastern Europe", "Mid-Market", 33216, 19819, 32, 88.5, 34603},
+							{#date(2024,11,15), 2024, "Q4", 11, "Nov", "Software Licenses", "BI Tools", "BI Suite Standard", "Austria", "DACH", "Enterprise", 36891, 24680, 42, 85.9, 39624},
+							{#date(2024,11,15), 2024, "Q4", 11, "Nov", "Software Licenses", "BI Tools", "BI Suite Standard", "France", "Western Europe", "Enterprise", 73496, 52200, 61, 74, 80294},
+							{#date(2024,11,15), 2024, "Q4", 11, "Nov", "Consulting", "Implementation", "Process Automation", "Austria", "DACH", "Small Business", 16736, 9846, 37, 92.4, 16371},
+							{#date(2024,11,15), 2024, "Q4", 11, "Nov", "Software Licenses", "BI Tools", "BI Suite Premium", "Germany", "DACH", "Small Business", 8192, 5069, 6, 79.3, 8105},
+							{#date(2024,11,15), 2024, "Q4", 11, "Nov", "Training", "E-Learning", "E-Learning Single Course", "Hungary", "Central & Eastern Europe", "Mid-Market", 25636, 15641, 36, 99, 22255},
+							{#date(2024,11,15), 2024, "Q4", 11, "Nov", "Managed Services", "Support", "Standard Support Plan", "Switzerland", "DACH", "Enterprise", 48046, 29968, 39, 92.9, 47559},
+							{#date(2024,11,15), 2024, "Q4", 11, "Nov", "Software Licenses", "BI Tools", "BI Suite Standard", "France", "Western Europe", "Mid-Market", 43718, 30755, 31, 85.6, 41464},
+							{#date(2024,11,15), 2024, "Q4", 11, "Nov", "Software Licenses", "ERP", "ERP Core License", "Italy", "Western Europe", "Mid-Market", 16293, 10096, 13, 99, 18399},
+							{#date(2024,12,15), 2024, "Q4", 12, "Dec", "Software Licenses", "ERP", "ERP Analytics Add-on", "Hungary", "Central & Eastern Europe", "Small Business", 12337, 8873, 9, 74, 12511},
+							{#date(2024,12,15), 2024, "Q4", 12, "Dec", "Managed Services", "Hosting", "Cloud Hosting Enterprise", "Austria", "DACH", "Small Business", 23782, 16613, 37, 82.4, 25235},
+							{#date(2024,12,15), 2024, "Q4", 12, "Dec", "Software Licenses", "ERP", "ERP Core License", "France", "Western Europe", "Small Business", 16856, 10271, 22, 75.4, 14838},
+							{#date(2024,12,15), 2024, "Q4", 12, "Dec", "Consulting", "Strategy", "Strategic Roadmap", "Czechia", "Central & Eastern Europe", "Mid-Market", 38013, 25265, 30, 98.4, 32961},
+							{#date(2024,12,15), 2024, "Q4", 12, "Dec", "Managed Services", "Support", "Premium Support Plan", "Poland", "Central & Eastern Europe", "Enterprise", 45067, 31697, 69, 83.8, 49443},
+							{#date(2024,12,15), 2024, "Q4", 12, "Dec", "Training", "Onsite", "Onsite Certification", "Switzerland", "DACH", "Small Business", 27924, 16156, 32, 78.1, 26162},
+							{#date(2024,12,15), 2024, "Q4", 12, "Dec", "Software Licenses", "ERP", "ERP Analytics Add-on", "Germany", "DACH", "Enterprise", 78618, 52723, 102, 96.3, 77920},
+							{#date(2024,12,15), 2024, "Q4", 12, "Dec", "Training", "Onsite", "Onsite Certification", "Germany", "DACH", "Small Business", 27041, 17817, 44, 80.2, 28305},
+							{#date(2024,12,15), 2024, "Q4", 12, "Dec", "Software Licenses", "ERP", "ERP Analytics Add-on", "Switzerland", "DACH", "Mid-Market", 40970, 30222, 99, 69.7, 41478},
+							{#date(2024,12,15), 2024, "Q4", 12, "Dec", "Consulting", "Strategy", "Operating Model Redesign", "Czechia", "Central & Eastern Europe", "Mid-Market", 37678, 25625, 51, 88.1, 32811},
+							{#date(2024,12,15), 2024, "Q4", 12, "Dec", "Software Licenses", "BI Tools", "BI Suite Standard", "Czechia", "Central & Eastern Europe", "Small Business", 15870, 10756, 24, 85.8, 14490},
+							{#date(2024,12,15), 2024, "Q4", 12, "Dec", "Software Licenses", "ERP", "ERP Core License", "Italy", "Western Europe", "Enterprise", 36092, 21951, 34, 92.7, 41325},
+							{#date(2024,12,15), 2024, "Q4", 12, "Dec", "Software Licenses", "Collaboration", "Secure File Share", "Hungary", "Central & Eastern Europe", "Mid-Market", 15669, 9419, 32, 92.2, 17683},
+							{#date(2024,12,15), 2024, "Q4", 12, "Dec", "Consulting", "Implementation", "ERP Rollout", "Czechia", "Central & Eastern Europe", "Mid-Market", 21127, 12991, 17, 82.3, 21487},
+							{#date(2024,12,15), 2024, "Q4", 12, "Dec", "Software Licenses", "BI Tools", "BI Suite Premium", "France", "Western Europe", "Enterprise", 74019, 42960, 57, 99, 76479},
+							{#date(2024,12,15), 2024, "Q4", 12, "Dec", "Managed Services", "Support", "Standard Support Plan", "Switzerland", "DACH", "Enterprise", 74056, 42404, 202, 87.4, 67915},
+							{#date(2024,12,15), 2024, "Q4", 12, "Dec", "Managed Services", "Hosting", "Cloud Hosting Basic", "Germany", "DACH", "Mid-Market", 46481, 28017, 80, 93.4, 51354},
+							{#date(2024,12,15), 2024, "Q4", 12, "Dec", "Consulting", "Strategy", "Strategic Roadmap", "Hungary", "Central & Eastern Europe", "Small Business", 11828, 8009, 29, 85, 10406},
+							{#date(2025,1,15), 2025, "Q1", 1, "Jan", "Managed Services", "Support", "Premium Support Plan", "Hungary", "Central & Eastern Europe", "Mid-Market", 32910, 20239, 26, 99, 29841},
+							{#date(2025,1,15), 2025, "Q1", 1, "Jan", "Software Licenses", "BI Tools", "BI Suite Premium", "Czechia", "Central & Eastern Europe", "Enterprise", 45774, 26830, 88, 90.1, 47097},
+							{#date(2025,1,15), 2025, "Q1", 1, "Jan", "Consulting", "Implementation", "Process Automation", "Poland", "Central & Eastern Europe", "Mid-Market", 37639, 25853, 73, 87.5, 36200},
+							{#date(2025,1,15), 2025, "Q1", 1, "Jan", "Software Licenses", "Collaboration", "Secure File Share", "Switzerland", "DACH", "Enterprise", 36317, 24459, 34, 74.4, 35094},
+							{#date(2025,1,15), 2025, "Q1", 1, "Jan", "Software Licenses", "ERP", "ERP Analytics Add-on", "Hungary", "Central & Eastern Europe", "Enterprise", 44853, 28676, 61, 77.7, 46067},
+							{#date(2025,1,15), 2025, "Q1", 1, "Jan", "Software Licenses", "ERP", "ERP Core License", "Germany", "DACH", "Mid-Market", 21829, 15821, 18, 75.3, 21370},
+							{#date(2025,1,15), 2025, "Q1", 1, "Jan", "Managed Services", "Hosting", "Cloud Hosting Basic", "France", "Western Europe", "Enterprise", 23667, 13030, 18, 82.6, 24693},
+							{#date(2025,1,15), 2025, "Q1", 1, "Jan", "Consulting", "Implementation", "Process Automation", "Italy", "Western Europe", "Enterprise", 58955, 43168, 45, 92.9, 51605},
+							{#date(2025,1,15), 2025, "Q1", 1, "Jan", "Software Licenses", "BI Tools", "BI Suite Premium", "France", "Western Europe", "Small Business", 7618, 4225, 8, 84, 7704},
+							{#date(2025,1,15), 2025, "Q1", 1, "Jan", "Managed Services", "Hosting", "Cloud Hosting Enterprise", "Hungary", "Central & Eastern Europe", "Small Business", 14819, 9921, 14, 76.9, 16051},
+							{#date(2025,1,15), 2025, "Q1", 1, "Jan", "Consulting", "Implementation", "Process Automation", "Italy", "Western Europe", "Small Business", 8430, 4648, 11, 92.2, 8119},
+							{#date(2025,1,15), 2025, "Q1", 1, "Jan", "Software Licenses", "ERP", "ERP Analytics Add-on", "Czechia", "Central & Eastern Europe", "Mid-Market", 8844, 5092, 22, 80.6, 8001},
+							{#date(2025,1,15), 2025, "Q1", 1, "Jan", "Consulting", "Strategy", "Operating Model Redesign", "Austria", "DACH", "Enterprise", 83125, 50146, 74, 75.6, 88981},
+							{#date(2025,1,15), 2025, "Q1", 1, "Jan", "Software Licenses", "ERP", "ERP Core License", "Austria", "DACH", "Mid-Market", 15486, 11210, 24, 92.8, 16059},
+							{#date(2025,1,15), 2025, "Q1", 1, "Jan", "Managed Services", "Hosting", "Cloud Hosting Basic", "Austria", "DACH", "Small Business", 29158, 21153, 33, 92.4, 26608},
+							{#date(2025,1,15), 2025, "Q1", 1, "Jan", "Software Licenses", "Collaboration", "Team Workspace", "Hungary", "Central & Eastern Europe", "Small Business", 6712, 4369, 11, 74, 5988},
+							{#date(2025,1,15), 2025, "Q1", 1, "Jan", "Managed Services", "Support", "Standard Support Plan", "Austria", "DACH", "Enterprise", 42402, 30735, 44, 95.4, 38784},
+							{#date(2025,1,15), 2025, "Q1", 1, "Jan", "Software Licenses", "Collaboration", "Team Workspace", "Austria", "DACH", "Mid-Market", 34646, 21266, 27, 99, 38509},
+							{#date(2025,1,15), 2025, "Q1", 1, "Jan", "Consulting", "Strategy", "Operating Model Redesign", "France", "Western Europe", "Small Business", 18236, 10343, 19, 99, 18941},
+							{#date(2025,1,15), 2025, "Q1", 1, "Jan", "Software Licenses", "ERP", "ERP Core License", "Italy", "Western Europe", "Mid-Market", 31965, 21397, 82, 71.3, 35617},
+							{#date(2025,1,15), 2025, "Q1", 1, "Jan", "Consulting", "Strategy", "Strategic Roadmap", "Italy", "Western Europe", "Mid-Market", 15656, 10884, 12, 70.3, 17859},
+							{#date(2025,1,15), 2025, "Q1", 1, "Jan", "Managed Services", "Hosting", "Cloud Hosting Basic", "Poland", "Central & Eastern Europe", "Small Business", 5835, 4281, 4, 74.4, 5827},
+							{#date(2025,1,15), 2025, "Q1", 1, "Jan", "Software Licenses", "BI Tools", "BI Suite Standard", "Poland", "Central & Eastern Europe", "Enterprise", 35611, 22156, 102, 98.4, 39861},
+							{#date(2025,2,15), 2025, "Q1", 2, "Feb", "Software Licenses", "ERP", "ERP Analytics Add-on", "France", "Western Europe", "Enterprise", 84950, 58207, 93, 77.1, 77227},
+							{#date(2025,2,15), 2025, "Q1", 2, "Feb", "Consulting", "Implementation", "ERP Rollout", "Italy", "Western Europe", "Enterprise", 82362, 54579, 63, 96.9, 83051},
+							{#date(2025,2,15), 2025, "Q1", 2, "Feb", "Software Licenses", "Collaboration", "Secure File Share", "Czechia", "Central & Eastern Europe", "Small Business", 10194, 6321, 9, 97.5, 11439},
+							{#date(2025,2,15), 2025, "Q1", 2, "Feb", "Training", "E-Learning", "E-Learning Single Course", "Austria", "DACH", "Mid-Market", 29175, 17473, 31, 98.7, 33529},
+							{#date(2025,2,15), 2025, "Q1", 2, "Feb", "Managed Services", "Support", "Premium Support Plan", "France", "Western Europe", "Mid-Market", 51665, 34924, 56, 94.7, 48628},
+							{#date(2025,2,15), 2025, "Q1", 2, "Feb", "Training", "E-Learning", "E-Learning Bundle", "Czechia", "Central & Eastern Europe", "Small Business", 10266, 6038, 12, 84.1, 9403},
+							{#date(2025,2,15), 2025, "Q1", 2, "Feb", "Managed Services", "Support", "Standard Support Plan", "Czechia", "Central & Eastern Europe", "Enterprise", 40810, 25279, 102, 79.9, 45911},
+							{#date(2025,2,15), 2025, "Q1", 2, "Feb", "Consulting", "Strategy", "Strategic Roadmap", "Hungary", "Central & Eastern Europe", "Small Business", 5504, 3264, 15, 89.4, 4690},
+							{#date(2025,2,15), 2025, "Q1", 2, "Feb", "Consulting", "Implementation", "Process Automation", "Poland", "Central & Eastern Europe", "Enterprise", 61889, 40789, 74, 94.3, 62519},
+							{#date(2025,2,15), 2025, "Q1", 2, "Feb", "Software Licenses", "Collaboration", "Team Workspace", "Czechia", "Central & Eastern Europe", "Enterprise", 45769, 30915, 34, 80.5, 46190},
+							{#date(2025,2,15), 2025, "Q1", 2, "Feb", "Managed Services", "Support", "Premium Support Plan", "Poland", "Central & Eastern Europe", "Mid-Market", 30655, 19278, 23, 80.6, 32683},
+							{#date(2025,2,15), 2025, "Q1", 2, "Feb", "Consulting", "Strategy", "Operating Model Redesign", "Germany", "DACH", "Mid-Market", 45820, 31442, 37, 75.7, 44060},
+							{#date(2025,2,15), 2025, "Q1", 2, "Feb", "Training", "Onsite", "Onsite Workshop", "Austria", "DACH", "Mid-Market", 17325, 10399, 36, 99, 15719},
+							{#date(2025,2,15), 2025, "Q1", 2, "Feb", "Software Licenses", "BI Tools", "BI Suite Premium", "Hungary", "Central & Eastern Europe", "Small Business", 16845, 10972, 24, 89.2, 16681},
+							{#date(2025,2,15), 2025, "Q1", 2, "Feb", "Managed Services", "Hosting", "Cloud Hosting Basic", "Switzerland", "DACH", "Small Business", 7012, 3903, 6, 89.1, 7109},
+							{#date(2025,2,15), 2025, "Q1", 2, "Feb", "Training", "E-Learning", "E-Learning Single Course", "France", "Western Europe", "Mid-Market", 49918, 31257, 50, 99, 53506},
+							{#date(2025,2,15), 2025, "Q1", 2, "Feb", "Managed Services", "Support", "Premium Support Plan", "Austria", "DACH", "Small Business", 13527, 9575, 31, 89.1, 15556},
+							{#date(2025,2,15), 2025, "Q1", 2, "Feb", "Training", "Onsite", "Onsite Workshop", "Switzerland", "DACH", "Enterprise", 84659, 59915, 62, 74.7, 91473},
+							{#date(2025,3,15), 2025, "Q1", 3, "Mar", "Managed Services", "Hosting", "Cloud Hosting Basic", "Czechia", "Central & Eastern Europe", "Enterprise", 36846, 23874, 82, 91.2, 37687},
+							{#date(2025,3,15), 2025, "Q1", 3, "Mar", "Software Licenses", "ERP", "ERP Core License", "Germany", "DACH", "Enterprise", 49520, 34206, 122, 91.2, 52423},
+							{#date(2025,3,15), 2025, "Q1", 3, "Mar", "Consulting", "Implementation", "ERP Rollout", "France", "Western Europe", "Small Business", 13770, 7809, 11, 83.4, 13296},
+							{#date(2025,3,15), 2025, "Q1", 3, "Mar", "Software Licenses", "BI Tools", "BI Suite Standard", "Italy", "Western Europe", "Small Business", 6951, 4657, 7, 92.5, 7908},
+							{#date(2025,3,15), 2025, "Q1", 3, "Mar", "Managed Services", "Support", "Premium Support Plan", "France", "Western Europe", "Mid-Market", 34833, 24685, 81, 68.8, 32064},
+							{#date(2025,3,15), 2025, "Q1", 3, "Mar", "Software Licenses", "BI Tools", "BI Suite Standard", "Hungary", "Central & Eastern Europe", "Enterprise", 45581, 33209, 126, 73, 45663},
+							{#date(2025,3,15), 2025, "Q1", 3, "Mar", "Software Licenses", "ERP", "ERP Analytics Add-on", "Poland", "Central & Eastern Europe", "Enterprise", 37563, 26318, 51, 75.8, 37715},
+							{#date(2025,3,15), 2025, "Q1", 3, "Mar", "Software Licenses", "BI Tools", "BI Suite Standard", "Czechia", "Central & Eastern Europe", "Small Business", 13094, 9370, 10, 89.6, 13285},
+							{#date(2025,3,15), 2025, "Q1", 3, "Mar", "Software Licenses", "ERP", "ERP Analytics Add-on", "Germany", "DACH", "Enterprise", 26674, 16966, 20, 84.4, 25755},
+							{#date(2025,3,15), 2025, "Q1", 3, "Mar", "Training", "Onsite", "Onsite Certification", "Czechia", "Central & Eastern Europe", "Enterprise", 22892, 15386, 17, 77.7, 19501},
+							{#date(2025,3,15), 2025, "Q1", 3, "Mar", "Consulting", "Strategy", "Operating Model Redesign", "Austria", "DACH", "Enterprise", 40320, 29783, 64, 76, 38594},
+							{#date(2025,3,15), 2025, "Q1", 3, "Mar", "Managed Services", "Support", "Premium Support Plan", "Czechia", "Central & Eastern Europe", "Mid-Market", 34166, 25369, 34, 78.5, 31656},
+							{#date(2025,3,15), 2025, "Q1", 3, "Mar", "Software Licenses", "ERP", "ERP Core License", "Switzerland", "DACH", "Mid-Market", 21113, 12043, 27, 80.1, 18281},
+							{#date(2025,3,15), 2025, "Q1", 3, "Mar", "Software Licenses", "Collaboration", "Secure File Share", "Czechia", "Central & Eastern Europe", "Small Business", 14994, 9229, 24, 83.5, 14854},
+							{#date(2025,3,15), 2025, "Q1", 3, "Mar", "Managed Services", "Support", "Premium Support Plan", "Germany", "DACH", "Small Business", 26400, 18674, 37, 87.2, 24875},
+							{#date(2025,3,15), 2025, "Q1", 3, "Mar", "Managed Services", "Hosting", "Cloud Hosting Basic", "Czechia", "Central & Eastern Europe", "Mid-Market", 21570, 13402, 30, 99, 23111},
+							{#date(2025,3,15), 2025, "Q1", 3, "Mar", "Software Licenses", "Collaboration", "Secure File Share", "France", "Western Europe", "Mid-Market", 47844, 30481, 41, 78.9, 54535},
+							{#date(2025,3,15), 2025, "Q1", 3, "Mar", "Software Licenses", "ERP", "ERP Core License", "Czechia", "Central & Eastern Europe", "Small Business", 5360, 3320, 4, 96.6, 4924},
+							{#date(2025,3,15), 2025, "Q1", 3, "Mar", "Training", "E-Learning", "E-Learning Single Course", "Italy", "Western Europe", "Enterprise", 52592, 34061, 41, 98.1, 57338},
+							{#date(2025,3,15), 2025, "Q1", 3, "Mar", "Training", "E-Learning", "E-Learning Single Course", "Switzerland", "DACH", "Mid-Market", 43001, 25926, 39, 76.7, 46078},
+							{#date(2025,3,15), 2025, "Q1", 3, "Mar", "Software Licenses", "BI Tools", "BI Suite Standard", "Austria", "DACH", "Mid-Market", 22882, 16773, 23, 72.8, 25413},
+							{#date(2025,3,15), 2025, "Q1", 3, "Mar", "Training", "E-Learning", "E-Learning Bundle", "Switzerland", "DACH", "Mid-Market", 55101, 39162, 69, 96.1, 62618},
+							{#date(2025,3,15), 2025, "Q1", 3, "Mar", "Consulting", "Implementation", "Process Automation", "Poland", "Central & Eastern Europe", "Small Business", 5324, 3970, 4, 77.7, 5529},
+							{#date(2025,4,15), 2025, "Q2", 4, "Apr", "Managed Services", "Hosting", "Cloud Hosting Basic", "Poland", "Central & Eastern Europe", "Enterprise", 30579, 18147, 74, 83.3, 33981},
+							{#date(2025,4,15), 2025, "Q2", 4, "Apr", "Software Licenses", "BI Tools", "BI Suite Premium", "Poland", "Central & Eastern Europe", "Small Business", 7733, 4982, 9, 90.4, 7974},
+							{#date(2025,4,15), 2025, "Q2", 4, "Apr", "Managed Services", "Support", "Premium Support Plan", "France", "Western Europe", "Small Business", 19083, 13907, 24, 85.1, 19219},
+							{#date(2025,4,15), 2025, "Q2", 4, "Apr", "Software Licenses", "BI Tools", "BI Suite Standard", "Switzerland", "DACH", "Small Business", 8728, 6055, 7, 74.1, 9454},
+							{#date(2025,4,15), 2025, "Q2", 4, "Apr", "Software Licenses", "ERP", "ERP Analytics Add-on", "Switzerland", "DACH", "Small Business", 21340, 13460, 15, 99, 22982},
+							{#date(2025,4,15), 2025, "Q2", 4, "Apr", "Software Licenses", "Collaboration", "Team Workspace", "France", "Western Europe", "Mid-Market", 18710, 13638, 30, 70.6, 16180},
+							{#date(2025,4,15), 2025, "Q2", 4, "Apr", "Training", "Onsite", "Onsite Certification", "Switzerland", "DACH", "Small Business", 13514, 10064, 15, 73.1, 14395},
+							{#date(2025,4,15), 2025, "Q2", 4, "Apr", "Training", "E-Learning", "E-Learning Single Course", "France", "Western Europe", "Mid-Market", 28147, 19435, 21, 70.2, 30870},
+							{#date(2025,4,15), 2025, "Q2", 4, "Apr", "Managed Services", "Hosting", "Cloud Hosting Basic", "France", "Western Europe", "Enterprise", 58667, 42183, 47, 93.8, 51288},
+							{#date(2025,4,15), 2025, "Q2", 4, "Apr", "Consulting", "Implementation", "ERP Rollout", "Hungary", "Central & Eastern Europe", "Enterprise", 17439, 12580, 44, 76.5, 19991},
+							{#date(2025,4,15), 2025, "Q2", 4, "Apr", "Consulting", "Implementation", "Process Automation", "Italy", "Western Europe", "Mid-Market", 23423, 14415, 25, 88.6, 20714},
+							{#date(2025,4,15), 2025, "Q2", 4, "Apr", "Consulting", "Implementation", "ERP Rollout", "France", "Western Europe", "Mid-Market", 33301, 24340, 47, 82.2, 35161},
+							{#date(2025,4,15), 2025, "Q2", 4, "Apr", "Software Licenses", "ERP", "ERP Core License", "Italy", "Western Europe", "Mid-Market", 11097, 7652, 16, 87.1, 9609},
+							{#date(2025,4,15), 2025, "Q2", 4, "Apr", "Consulting", "Strategy", "Operating Model Redesign", "Austria", "DACH", "Enterprise", 48755, 31869, 115, 87.3, 42584},
+							{#date(2025,4,15), 2025, "Q2", 4, "Apr", "Consulting", "Strategy", "Operating Model Redesign", "Italy", "Western Europe", "Mid-Market", 29781, 18836, 24, 94.6, 27756},
+							{#date(2025,4,15), 2025, "Q2", 4, "Apr", "Software Licenses", "Collaboration", "Secure File Share", "Italy", "Western Europe", "Small Business", 19028, 14224, 37, 94, 20660},
+							{#date(2025,4,15), 2025, "Q2", 4, "Apr", "Software Licenses", "BI Tools", "BI Suite Standard", "Italy", "Western Europe", "Mid-Market", 14077, 8001, 10, 94.1, 12760},
+							{#date(2025,4,15), 2025, "Q2", 4, "Apr", "Software Licenses", "BI Tools", "BI Suite Premium", "Czechia", "Central & Eastern Europe", "Mid-Market", 26201, 17332, 48, 93.4, 23814},
+							{#date(2025,4,15), 2025, "Q2", 4, "Apr", "Training", "Onsite", "Onsite Workshop", "Italy", "Western Europe", "Small Business", 23168, 13006, 20, 99, 23707},
+							{#date(2025,4,15), 2025, "Q2", 4, "Apr", "Managed Services", "Support", "Premium Support Plan", "Italy", "Western Europe", "Mid-Market", 26511, 19022, 31, 83.1, 28643},
+							{#date(2025,4,15), 2025, "Q2", 4, "Apr", "Training", "E-Learning", "E-Learning Single Course", "Germany", "DACH", "Enterprise", 46167, 26731, 35, 92.3, 49512},
+							{#date(2025,4,15), 2025, "Q2", 4, "Apr", "Training", "Onsite", "Onsite Workshop", "Austria", "DACH", "Enterprise", 67163, 37948, 50, 97.6, 65181},
+							{#date(2025,5,15), 2025, "Q2", 5, "May", "Consulting", "Implementation", "Process Automation", "Czechia", "Central & Eastern Europe", "Mid-Market", 32487, 18356, 39, 94.7, 32350},
+							{#date(2025,5,15), 2025, "Q2", 5, "May", "Software Licenses", "BI Tools", "BI Suite Premium", "Germany", "DACH", "Enterprise", 69183, 48483, 162, 88.1, 69460},
+							{#date(2025,5,15), 2025, "Q2", 5, "May", "Software Licenses", "ERP", "ERP Core License", "Switzerland", "DACH", "Enterprise", 28446, 20228, 48, 82.1, 25228},
+							{#date(2025,5,15), 2025, "Q2", 5, "May", "Training", "Onsite", "Onsite Workshop", "Poland", "Central & Eastern Europe", "Enterprise", 34602, 22050, 75, 84.2, 35148},
+							{#date(2025,5,15), 2025, "Q2", 5, "May", "Managed Services", "Support", "Premium Support Plan", "France", "Western Europe", "Enterprise", 46856, 34720, 54, 80.5, 50485},
+							{#date(2025,5,15), 2025, "Q2", 5, "May", "Consulting", "Strategy", "Operating Model Redesign", "Switzerland", "DACH", "Small Business", 12280, 8611, 20, 86.8, 10828},
+							{#date(2025,5,15), 2025, "Q2", 5, "May", "Software Licenses", "Collaboration", "Team Workspace", "Czechia", "Central & Eastern Europe", "Mid-Market", 24386, 15899, 20, 82.6, 25965},
+							{#date(2025,5,15), 2025, "Q2", 5, "May", "Managed Services", "Support", "Standard Support Plan", "Italy", "Western Europe", "Enterprise", 60599, 41232, 75, 85.3, 55421},
+							{#date(2025,5,15), 2025, "Q2", 5, "May", "Software Licenses", "ERP", "ERP Analytics Add-on", "Hungary", "Central & Eastern Europe", "Small Business", 14693, 10551, 12, 91.8, 13942},
+							{#date(2025,5,15), 2025, "Q2", 5, "May", "Software Licenses", "ERP", "ERP Core License", "Italy", "Western Europe", "Enterprise", 30691, 19451, 60, 96.2, 31526},
+							{#date(2025,5,15), 2025, "Q2", 5, "May", "Training", "Onsite", "Onsite Certification", "Austria", "DACH", "Small Business", 13717, 8078, 12, 99, 14788},
+							{#date(2025,5,15), 2025, "Q2", 5, "May", "Training", "E-Learning", "E-Learning Single Course", "Austria", "DACH", "Mid-Market", 17694, 10777, 14, 83.3, 16922},
+							{#date(2025,5,15), 2025, "Q2", 5, "May", "Consulting", "Implementation", "Process Automation", "France", "Western Europe", "Small Business", 19507, 12059, 21, 99, 20372},
+							{#date(2025,5,15), 2025, "Q2", 5, "May", "Software Licenses", "ERP", "ERP Analytics Add-on", "France", "Western Europe", "Small Business", 8223, 4754, 12, 82.2, 7719},
+							{#date(2025,5,15), 2025, "Q2", 5, "May", "Training", "Onsite", "Onsite Certification", "Czechia", "Central & Eastern Europe", "Enterprise", 50717, 30749, 42, 83.1, 43110},
+							{#date(2025,5,15), 2025, "Q2", 5, "May", "Training", "Onsite", "Onsite Certification", "Germany", "DACH", "Small Business", 27167, 19544, 77, 73.2, 31079},
+							{#date(2025,5,15), 2025, "Q2", 5, "May", "Software Licenses", "BI Tools", "BI Suite Premium", "Austria", "DACH", "Small Business", 20911, 15031, 23, 70.4, 23022},
+							{#date(2025,5,15), 2025, "Q2", 5, "May", "Managed Services", "Support", "Premium Support Plan", "France", "Western Europe", "Small Business", 17748, 12169, 16, 92.8, 19090},
+							{#date(2025,5,15), 2025, "Q2", 5, "May", "Training", "Onsite", "Onsite Workshop", "Austria", "DACH", "Enterprise", 37549, 22831, 51, 99, 33521},
+							{#date(2025,5,15), 2025, "Q2", 5, "May", "Software Licenses", "ERP", "ERP Analytics Add-on", "France", "Western Europe", "Mid-Market", 18991, 13522, 20, 84.1, 20742},
+							{#date(2025,6,15), 2025, "Q2", 6, "Jun", "Managed Services", "Hosting", "Cloud Hosting Enterprise", "France", "Western Europe", "Enterprise", 31989, 21181, 73, 96.7, 29064},
+							{#date(2025,6,15), 2025, "Q2", 6, "Jun", "Software Licenses", "ERP", "ERP Analytics Add-on", "Hungary", "Central & Eastern Europe", "Mid-Market", 25879, 18234, 70, 89.9, 26578},
+							{#date(2025,6,15), 2025, "Q2", 6, "Jun", "Consulting", "Strategy", "Strategic Roadmap", "Czechia", "Central & Eastern Europe", "Enterprise", 38300, 24445, 45, 82.4, 38323},
+							{#date(2025,6,15), 2025, "Q2", 6, "Jun", "Software Licenses", "BI Tools", "BI Suite Standard", "Czechia", "Central & Eastern Europe", "Small Business", 12679, 9492, 15, 86, 11946},
+							{#date(2025,6,15), 2025, "Q2", 6, "Jun", "Software Licenses", "BI Tools", "BI Suite Standard", "Italy", "Western Europe", "Mid-Market", 36652, 26667, 42, 92.7, 37126},
+							{#date(2025,6,15), 2025, "Q2", 6, "Jun", "Software Licenses", "BI Tools", "BI Suite Premium", "Switzerland", "DACH", "Mid-Market", 18515, 13108, 23, 91.9, 18965},
+							{#date(2025,6,15), 2025, "Q2", 6, "Jun", "Software Licenses", "ERP", "ERP Core License", "Italy", "Western Europe", "Enterprise", 48038, 31222, 40, 99, 47681},
+							{#date(2025,6,15), 2025, "Q2", 6, "Jun", "Training", "E-Learning", "E-Learning Single Course", "Czechia", "Central & Eastern Europe", "Mid-Market", 28491, 19651, 20, 90.1, 27086},
+							{#date(2025,6,15), 2025, "Q2", 6, "Jun", "Software Licenses", "Collaboration", "Secure File Share", "Austria", "DACH", "Enterprise", 30426, 19005, 38, 99, 28656},
+							{#date(2025,6,15), 2025, "Q2", 6, "Jun", "Software Licenses", "ERP", "ERP Analytics Add-on", "Germany", "DACH", "Small Business", 33691, 21772, 74, 83.8, 35128},
+							{#date(2025,6,15), 2025, "Q2", 6, "Jun", "Consulting", "Implementation", "Process Automation", "France", "Western Europe", "Small Business", 13154, 7618, 25, 91.9, 14374},
+							{#date(2025,6,15), 2025, "Q2", 6, "Jun", "Managed Services", "Support", "Standard Support Plan", "Switzerland", "DACH", "Small Business", 8902, 5689, 7, 95, 7998},
+							{#date(2025,6,15), 2025, "Q2", 6, "Jun", "Training", "Onsite", "Onsite Workshop", "Austria", "DACH", "Small Business", 17342, 9873, 29, 95.5, 17507},
+							{#date(2025,6,15), 2025, "Q2", 6, "Jun", "Software Licenses", "ERP", "ERP Analytics Add-on", "France", "Western Europe", "Small Business", 24660, 17219, 25, 73.6, 27433},
+							{#date(2025,6,15), 2025, "Q2", 6, "Jun", "Consulting", "Strategy", "Operating Model Redesign", "Germany", "DACH", "Mid-Market", 23028, 16901, 53, 82.9, 22453},
+							{#date(2025,6,15), 2025, "Q2", 6, "Jun", "Training", "Onsite", "Onsite Workshop", "France", "Western Europe", "Enterprise", 72695, 42699, 110, 78.3, 65373},
+							{#date(2025,6,15), 2025, "Q2", 6, "Jun", "Software Licenses", "Collaboration", "Secure File Share", "Poland", "Central & Eastern Europe", "Enterprise", 21255, 12510, 17, 96.3, 23290},
+							{#date(2025,6,15), 2025, "Q2", 6, "Jun", "Consulting", "Strategy", "Operating Model Redesign", "France", "Western Europe", "Small Business", 7987, 4554, 17, 89, 7234},
+							{#date(2025,6,15), 2025, "Q2", 6, "Jun", "Training", "Onsite", "Onsite Certification", "France", "Western Europe", "Enterprise", 37792, 25731, 42, 88.3, 33361},
+							{#date(2025,6,15), 2025, "Q2", 6, "Jun", "Consulting", "Implementation", "Process Automation", "Czechia", "Central & Eastern Europe", "Mid-Market", 30348, 17814, 29, 99, 34322},
+							{#date(2025,6,15), 2025, "Q2", 6, "Jun", "Software Licenses", "BI Tools", "BI Suite Standard", "Poland", "Central & Eastern Europe", "Enterprise", 56556, 36400, 43, 94.5, 62087},
+							{#date(2025,7,15), 2025, "Q3", 7, "Jul", "Training", "E-Learning", "E-Learning Single Course", "Austria", "DACH", "Small Business", 21098, 14122, 34, 93.4, 21554},
+							{#date(2025,7,15), 2025, "Q3", 7, "Jul", "Consulting", "Strategy", "Operating Model Redesign", "France", "Western Europe", "Enterprise", 26077, 14434, 59, 99, 25158},
+							{#date(2025,7,15), 2025, "Q3", 7, "Jul", "Software Licenses", "ERP", "ERP Analytics Add-on", "Switzerland", "DACH", "Enterprise", 34991, 24967, 61, 75.7, 32690},
+							{#date(2025,7,15), 2025, "Q3", 7, "Jul", "Managed Services", "Hosting", "Cloud Hosting Enterprise", "France", "Western Europe", "Small Business", 8647, 6390, 9, 83.5, 8974},
+							{#date(2025,7,15), 2025, "Q3", 7, "Jul", "Training", "E-Learning", "E-Learning Single Course", "Austria", "DACH", "Enterprise", 70115, 46363, 54, 90.4, 60296},
+							{#date(2025,7,15), 2025, "Q3", 7, "Jul", "Consulting", "Implementation", "ERP Rollout", "Germany", "DACH", "Enterprise", 95918, 69251, 156, 69.9, 93165},
+							{#date(2025,7,15), 2025, "Q3", 7, "Jul", "Software Licenses", "BI Tools", "BI Suite Premium", "Germany", "DACH", "Mid-Market", 63113, 43024, 50, 72.9, 68632},
+							{#date(2025,7,15), 2025, "Q3", 7, "Jul", "Software Licenses", "Collaboration", "Team Workspace", "Poland", "Central & Eastern Europe", "Mid-Market", 27112, 17000, 22, 89.9, 26067},
+							{#date(2025,7,15), 2025, "Q3", 7, "Jul", "Software Licenses", "BI Tools", "BI Suite Premium", "Switzerland", "DACH", "Small Business", 12760, 8832, 13, 71.1, 11088},
+							{#date(2025,7,15), 2025, "Q3", 7, "Jul", "Consulting", "Implementation", "Process Automation", "Austria", "DACH", "Small Business", 17532, 11242, 27, 87.8, 16222},
+							{#date(2025,7,15), 2025, "Q3", 7, "Jul", "Managed Services", "Support", "Standard Support Plan", "Hungary", "Central & Eastern Europe", "Mid-Market", 11068, 6389, 28, 93.2, 11923},
+							{#date(2025,7,15), 2025, "Q3", 7, "Jul", "Software Licenses", "ERP", "ERP Analytics Add-on", "Switzerland", "DACH", "Small Business", 23145, 13638, 18, 97.8, 25058},
+							{#date(2025,7,15), 2025, "Q3", 7, "Jul", "Software Licenses", "ERP", "ERP Analytics Add-on", "Poland", "Central & Eastern Europe", "Mid-Market", 9536, 6504, 8, 87.7, 10336},
+							{#date(2025,7,15), 2025, "Q3", 7, "Jul", "Training", "Onsite", "Onsite Certification", "Austria", "DACH", "Mid-Market", 43876, 27728, 35, 97.8, 43387},
+							{#date(2025,7,15), 2025, "Q3", 7, "Jul", "Training", "Onsite", "Onsite Certification", "Czechia", "Central & Eastern Europe", "Enterprise", 33188, 18259, 66, 79.3, 35807},
+							{#date(2025,7,15), 2025, "Q3", 7, "Jul", "Software Licenses", "ERP", "ERP Analytics Add-on", "Austria", "DACH", "Enterprise", 52592, 29875, 39, 99, 59044},
+							{#date(2025,7,15), 2025, "Q3", 7, "Jul", "Training", "Onsite", "Onsite Certification", "Hungary", "Central & Eastern Europe", "Enterprise", 22623, 16815, 18, 69.3, 22631},
+							{#date(2025,7,15), 2025, "Q3", 7, "Jul", "Software Licenses", "Collaboration", "Secure File Share", "Italy", "Western Europe", "Small Business", 22628, 13425, 19, 95.7, 23991},
+							{#date(2025,7,15), 2025, "Q3", 7, "Jul", "Software Licenses", "Collaboration", "Secure File Share", "Switzerland", "DACH", "Small Business", 7661, 5666, 7, 91.2, 8112},
+							{#date(2025,7,15), 2025, "Q3", 7, "Jul", "Software Licenses", "BI Tools", "BI Suite Premium", "Czechia", "Central & Eastern Europe", "Small Business", 9164, 5521, 21, 84.9, 8326},
+							{#date(2025,7,15), 2025, "Q3", 7, "Jul", "Managed Services", "Support", "Premium Support Plan", "Austria", "DACH", "Small Business", 27487, 19648, 32, 68.9, 29165},
+							{#date(2025,7,15), 2025, "Q3", 7, "Jul", "Training", "E-Learning", "E-Learning Bundle", "Switzerland", "DACH", "Small Business", 14965, 10675, 26, 85.8, 13816},
+							{#date(2025,7,15), 2025, "Q3", 7, "Jul", "Training", "E-Learning", "E-Learning Single Course", "Poland", "Central & Eastern Europe", "Small Business", 8411, 4742, 8, 99, 7806},
+							{#date(2025,8,15), 2025, "Q3", 8, "Aug", "Training", "Onsite", "Onsite Certification", "Poland", "Central & Eastern Europe", "Small Business", 16547, 11054, 27, 74.8, 15019},
+							{#date(2025,8,15), 2025, "Q3", 8, "Aug", "Software Licenses", "Collaboration", "Team Workspace", "Germany", "DACH", "Small Business", 11974, 8419, 9, 68.8, 13527},
+							{#date(2025,8,15), 2025, "Q3", 8, "Aug", "Training", "E-Learning", "E-Learning Bundle", "Italy", "Western Europe", "Enterprise", 57817, 33999, 111, 94.6, 60213},
+							{#date(2025,8,15), 2025, "Q3", 8, "Aug", "Software Licenses", "Collaboration", "Secure File Share", "Czechia", "Central & Eastern Europe", "Small Business", 15808, 8740, 29, 99, 14935},
+							{#date(2025,8,15), 2025, "Q3", 8, "Aug", "Managed Services", "Support", "Premium Support Plan", "Czechia", "Central & Eastern Europe", "Mid-Market", 33326, 20006, 46, 87.3, 36152},
+							{#date(2025,8,15), 2025, "Q3", 8, "Aug", "Training", "E-Learning", "E-Learning Single Course", "Italy", "Western Europe", "Small Business", 10452, 5882, 23, 91.4, 9332},
+							{#date(2025,8,15), 2025, "Q3", 8, "Aug", "Training", "E-Learning", "E-Learning Single Course", "Austria", "DACH", "Enterprise", 34645, 23239, 29, 88.6, 32363},
+							{#date(2025,8,15), 2025, "Q3", 8, "Aug", "Software Licenses", "BI Tools", "BI Suite Standard", "Poland", "Central & Eastern Europe", "Small Business", 17807, 10087, 17, 87.3, 16292},
+							{#date(2025,8,15), 2025, "Q3", 8, "Aug", "Training", "E-Learning", "E-Learning Single Course", "Czechia", "Central & Eastern Europe", "Enterprise", 49064, 30974, 60, 78.4, 54761},
+							{#date(2025,8,15), 2025, "Q3", 8, "Aug", "Training", "Onsite", "Onsite Certification", "Czechia", "Central & Eastern Europe", "Small Business", 11457, 6603, 17, 85.8, 12597},
+							{#date(2025,8,15), 2025, "Q3", 8, "Aug", "Managed Services", "Hosting", "Cloud Hosting Basic", "Poland", "Central & Eastern Europe", "Small Business", 18595, 13037, 17, 92.8, 19167},
+							{#date(2025,8,15), 2025, "Q3", 8, "Aug", "Consulting", "Strategy", "Operating Model Redesign", "Switzerland", "DACH", "Mid-Market", 33629, 19486, 29, 86.4, 35189},
+							{#date(2025,8,15), 2025, "Q3", 8, "Aug", "Software Licenses", "ERP", "ERP Core License", "Switzerland", "DACH", "Small Business", 17428, 11162, 15, 77.5, 19111},
+							{#date(2025,8,15), 2025, "Q3", 8, "Aug", "Training", "E-Learning", "E-Learning Single Course", "Poland", "Central & Eastern Europe", "Small Business", 6867, 4714, 5, 93.4, 5986},
+							{#date(2025,8,15), 2025, "Q3", 8, "Aug", "Managed Services", "Hosting", "Cloud Hosting Enterprise", "Germany", "DACH", "Enterprise", 47203, 26728, 71, 83.2, 52498},
+							{#date(2025,8,15), 2025, "Q3", 8, "Aug", "Managed Services", "Support", "Standard Support Plan", "Germany", "DACH", "Small Business", 11566, 7963, 23, 79.9, 10089},
+							{#date(2025,8,15), 2025, "Q3", 8, "Aug", "Managed Services", "Hosting", "Cloud Hosting Enterprise", "Italy", "Western Europe", "Small Business", 22421, 15263, 24, 76.1, 22436},
+							{#date(2025,8,15), 2025, "Q3", 8, "Aug", "Training", "Onsite", "Onsite Certification", "Hungary", "Central & Eastern Europe", "Small Business", 9408, 5660, 9, 78, 9001},
+							{#date(2025,9,15), 2025, "Q3", 9, "Sep", "Software Licenses", "Collaboration", "Secure File Share", "Austria", "DACH", "Small Business", 19056, 12812, 14, 93, 18017},
+							{#date(2025,9,15), 2025, "Q3", 9, "Sep", "Software Licenses", "Collaboration", "Secure File Share", "Czechia", "Central & Eastern Europe", "Mid-Market", 25935, 18908, 26, 76.6, 24489},
+							{#date(2025,9,15), 2025, "Q3", 9, "Sep", "Managed Services", "Hosting", "Cloud Hosting Enterprise", "Czechia", "Central & Eastern Europe", "Enterprise", 39552, 28086, 37, 72.2, 35050},
+							{#date(2025,9,15), 2025, "Q3", 9, "Sep", "Software Licenses", "BI Tools", "BI Suite Premium", "Switzerland", "DACH", "Small Business", 6814, 3808, 5, 99, 7094},
+							{#date(2025,9,15), 2025, "Q3", 9, "Sep", "Software Licenses", "Collaboration", "Secure File Share", "Hungary", "Central & Eastern Europe", "Small Business", 13737, 8281, 12, 80.6, 11979},
+							{#date(2025,9,15), 2025, "Q3", 9, "Sep", "Managed Services", "Hosting", "Cloud Hosting Basic", "France", "Western Europe", "Mid-Market", 49395, 28820, 38, 79.5, 52435},
+							{#date(2025,9,15), 2025, "Q3", 9, "Sep", "Consulting", "Implementation", "ERP Rollout", "Germany", "DACH", "Mid-Market", 63212, 47346, 158, 79.4, 58619},
+							{#date(2025,9,15), 2025, "Q3", 9, "Sep", "Training", "E-Learning", "E-Learning Single Course", "Hungary", "Central & Eastern Europe", "Enterprise", 20284, 12092, 29, 77.6, 20722},
+							{#date(2025,9,15), 2025, "Q3", 9, "Sep", "Consulting", "Implementation", "ERP Rollout", "Italy", "Western Europe", "Mid-Market", 24937, 16256, 18, 78.6, 28492},
+							{#date(2025,9,15), 2025, "Q3", 9, "Sep", "Software Licenses", "BI Tools", "BI Suite Standard", "Germany", "DACH", "Mid-Market", 58854, 43367, 57, 73, 58642},
+							{#date(2025,9,15), 2025, "Q3", 9, "Sep", "Consulting", "Strategy", "Operating Model Redesign", "Hungary", "Central & Eastern Europe", "Small Business", 14100, 8917, 23, 89.2, 13489},
+							{#date(2025,9,15), 2025, "Q3", 9, "Sep", "Training", "E-Learning", "E-Learning Single Course", "Czechia", "Central & Eastern Europe", "Mid-Market", 21167, 14879, 20, 70.8, 18159},
+							{#date(2025,9,15), 2025, "Q3", 9, "Sep", "Software Licenses", "Collaboration", "Secure File Share", "Germany", "DACH", "Small Business", 19782, 12548, 42, 74, 18758},
+							{#date(2025,9,15), 2025, "Q3", 9, "Sep", "Consulting", "Implementation", "ERP Rollout", "Hungary", "Central & Eastern Europe", "Mid-Market", 19135, 11206, 16, 89.5, 21580},
+							{#date(2025,9,15), 2025, "Q3", 9, "Sep", "Software Licenses", "BI Tools", "BI Suite Premium", "Italy", "Western Europe", "Enterprise", 25790, 14687, 34, 76.9, 26282},
+							{#date(2025,9,15), 2025, "Q3", 9, "Sep", "Software Licenses", "ERP", "ERP Core License", "Austria", "DACH", "Enterprise", 69159, 43596, 52, 84.4, 64291},
+							{#date(2025,9,15), 2025, "Q3", 9, "Sep", "Managed Services", "Hosting", "Cloud Hosting Basic", "Poland", "Central & Eastern Europe", "Enterprise", 14330, 8037, 10, 79.2, 16164},
+							{#date(2025,9,15), 2025, "Q3", 9, "Sep", "Training", "E-Learning", "E-Learning Single Course", "France", "Western Europe", "Enterprise", 81850, 47572, 123, 99, 75482},
+							{#date(2025,9,15), 2025, "Q3", 9, "Sep", "Software Licenses", "ERP", "ERP Core License", "Czechia", "Central & Eastern Europe", "Small Business", 10160, 6321, 13, 74.2, 11199},
+							{#date(2025,10,15), 2025, "Q4", 10, "Oct", "Software Licenses", "ERP", "ERP Analytics Add-on", "Germany", "DACH", "Small Business", 35356, 20921, 50, 80.8, 35937},
+							{#date(2025,10,15), 2025, "Q4", 10, "Oct", "Software Licenses", "BI Tools", "BI Suite Standard", "Czechia", "Central & Eastern Europe", "Small Business", 13151, 9622, 21, 77.5, 13208},
+							{#date(2025,10,15), 2025, "Q4", 10, "Oct", "Training", "E-Learning", "E-Learning Bundle", "Italy", "Western Europe", "Mid-Market", 25909, 15875, 21, 94, 27341},
+							{#date(2025,10,15), 2025, "Q4", 10, "Oct", "Software Licenses", "ERP", "ERP Core License", "Austria", "DACH", "Mid-Market", 21830, 13439, 52, 75, 19995},
+							{#date(2025,10,15), 2025, "Q4", 10, "Oct", "Training", "Onsite", "Onsite Workshop", "Italy", "Western Europe", "Enterprise", 51798, 37075, 55, 79.1, 53037},
+							{#date(2025,10,15), 2025, "Q4", 10, "Oct", "Training", "Onsite", "Onsite Workshop", "Germany", "DACH", "Enterprise", 97005, 65020, 83, 98, 93118},
+							{#date(2025,10,15), 2025, "Q4", 10, "Oct", "Consulting", "Strategy", "Operating Model Redesign", "Austria", "DACH", "Enterprise", 39076, 23278, 49, 99, 43752},
+							{#date(2025,10,15), 2025, "Q4", 10, "Oct", "Consulting", "Implementation", "ERP Rollout", "Hungary", "Central & Eastern Europe", "Small Business", 12606, 9187, 16, 93.2, 11359},
+							{#date(2025,10,15), 2025, "Q4", 10, "Oct", "Managed Services", "Hosting", "Cloud Hosting Enterprise", "Austria", "DACH", "Mid-Market", 25799, 16370, 23, 76.7, 23513},
+							{#date(2025,10,15), 2025, "Q4", 10, "Oct", "Managed Services", "Support", "Standard Support Plan", "Poland", "Central & Eastern Europe", "Small Business", 12700, 8470, 9, 89.3, 13808},
+							{#date(2025,10,15), 2025, "Q4", 10, "Oct", "Software Licenses", "ERP", "ERP Analytics Add-on", "Switzerland", "DACH", "Enterprise", 50247, 32564, 38, 76.3, 50796},
+							{#date(2025,10,15), 2025, "Q4", 10, "Oct", "Software Licenses", "ERP", "ERP Analytics Add-on", "Poland", "Central & Eastern Europe", "Mid-Market", 14153, 10238, 16, 76.1, 15592},
+							{#date(2025,10,15), 2025, "Q4", 10, "Oct", "Training", "Onsite", "Onsite Certification", "Switzerland", "DACH", "Mid-Market", 55160, 39351, 43, 75.7, 58404},
+							{#date(2025,10,15), 2025, "Q4", 10, "Oct", "Training", "E-Learning", "E-Learning Bundle", "Hungary", "Central & Eastern Europe", "Mid-Market", 20416, 14258, 18, 80.2, 18273},
+							{#date(2025,10,15), 2025, "Q4", 10, "Oct", "Managed Services", "Support", "Premium Support Plan", "Poland", "Central & Eastern Europe", "Small Business", 19113, 12809, 30, 85.5, 18281},
+							{#date(2025,10,15), 2025, "Q4", 10, "Oct", "Software Licenses", "BI Tools", "BI Suite Standard", "Austria", "DACH", "Enterprise", 95516, 53957, 100, 88.1, 84204},
+							{#date(2025,10,15), 2025, "Q4", 10, "Oct", "Software Licenses", "ERP", "ERP Core License", "Czechia", "Central & Eastern Europe", "Small Business", 5139, 2901, 4, 97, 5631},
+							{#date(2025,10,15), 2025, "Q4", 10, "Oct", "Software Licenses", "ERP", "ERP Core License", "Poland", "Central & Eastern Europe", "Enterprise", 37766, 21490, 37, 99, 41394},
+							{#date(2025,10,15), 2025, "Q4", 10, "Oct", "Managed Services", "Hosting", "Cloud Hosting Enterprise", "Germany", "DACH", "Small Business", 8860, 5903, 7, 71.8, 9917},
+							{#date(2025,10,15), 2025, "Q4", 10, "Oct", "Consulting", "Implementation", "Process Automation", "France", "Western Europe", "Small Business", 18827, 12853, 16, 72, 17311},
+							{#date(2025,11,15), 2025, "Q4", 11, "Nov", "Software Licenses", "Collaboration", "Team Workspace", "Germany", "DACH", "Enterprise", 61020, 40068, 53, 74.1, 55503},
+							{#date(2025,11,15), 2025, "Q4", 11, "Nov", "Training", "Onsite", "Onsite Workshop", "Switzerland", "DACH", "Enterprise", 31383, 23119, 23, 77.4, 28455},
+							{#date(2025,11,15), 2025, "Q4", 11, "Nov", "Software Licenses", "BI Tools", "BI Suite Standard", "Austria", "DACH", "Mid-Market", 28117, 20856, 21, 76.7, 26224},
+							{#date(2025,11,15), 2025, "Q4", 11, "Nov", "Software Licenses", "Collaboration", "Secure File Share", "Czechia", "Central & Eastern Europe", "Mid-Market", 22341, 16388, 21, 68.4, 23395},
+							{#date(2025,11,15), 2025, "Q4", 11, "Nov", "Consulting", "Strategy", "Operating Model Redesign", "Italy", "Western Europe", "Enterprise", 82677, 54562, 188, 98.1, 87802},
+							{#date(2025,11,15), 2025, "Q4", 11, "Nov", "Training", "Onsite", "Onsite Workshop", "Poland", "Central & Eastern Europe", "Small Business", 17224, 12468, 17, 86.3, 19154},
+							{#date(2025,11,15), 2025, "Q4", 11, "Nov", "Consulting", "Strategy", "Strategic Roadmap", "Italy", "Western Europe", "Mid-Market", 55900, 41819, 67, 86.1, 63377},
+							{#date(2025,11,15), 2025, "Q4", 11, "Nov", "Software Licenses", "ERP", "ERP Analytics Add-on", "Poland", "Central & Eastern Europe", "Small Business", 7972, 4788, 11, 84.6, 8484},
+							{#date(2025,11,15), 2025, "Q4", 11, "Nov", "Consulting", "Implementation", "Process Automation", "Czechia", "Central & Eastern Europe", "Enterprise", 26964, 15499, 43, 99, 28354},
+							{#date(2025,11,15), 2025, "Q4", 11, "Nov", "Software Licenses", "BI Tools", "BI Suite Premium", "Hungary", "Central & Eastern Europe", "Enterprise", 52987, 32123, 46, 99, 60350},
+							{#date(2025,11,15), 2025, "Q4", 11, "Nov", "Managed Services", "Hosting", "Cloud Hosting Basic", "Switzerland", "DACH", "Enterprise", 89273, 52861, 111, 99, 90031},
+							{#date(2025,11,15), 2025, "Q4", 11, "Nov", "Consulting", "Implementation", "ERP Rollout", "Hungary", "Central & Eastern Europe", "Enterprise", 15587, 9261, 31, 96.6, 14002},
+							{#date(2025,11,15), 2025, "Q4", 11, "Nov", "Software Licenses", "BI Tools", "BI Suite Standard", "France", "Western Europe", "Enterprise", 86352, 52254, 116, 74.7, 82883},
+							{#date(2025,11,15), 2025, "Q4", 11, "Nov", "Software Licenses", "BI Tools", "BI Suite Premium", "Switzerland", "DACH", "Mid-Market", 37249, 27877, 44, 76.2, 32813},
+							{#date(2025,11,15), 2025, "Q4", 11, "Nov", "Training", "E-Learning", "E-Learning Bundle", "Switzerland", "DACH", "Enterprise", 30801, 22635, 34, 76.4, 28031},
+							{#date(2025,11,15), 2025, "Q4", 11, "Nov", "Software Licenses", "BI Tools", "BI Suite Standard", "Hungary", "Central & Eastern Europe", "Enterprise", 20803, 11544, 25, 91.8, 19970},
+							{#date(2025,11,15), 2025, "Q4", 11, "Nov", "Consulting", "Strategy", "Operating Model Redesign", "Austria", "DACH", "Mid-Market", 34222, 23043, 58, 86.2, 32646},
+							{#date(2025,11,15), 2025, "Q4", 11, "Nov", "Managed Services", "Hosting", "Cloud Hosting Basic", "Hungary", "Central & Eastern Europe", "Small Business", 7143, 4054, 6, 99, 7172},
+							{#date(2025,12,15), 2025, "Q4", 12, "Dec", "Training", "E-Learning", "E-Learning Bundle", "Switzerland", "DACH", "Mid-Market", 22625, 13643, 44, 80.9, 24977},
+							{#date(2025,12,15), 2025, "Q4", 12, "Dec", "Training", "E-Learning", "E-Learning Single Course", "Italy", "Western Europe", "Enterprise", 60417, 36415, 143, 84.1, 64986},
+							{#date(2025,12,15), 2025, "Q4", 12, "Dec", "Software Licenses", "BI Tools", "BI Suite Standard", "Italy", "Western Europe", "Small Business", 13482, 9394, 17, 70.6, 12311},
+							{#date(2025,12,15), 2025, "Q4", 12, "Dec", "Software Licenses", "BI Tools", "BI Suite Standard", "France", "Western Europe", "Small Business", 29491, 16723, 38, 82.7, 31628},
+							{#date(2025,12,15), 2025, "Q4", 12, "Dec", "Managed Services", "Hosting", "Cloud Hosting Basic", "Austria", "DACH", "Mid-Market", 17533, 11352, 16, 77.2, 18123},
+							{#date(2025,12,15), 2025, "Q4", 12, "Dec", "Managed Services", "Support", "Premium Support Plan", "Italy", "Western Europe", "Enterprise", 34412, 24611, 43, 80.2, 38811},
+							{#date(2025,12,15), 2025, "Q4", 12, "Dec", "Software Licenses", "Collaboration", "Team Workspace", "Austria", "DACH", "Mid-Market", 62410, 42441, 155, 93.5, 62342},
+							{#date(2025,12,15), 2025, "Q4", 12, "Dec", "Software Licenses", "BI Tools", "BI Suite Standard", "Switzerland", "DACH", "Enterprise", 54440, 36853, 74, 95.5, 59025},
+							{#date(2025,12,15), 2025, "Q4", 12, "Dec", "Software Licenses", "Collaboration", "Team Workspace", "Switzerland", "DACH", "Small Business", 32790, 18579, 25, 84.5, 34779},
+							{#date(2025,12,15), 2025, "Q4", 12, "Dec", "Training", "E-Learning", "E-Learning Single Course", "Czechia", "Central & Eastern Europe", "Small Business", 6074, 3630, 5, 77, 5726},
+							{#date(2025,12,15), 2025, "Q4", 12, "Dec", "Software Licenses", "ERP", "ERP Core License", "Germany", "DACH", "Mid-Market", 68334, 43680, 148, 86.6, 66881},
+							{#date(2025,12,15), 2025, "Q4", 12, "Dec", "Software Licenses", "Collaboration", "Secure File Share", "Hungary", "Central & Eastern Europe", "Enterprise", 54420, 37430, 88, 70.9, 52937},
+							{#date(2025,12,15), 2025, "Q4", 12, "Dec", "Software Licenses", "Collaboration", "Secure File Share", "Switzerland", "DACH", "Small Business", 24505, 14697, 54, 82.2, 27159},
+							{#date(2025,12,15), 2025, "Q4", 12, "Dec", "Software Licenses", "Collaboration", "Team Workspace", "Switzerland", "DACH", "Mid-Market", 60759, 40502, 87, 87.6, 53618},
+							{#date(2025,12,15), 2025, "Q4", 12, "Dec", "Training", "Onsite", "Onsite Workshop", "Austria", "DACH", "Mid-Market", 21205, 14834, 17, 77.7, 18274},
+							{#date(2025,12,15), 2025, "Q4", 12, "Dec", "Training", "Onsite", "Onsite Certification", "Germany", "DACH", "Enterprise", 70223, 47218, 119, 86.9, 78028},
+							{#date(2025,12,15), 2025, "Q4", 12, "Dec", "Software Licenses", "BI Tools", "BI Suite Standard", "Italy", "Western Europe", "Enterprise", 30247, 19884, 53, 96.3, 30104},
+							{#date(2025,12,15), 2025, "Q4", 12, "Dec", "Training", "Onsite", "Onsite Workshop", "Czechia", "Central & Eastern Europe", "Small Business", 18501, 13381, 20, 79.9, 20852},
+							{#date(2025,12,15), 2025, "Q4", 12, "Dec", "Training", "E-Learning", "E-Learning Single Course", "Hungary", "Central & Eastern Europe", "Enterprise", 50344, 31337, 129, 89.9, 52163},
+							{#date(2025,12,15), 2025, "Q4", 12, "Dec", "Training", "Onsite", "Onsite Workshop", "France", "Western Europe", "Enterprise", 60597, 39800, 63, 86.7, 51596},
+							{#date(2025,12,15), 2025, "Q4", 12, "Dec", "Managed Services", "Support", "Premium Support Plan", "Poland", "Central & Eastern Europe", "Mid-Market", 34905, 22723, 62, 76.1, 33952}
+						}
+					),
+				#"Changed Type" = Table.TransformColumnTypes(Source, {
+					{"OrderDate", type datetime}, {"Year", Int64.Type}, {"MonthNumber", Int64.Type},
+					{"Sales", type number}, {"Cost", type number}, {"Units", Int64.Type},
+					{"SatisfactionScore", type number}, {"Target", type number}
+				})
+				in
+					#"Changed Type"
+

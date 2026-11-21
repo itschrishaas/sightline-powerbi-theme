@@ -1,0 +1,18 @@
+{
+  "totals": [
+    {
+      "show": true,
+      "fontFamily": "{{font.semibold.family}}",
+      "bold": false,
+      "fontSize": "{{font.sizes.s}}",
+      "labelPrecision": 1,
+      "enableBackground": true,
+      "backgroundColor": {
+        "solid": {
+          "color": "{{otherColors.gray_lighter}}"
+        }
+      },
+      "backgroundTransparency": 50
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/powerbi-desktop-samples/refs/heads/main/Report%20Theme%20JSON%20Schema/reportThemeSchema-2.159.json",
+  "visualStyles": {
+    "textbox": {
+      "*": {
+        "background": [
+          {
+            "show": false
+          }
+        ],
+        "border": [
+          {
+            "show": false
+          }
+        ],
+        "title": [
+          {
+            "show": false
+          }
+        ],
+        "padding": [
+          {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          }
+        ],
+        "text": [
+          {
+            "fontSize": "{{font.sizes.s}}",
+            "color": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            }
+          }
+        ]
+      },
+      "Page Header": {
+        "padding": [
+          {
+            "top": 10,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          }
+        ],
+        "text": [
+          {
+            "fontFamily": "{{text.title.fontFace}}",
+            "fontSize": "{{text.title.fontSize}}",
+            "color": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

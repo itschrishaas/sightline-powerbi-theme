@@ -1,0 +1,32 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "4b6f0d888884b532fd61",
+  "position": {
+    "x": 8,
+    "y": 104,
+    "z": 1,
+    "height": 56,
+    "width": 1904,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Slicers filter the whole page from a single value or range. This theme styles list, dropdown, tile, text, date-range and numeric-range slicers consistently with the rest of the report — only the bound field changes between the examples below."
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,460 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/powerbi-desktop-samples/refs/heads/main/Report%20Theme%20JSON%20Schema/reportThemeSchema-2.159.json",
+  "name": "pivotTable",
+  "visualStyles": {
+    "pivotTable": {
+      "Record View": {
+        "spacing": [
+          {
+            "spaceBelowTitle": 0,
+            "customizeSpacing": true
+          }
+        ],
+        "rowHeaders": [
+          {
+            "fontColor": {
+              "solid": {
+                "color": "{{otherColors.text_muted}}"
+              }
+            },
+            "bold": false,
+            "backColor": {
+              "solid": {
+                "color": "{{otherColors.white}}"
+              }
+            }
+          }
+        ],
+        "columnHeaders": [
+          {
+            "fontColor": {
+              "solid": {
+                "color": "{{otherColors.white}}"
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": "{{otherColors.white}}"
+              }
+            },
+            "outlineColor": {
+              "solid": {
+                "color": "{{otherColors.white}}"
+              }
+            },
+            "outlineStyle": 0,
+            "outlineWeight": 0,
+            "fontSize": 8
+          }
+        ],
+        "values": [
+          {
+            "fontColor": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            },
+            "fontFamily": "{{font.semibold.family}}",
+            "bold": false,
+            "backColorPrimary": {
+              "solid": {
+                "color": "{{otherColors.white}}"
+              }
+            },
+            "backColorSecondary": {
+              "solid": {
+                "color": "{{otherColors.white}}"
+              }
+            },
+            "valuesOnRow": true
+          }
+        ],
+        "grid": [
+          {
+            "rowPadding": 8,
+            "textSize": "{{font.sizes.m}}",
+            "gridVertical": false,
+            "gridHorizontal": true,
+            "gridHorizontalColor": {
+              "solid": {
+                "color": "{{borders.color}}"
+              }
+            },
+            "outlineColor": {
+              "solid": {
+                "color": "{{otherColors.white}}"
+              }
+            }
+          }
+        ]
+      },
+      "Condensed": {
+        "grid": [
+          {
+            "rowPadding": 5,
+            "textSize": "{{font.sizes.s}}"
+          }
+        ],
+        "columnHeaders": [
+          {
+            "fontSize": "{{font.sizes.s}}"
+          }
+        ],
+        "columnTotal": [
+          {
+            "fontSize": "{{font.sizes.s}}"
+          }
+        ],
+        "rowHeaders": [
+          {
+            "fontSize": "{{font.sizes.s}}"
+          }
+        ],
+        "rowTotal": [
+          {
+            "fontSize": "{{font.sizes.s}}"
+          }
+        ],
+        "subTotals": [
+          {
+            "fontSize": "{{font.sizes.s}}"
+          }
+        ],
+        "total": [
+          {
+            "fontSize": "{{font.sizes.s}}"
+          }
+        ],
+        "values": [
+          {
+            "fontSize": "{{font.sizes.s}}"
+          }
+        ]
+      },
+      "Embedded": {
+        "background": [
+          {
+            "show": false
+          }
+        ],
+        "border": [
+          {
+            "show": false
+          }
+        ],
+        "padding": [
+          {
+            "bottom": 0,
+            "left": 0,
+            "right": 0,
+            "top": 0
+          }
+        ]
+      },
+      "*": {
+        "columnTotal": [
+          {
+            "applyToHeaders": false,
+            "backColor": {
+              "solid": {
+                "color": "{{otherColors.white}}"
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            },
+            "fontFamily": "{{font.semibold.family}}",
+            "bold": false
+          }
+        ],
+        "rowHeaders": [
+          {
+            "fontColor": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            },
+            "bold": false,
+            "backColor": {
+              "solid": {
+                "color": "{{otherColors.white}}"
+              }
+            }
+          }
+        ],
+        "columnHeaders": [
+          {
+            "fontColor": {
+              "solid": {
+                "color": "{{otherColors.text_muted}}"
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": "{{otherColors.white}}"
+              }
+            },
+            "outlineColor": {
+              "solid": {
+                "color": "{{borders.color}}"
+              }
+            },
+            "alignment": "Right",
+            "titleAlignment": "Left",
+            "outlineWeight": 1,
+            "outlineStyle": 4,
+            "autoSizeColumnWidth": true,
+            "columnAdjustment": "growToFit",
+            "fontFamily": "{{font.semibold.family}}",
+            "bold": false,
+            "wordWrap": true
+          }
+        ],
+        "grid": "{{def.table.grid}}",
+        "values": [
+          {
+            "fontColor": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            },
+            "bold": false,
+            "backColorPrimary": {
+              "solid": {
+                "color": "{{otherColors.white}}"
+              }
+            },
+            "backColorSecondary": {
+              "solid": {
+                "color": "{{otherColors.white}}"
+              }
+            }
+          }
+        ],
+        "total": [
+          {
+            "fontColor": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            },
+            "bold": false,
+            "fontFamily": "{{font.semibold.family}}",
+            "applyToHeaders": false,
+            "backColor": {
+              "solid": {
+                "color": "{{otherColors.light}}"
+              }
+            }
+          }
+        ],
+        "rowTotal": [
+          {
+            "backColor": {
+              "solid": {
+                "color": "{{otherColors.light}}"
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            },
+            "bold": false,
+            "fontFamily": "{{font.semibold.family}}",
+            "applyToHeaders": true
+          }
+        ],
+        "columnFormatting": [
+          {
+            "labelDisplayUnits": 1,
+            "labelPrecision": 0
+          }
+        ],
+        "subTotals": [
+          {
+            "fontColor": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            },
+            "fontFamily": "{{font.semibold.family}}",
+            "bold": false
+          }
+        ],
+        "padding": [
+          {
+            "bottom": 0
+          }
+        ]
+      },
+      "Bordered": {
+        "grid": [
+          {
+            "gridVertical": true,
+            "gridVerticalColor": {
+              "solid": {
+                "color": "{{borders.color}}"
+              }
+            },
+            "gridVerticalWeight": 1
+          }
+        ]
+      },
+      "Minimal": {
+        "grid": [
+          {
+            "gridHorizontal": false
+          }
+        ]
+      },
+      "BoldHeader": {
+        "columnHeaders": [
+          {
+            "backColor": {
+              "solid": {
+                "color": "{{otherColors.gray_lighter}}"
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            }
+          }
+        ]
+      },
+      "AlternatingRows": {
+        "values": [
+          {
+            "backColorPrimary": {
+              "solid": {
+                "color": "{{otherColors.white}}"
+              }
+            },
+            "backColorSecondary": {
+              "solid": {
+                "color": "{{otherColors.light}}"
+              }
+            },
+            "fontColorPrimary": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            },
+            "fontColorSecondary": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            },
+            "bandedRowHeaders": true
+          }
+        ]
+      },
+      "ContrastAlternatingRows": {
+        "values": [
+          {
+            "backColorPrimary": {
+              "solid": {
+                "color": "{{otherColors.white}}"
+              }
+            },
+            "backColorSecondary": {
+              "solid": {
+                "color": "{{otherColors.gray_lighter}}"
+              }
+            },
+            "fontColorPrimary": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            },
+            "fontColorSecondary": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            },
+            "bandedRowHeaders": true
+          }
+        ]
+      },
+      "FlashyRows": {
+        "values": [
+          {
+            "backColorPrimary": {
+              "solid": {
+                "color": "{{otherColors.white}}"
+              }
+            },
+            "backColorSecondary": {
+              "solid": {
+                "color": "{{sequential.step1}}"
+              }
+            },
+            "fontColorPrimary": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            },
+            "fontColorSecondary": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            },
+            "bandedRowHeaders": true
+          }
+        ]
+      },
+      "BoldHeaderFlashyRows": {
+        "values": [
+          {
+            "backColorPrimary": {
+              "solid": {
+                "color": "{{otherColors.white}}"
+              }
+            },
+            "backColorSecondary": {
+              "solid": {
+                "color": "{{sequential.step1}}"
+              }
+            },
+            "fontColorPrimary": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            },
+            "fontColorSecondary": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            },
+            "bandedRowHeaders": true
+          }
+        ],
+        "columnHeaders": [
+          {
+            "backColor": {
+              "solid": {
+                "color": "{{dataColors.primary}}"
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": "{{buttons.selected.value.fontColor}}"
+              }
+            }
+          }
+        ]
+      },
+      "Sparse": {
+        "grid": [
+          {
+            "rowPadding": 14
+          }
+        ]
+      }
+    }
+  }
+}

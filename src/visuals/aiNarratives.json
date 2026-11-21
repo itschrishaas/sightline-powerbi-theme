@@ -1,0 +1,27 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/powerbi-desktop-samples/refs/heads/main/Report%20Theme%20JSON%20Schema/reportThemeSchema-2.159.json",
+  "name": "aiNarratives",
+  "visualStyles": {
+    "aiNarratives": {
+      "*": {
+        "title": [
+          {
+            "show": false
+          }
+        ],
+        "text": [
+          {
+            "fontFamily": "{{text.label.fontFace}}",
+            "fontSize": "{{text.label.fontSize}}",
+            "fontColor": {
+              "solid": {
+                "color": "{{text.label.color}}"
+              }
+            },
+            "textAlignment": "Left"
+          }
+        ]
+      }
+    }
+  }
+}

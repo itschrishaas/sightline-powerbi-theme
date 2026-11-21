@@ -1,0 +1,182 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/powerbi-desktop-samples/refs/heads/main/Report%20Theme%20JSON%20Schema/reportThemeSchema-2.159.json",
+  "name": "tableEx",
+  "visualStyles": {
+    "tableEx": {
+      "*": {
+        "columnHeaders": "{{def.table.columnHeaders}}",
+        "grid": "{{def.table.grid}}",
+        "values": "{{def.table.values}}",
+        "total": "{{def.table.total}}"
+      },
+      "Bordered": {
+        "grid": [
+          {
+            "gridVertical": true,
+            "gridVerticalColor": {
+              "solid": {
+                "color": "{{borders.color}}"
+              }
+            },
+            "gridVerticalWeight": 1
+          }
+        ]
+      },
+      "Minimal": {
+        "grid": [
+          {
+            "gridHorizontal": false
+          }
+        ]
+      },
+      "BoldHeader": {
+        "columnHeaders": [
+          {
+            "backColor": {
+              "solid": {
+                "color": "{{otherColors.gray_lighter}}"
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            }
+          }
+        ]
+      },
+      "AlternatingRows": {
+        "values": [
+          {
+            "backColorPrimary": {
+              "solid": {
+                "color": "{{otherColors.white}}"
+              }
+            },
+            "backColorSecondary": {
+              "solid": {
+                "color": "{{otherColors.light}}"
+              }
+            },
+            "fontColorPrimary": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            },
+            "fontColorSecondary": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            }
+          }
+        ]
+      },
+      "ContrastAlternatingRows": {
+        "values": [
+          {
+            "backColorPrimary": {
+              "solid": {
+                "color": "{{otherColors.white}}"
+              }
+            },
+            "backColorSecondary": {
+              "solid": {
+                "color": "{{otherColors.gray_lighter}}"
+              }
+            },
+            "fontColorPrimary": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            },
+            "fontColorSecondary": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            }
+          }
+        ]
+      },
+      "FlashyRows": {
+        "values": [
+          {
+            "backColorPrimary": {
+              "solid": {
+                "color": "{{otherColors.white}}"
+              }
+            },
+            "backColorSecondary": {
+              "solid": {
+                "color": "{{sequential.step1}}"
+              }
+            },
+            "fontColorPrimary": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            },
+            "fontColorSecondary": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            }
+          }
+        ]
+      },
+      "BoldHeaderFlashyRows": {
+        "values": [
+          {
+            "backColorPrimary": {
+              "solid": {
+                "color": "{{otherColors.white}}"
+              }
+            },
+            "backColorSecondary": {
+              "solid": {
+                "color": "{{sequential.step1}}"
+              }
+            },
+            "fontColorPrimary": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            },
+            "fontColorSecondary": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            }
+          }
+        ],
+        "columnHeaders": [
+          {
+            "backColor": {
+              "solid": {
+                "color": "{{dataColors.primary}}"
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": "{{buttons.selected.value.fontColor}}"
+              }
+            }
+          }
+        ]
+      },
+      "Sparse": {
+        "grid": [
+          {
+            "rowPadding": 14
+          }
+        ]
+      },
+      "Condensed": {
+        "grid": [
+          {
+            "rowPadding": 5
+          }
+        ]
+      }
+    }
+  }
+}

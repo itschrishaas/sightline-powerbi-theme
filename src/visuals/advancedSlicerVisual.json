@@ -1,0 +1,665 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/powerbi-desktop-samples/refs/heads/main/Report%20Theme%20JSON%20Schema/reportThemeSchema-2.159.json",
+  "name": "advancedSlicerVisual",
+  "visualStyles": {
+    "advancedSlicerVisual": {
+      "*": {
+        "title": [
+          {
+            "show": false,
+            "fontFamily": "{{font.semibold.family}}",
+            "fontSize": "{{font.sizes.s}}",
+            "bold": false
+          }
+        ],
+        "background": [
+          {
+            "show": false
+          }
+        ],
+        "border": [
+          {
+            "show": false
+          }
+        ],
+        "behavior": [
+          {
+            "disabledItemsOrder": "moveToEnd"
+          }
+        ],
+        "layout": [
+          {
+            "orientation": 2,
+            "rowPadding": 4,
+            "columnPadding": 4,
+            "cellPadding": 4,
+            "alignment": "center",
+            "backgroundShow": true,
+            "backgroundFillColor": {
+              "solid": {
+                "color": "{{otherColors.gray_lighter}}"
+              }
+            },
+            "backgroundTransparency": 0,
+            "rectangleRoundedCurve": "{{borders.controlCorners}}",
+            "style": "Table",
+            "gridlineStyle": "dotted",
+            "lineTransparency": 100
+          }
+        ],
+        "padding": [
+          {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          {
+            "$id": "default",
+            "paddingSelection": "Custom",
+            "leftMargin": 0,
+            "rightMargin": 0,
+            "topMargin": 0,
+            "bottomMargin": 0
+          }
+        ],
+        "value": [
+          {
+            "$id": "default",
+            "fontFamily": "{{font.semibold.family}}",
+            "fontSize": "{{font.sizes.s}}",
+            "bold": false,
+            "verticalAlignment": "middle",
+            "horizontalAlignment": "center",
+            "fontColor": {
+              "solid": {
+                "color": "{{otherColors.text_muted}}"
+              }
+            }
+          },
+          {
+            "$id": "interaction:hover",
+            "fontFamily": "{{font.semibold.family}}",
+            "fontSize": "{{font.sizes.s}}",
+            "bold": false,
+            "verticalAlignment": "middle",
+            "horizontalAlignment": "center",
+            "fontColor": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            }
+          },
+          {
+            "$id": "selection:selected",
+            "fontFamily": "{{font.semibold.family}}",
+            "fontSize": "{{font.sizes.s}}",
+            "bold": false,
+            "verticalAlignment": "middle",
+            "horizontalAlignment": "center",
+            "fontColor": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            }
+          }
+        ],
+        "fillCustom": [
+          {
+            "$id": "default",
+            "show": true,
+            "fillColor": {
+              "solid": {
+                "color": "{{otherColors.white}}"
+              }
+            },
+            "imageShow": false,
+            "transparency": 100
+          },
+          {
+            "$id": "interaction:hover",
+            "show": true,
+            "fillColor": {
+              "solid": {
+                "color": "{{otherColors.white}}"
+              }
+            },
+            "imageShow": false,
+            "transparency": 50
+          },
+          {
+            "$id": "selection:selected",
+            "show": true,
+            "fillColor": {
+              "solid": {
+                "color": "{{otherColors.white}}"
+              }
+            },
+            "imageShow": false,
+            "transparency": 0
+          }
+        ],
+        "outline": [
+          {
+            "$id": "default",
+            "show": true,
+            "lineColor": {
+              "solid": {
+                "color": "{{borders.color}}"
+              }
+            },
+            "weight": 1,
+            "transparency": 100
+          },
+          {
+            "$id": "interaction:hover",
+            "show": true,
+            "lineColor": {
+              "solid": {
+                "color": "{{borders.color}}"
+              }
+            },
+            "weight": 1,
+            "transparency": 100
+          },
+          {
+            "$id": "selection:selected",
+            "show": true,
+            "lineColor": {
+              "solid": {
+                "color": "{{borders.color}}"
+              }
+            },
+            "weight": 1,
+            "transparency": 0
+          }
+        ],
+        "shapeCustomRectangle": [
+          {
+            "$id": "default",
+            "tileShape": "rectangleRoundedByPixel",
+            "rectangleRoundedCurve": 6
+          }
+        ],
+        "overFlow": [
+          {
+            "overFlowDirection": 1,
+            "overFlowStyle": 1
+          }
+        ]
+      },
+      "Filled": {
+        "title": [
+          {
+            "show": false,
+            "fontFamily": "{{font.semibold.family}}",
+            "fontSize": "{{font.sizes.s}}",
+            "bold": false
+          }
+        ],
+        "background": [
+          {
+            "show": false
+          }
+        ],
+        "border": [
+          {
+            "show": false
+          }
+        ],
+        "behavior": [
+          {
+            "disabledItemsOrder": "moveToEnd"
+          }
+        ],
+        "layout": [
+          {
+            "orientation": 2,
+            "rowPadding": 0,
+            "columnPadding": 4,
+            "cellPadding": "{{margin}}",
+            "alignment": "center",
+            "fixedHeight": 40,
+            "backgroundShow": false
+          }
+        ],
+        "padding": [
+          {
+            "$id": "default",
+            "paddingSelection": "Custom",
+            "leftMargin": 0,
+            "rightMargin": 0,
+            "topMargin": 0,
+            "bottomMargin": 0
+          }
+        ],
+        "value": [
+          {
+            "$id": "default",
+            "fontColor": {
+              "solid": {
+                "color": "{{buttons.default.value.fontColor}}"
+              }
+            },
+            "verticalAlignment": "middle",
+            "horizontalAlignment": "center",
+            "bold": "{{buttons.default.value.bold}}",
+            "fontFamily": "{{buttons.default.value.fontFamily}}",
+            "fontSize": "{{buttons.default.value.fontSize}}"
+          },
+          {
+            "$id": "selection:selected",
+            "fontColor": {
+              "solid": {
+                "color": "{{buttons.selected.value.fontColor}}"
+              }
+            },
+            "verticalAlignment": "middle",
+            "bold": "{{buttons.selected.value.bold}}",
+            "fontFamily": "{{buttons.selected.value.fontFamily}}",
+            "fontSize": "{{buttons.selected.value.fontSize}}"
+          },
+          {
+            "$id": "interaction:hover",
+            "fontColor": {
+              "solid": {
+                "color": "{{buttons.hover.value.fontColor}}"
+              }
+            },
+            "verticalAlignment": "middle",
+            "bold": "{{buttons.hover.value.bold}}",
+            "fontFamily": "{{buttons.hover.value.fontFamily}}",
+            "fontSize": "{{buttons.hover.value.fontSize}}"
+          }
+        ],
+        "fillCustom": [
+          {
+            "$id": "default",
+            "fillColor": {
+              "solid": {
+                "color": "{{buttons.default.background.color}}"
+              }
+            },
+            "imageShow": false,
+            "transparency": "{{buttons.default.background.transparency}}"
+          },
+          {
+            "$id": "selection:selected",
+            "fillColor": {
+              "solid": {
+                "color": "{{buttons.selected.background.color}}"
+              }
+            },
+            "imageShow": false,
+            "transparency": "{{buttons.selected.background.transparency}}"
+          },
+          {
+            "$id": "interaction:hover",
+            "fillColor": {
+              "solid": {
+                "color": "{{buttons.hover.background.color}}"
+              }
+            },
+            "imageShow": false,
+            "transparency": "{{buttons.hover.background.transparency}}"
+          },
+          {
+            "$id": "interaction:press",
+            "fillColor": {
+              "solid": {
+                "color": "{{buttons.pressed.background.color}}"
+              }
+            },
+            "imageShow": false,
+            "transparency": "{{buttons.pressed.background.transparency}}"
+          },
+          {
+            "show": true
+          }
+        ],
+        "outline": [
+          {
+            "$id": "default",
+            "lineColor": {
+              "solid": {
+                "color": "{{buttons.default.border.color}}"
+              }
+            },
+            "weight": "{{buttons.default.border.width}}",
+            "transparency": "{{buttons.default.border.transparency}}"
+          },
+          {
+            "$id": "interaction:hover",
+            "lineColor": {
+              "solid": {
+                "color": "{{buttons.hover.border.color}}"
+              }
+            },
+            "weight": "{{buttons.hover.border.width}}",
+            "transparency": "{{buttons.hover.border.transparency}}"
+          },
+          {
+            "$id": "interaction:press",
+            "lineColor": {
+              "solid": {
+                "color": "{{buttons.pressed.border.color}}"
+              }
+            },
+            "weight": "{{buttons.pressed.border.width}}",
+            "transparency": "{{buttons.pressed.border.transparency}}"
+          },
+          {
+            "$id": "selection:selected",
+            "lineColor": {
+              "solid": {
+                "color": "{{buttons.selected.border.color}}"
+              }
+            },
+            "weight": "{{buttons.selected.border.width}}",
+            "transparency": "{{buttons.selected.border.transparency}}"
+          }
+        ],
+        "shapeCustomRectangle": [
+          {
+            "$id": "default",
+            "tileShape": "rectangleRoundedByPixel",
+            "rectangleRoundedCurve": "{{borders.controlCorners}}"
+          }
+        ],
+        "overFlow": [
+          {
+            "overFlowDirection": 1,
+            "overFlowStyle": 1
+          }
+        ]
+      },
+      "Text Slicer": {
+        "selection": [
+          {
+            "strictSingleSelect": true
+          }
+        ],
+        "value": [
+          {
+            "$id": "default",
+            "fontColor": {
+              "solid": {
+                "color": "{{otherColors.text_muted}}"
+              }
+            },
+            "verticalAlignment": "middle",
+            "horizontalAlignment": "center",
+            "bold": false,
+            "fontFamily": "{{font.semibold.family}}",
+            "fontSize": "{{font.sizes.s}}"
+          },
+          {
+            "$id": "interaction:hover",
+            "fontColor": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            },
+            "verticalAlignment": "middle",
+            "horizontalAlignment": "center",
+            "bold": false,
+            "fontFamily": "{{font.semibold.family}}",
+            "fontSize": "{{font.sizes.s}}"
+          },
+          {
+            "$id": "selection:selected",
+            "fontColor": {
+              "solid": {
+                "color": "{{dataColors.primary}}"
+              }
+            },
+            "verticalAlignment": "middle",
+            "horizontalAlignment": "center",
+            "bold": false,
+            "fontFamily": "{{font.semibold.family}}",
+            "fontSize": "{{font.sizes.s}}"
+          }
+        ],
+        "layout": [
+          {
+            "orientation": 2,
+            "style": "Table",
+            "gridlineStyle": "dotted",
+            "lineTransparency": 100,
+            "backgroundShow": false
+          }
+        ],
+        "overFlow": [
+          {
+            "overFlowStyle": 0
+          }
+        ],
+        "fillCustom": [
+          {
+            "$id": "default",
+            "transparency": 100
+          },
+          {
+            "show": true
+          }
+        ],
+        "accentBar": [
+          {
+            "$id": "default",
+            "show": false
+          },
+          {
+            "$id": "selection:selected",
+            "show": true,
+            "width": 2,
+            "color": {
+              "solid": {
+                "color": "{{dataColors.primary}}"
+              }
+            },
+            "position": "Bottom"
+          }
+        ]
+      },
+      "Tab": {
+        "value": [
+          {
+            "$id": "default",
+            "fontColor": {
+              "solid": {
+                "color": "{{otherColors.text_muted}}"
+              }
+            },
+            "verticalAlignment": "middle",
+            "horizontalAlignment": "center",
+            "bold": false,
+            "fontFamily": "{{font.semibold.family}}",
+            "fontSize": "{{font.sizes.s}}"
+          },
+          {
+            "$id": "interaction:hover",
+            "fontColor": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            },
+            "verticalAlignment": "middle",
+            "horizontalAlignment": "center",
+            "bold": false,
+            "fontFamily": "{{font.semibold.family}}",
+            "fontSize": "{{font.sizes.s}}"
+          },
+          {
+            "$id": "selection:selected",
+            "fontColor": {
+              "solid": {
+                "color": "{{dataColors.primary}}"
+              }
+            },
+            "verticalAlignment": "middle",
+            "horizontalAlignment": "center",
+            "bold": false,
+            "fontFamily": "{{font.semibold.family}}",
+            "fontSize": "{{font.sizes.s}}"
+          }
+        ],
+        "layout": [
+          {
+            "orientation": 2,
+            "style": "Table",
+            "gridlineStyle": "dotted",
+            "lineTransparency": 100,
+            "backgroundShow": false
+          }
+        ],
+        "overFlow": [
+          {
+            "overFlowStyle": 0
+          }
+        ],
+        "fillCustom": [
+          {
+            "$id": "default",
+            "transparency": 100
+          },
+          {
+            "show": true
+          }
+        ],
+        "accentBar": [
+          {
+            "$id": "default",
+            "show": false
+          },
+          {
+            "$id": "selection:selected",
+            "show": true,
+            "width": 2,
+            "color": {
+              "solid": {
+                "color": "{{dataColors.primary}}"
+              }
+            },
+            "position": "Bottom"
+          }
+        ]
+      },
+      "Badge": {
+        "layout": [
+          {
+            "rowCount": 1,
+            "columnCount": 3,
+            "rowPadding": 0,
+            "columnPadding": 0,
+            "cellPadding": 0,
+            "backgroundShow": false
+          }
+        ],
+        "shapeCustomRectangle": [
+          {
+            "$id": "default",
+            "tileShape": "rectangleRoundedByPixel",
+            "rectangleRoundedCurve": "{{borders.controlCorners}}"
+          }
+        ],
+        "fillCustom": [
+          {
+            "$id": "default",
+            "fillColor": {
+              "solid": {
+                "color": "{{buttons.default.background.color}}"
+              }
+            },
+            "imageShow": false,
+            "transparency": "{{buttons.default.background.transparency}}"
+          },
+          {
+            "$id": "selection:selected",
+            "fillColor": {
+              "solid": {
+                "color": "{{buttons.selected.background.color}}"
+              }
+            },
+            "imageShow": false,
+            "transparency": "{{buttons.selected.background.transparency}}"
+          },
+          {
+            "$id": "interaction:hover",
+            "fillColor": {
+              "solid": {
+                "color": "{{buttons.hover.background.color}}"
+              }
+            },
+            "imageShow": false,
+            "transparency": "{{buttons.hover.background.transparency}}"
+          },
+          {
+            "$id": "interaction:press",
+            "fillColor": {
+              "solid": {
+                "color": "{{buttons.pressed.background.color}}"
+              }
+            },
+            "imageShow": false,
+            "transparency": "{{buttons.pressed.background.transparency}}"
+          },
+          {
+            "show": true
+          }
+        ],
+        "value": [
+          {
+            "$id": "default",
+            "fontColor": {
+              "solid": {
+                "color": "{{otherColors.text_muted}}"
+              }
+            },
+            "bold": false,
+            "fontFamily": "{{font.semibold.family}}",
+            "fontSize": "{{font.sizes.s}}",
+            "verticalAlignment": "middle",
+            "horizontalAlignment": "center"
+          },
+          {
+            "$id": "selection:selected",
+            "fontColor": {
+              "solid": {
+                "color": "{{buttons.selected.value.fontColor}}"
+              }
+            },
+            "bold": false,
+            "fontFamily": "{{font.semibold.family}}",
+            "fontSize": "{{font.sizes.s}}",
+            "verticalAlignment": "middle",
+            "horizontalAlignment": "center"
+          }
+        ],
+        "selectionIcon": [
+          {
+            "$id": "default",
+            "position": "Left",
+            "spacing": 6,
+            "size": 14,
+            "color": {
+              "solid": {
+                "color": "{{otherColors.text_muted}}"
+              }
+            }
+          },
+          {
+            "$id": "selection:selected",
+            "position": "Left",
+            "spacing": 6,
+            "size": 14,
+            "color": {
+              "solid": {
+                "color": "{{buttons.selected.value.fontColor}}"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

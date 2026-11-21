@@ -1,0 +1,122 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/powerbi-desktop-samples/refs/heads/main/Report%20Theme%20JSON%20Schema/reportThemeSchema-2.159.json",
+  "name": "page",
+  "visualStyles": {
+    "page": {
+      "*": {
+        "pageSize": [
+          {
+            "pageSizeTypes": "Custom",
+            "pageSizeWidth": 1920,
+            "pageSizeHeight": 1080
+          }
+        ],
+        "background": [
+          {
+            "color": {
+              "solid": {
+                "color": "{{otherColors.light}}"
+              }
+            },
+            "transparency": 0
+          }
+        ],
+        "outspace": [
+          {
+            "color": {
+              "solid": {
+                "color": "{{otherColors.light}}"
+              }
+            },
+            "transparency": 0
+          }
+        ],
+        "outspacePane": [
+          {
+            "backgroundColor": {
+              "solid": {
+                "color": "{{otherColors.white}}"
+              }
+            },
+            "transparency": 0,
+            "foregroundColor": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            },
+            "titleSize": "{{font.chrome.title}}",
+            "headerSize": "{{font.chrome.header}}",
+            "fontFamily": "{{font.family}}",
+            "border": true,
+            "borderColor": {
+              "solid": {
+                "color": "{{borders.color}}"
+              }
+            },
+            "width": 200,
+            "checkboxAndApplyColor": {
+              "solid": {
+                "color": "{{dataColors.primary}}"
+              }
+            },
+            "searchTextSize": "{{font.chrome.body}}",
+            "inputBoxColor": {
+              "solid": {
+                "color": "{{otherColors.white}}"
+              }
+            }
+          }
+        ],
+        "filterCard": [
+          {
+            "$id": "Available",
+            "foregroundColor": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            },
+            "backgroundColor": {
+              "solid": {
+                "color": "{{otherColors.white}}"
+              }
+            },
+            "textSize": "{{font.chrome.body}}",
+            "fontFamily": "{{font.family}}",
+            "transparency": 0,
+            "border": true,
+            "borderColor": {
+              "solid": {
+                "color": "{{borders.color}}"
+              }
+            },
+            "inputBoxColor": {
+              "solid": {
+                "color": "{{otherColors.white}}"
+              }
+            }
+          },
+          {
+            "$id": "Applied",
+            "foregroundColor": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            },
+            "backgroundColor": {
+              "solid": {
+                "color": "{{otherColors.white}}"
+              }
+            },
+            "textSize": "{{font.chrome.body}}",
+            "fontFamily": "{{font.family}}",
+            "inputBoxColor": {
+              "solid": {
+                "color": "{{otherColors.light_active}}"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

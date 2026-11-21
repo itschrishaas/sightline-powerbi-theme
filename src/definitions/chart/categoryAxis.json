@@ -1,0 +1,24 @@
+{
+  "categoryAxis": [
+    {
+      "show": true,
+      "showAxisTitle": false,
+      "preferredCategoryWidth": 40,
+      "gridlineAutoScale": "{{gridlines.gridlineAutoScale}}",
+      "gridlineColor": "{{gridlines.gridlineColor}}",
+      "gridlineDashCap": "{{gridlines.gridlineDashCap}}",
+      "gridlineShow": "{{gridlines.gridlineShow}}",
+      "gridlineStyle": "{{gridlines.gridlineStyle}}",
+      "gridlineThickness": "{{gridlines.gridlineThickness}}",
+      "gridlineTransparency": "{{gridlines.gridlineTransparency}}",
+      "gridlineDashArray": "{{gridlines.gridlineDashArray}}",
+      "maxMarginFactor": 30,
+      "labelColor": {
+        "solid": {
+          "color": "{{otherColors.text_muted}}"
+        }
+      },
+      "fontSize": "{{font.sizes.xs}}"
+    }
+  ]
+}

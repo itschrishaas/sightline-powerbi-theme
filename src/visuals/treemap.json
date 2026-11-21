@@ -1,0 +1,187 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/powerbi-desktop-samples/refs/heads/main/Report%20Theme%20JSON%20Schema/reportThemeSchema-2.159.json",
+  "name": "treemap",
+  "visualStyles": {
+    "treemap": {
+      "*": {
+        "title": [
+          {
+            "show": false
+          }
+        ],
+        "subTitle": [
+          {
+            "show": false
+          }
+        ],
+        "padding": [
+          {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          }
+        ],
+        "layout": [
+          {
+            "tilingMethod": "stableSquarified",
+            "innerPadding": 2,
+            "outerPadding": 0
+          }
+        ],
+        "categoryLabels": [
+          {
+            "show": true,
+            "fontFamily": "{{text.semiboldLabel.fontFace}}",
+            "fontSize": "{{font.sizes.xs}}",
+            "bold": false,
+            "color": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            }
+          }
+        ],
+        "labels": [
+          {
+            "show": true,
+            "fontSize": "{{font.sizes.xs}}",
+            "bold": false,
+            "labelDisplayUnits": 0,
+            "color": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            }
+          }
+        ]
+      },
+      "Labelled": {
+        "title": [
+          {
+            "show": false
+          }
+        ],
+        "subTitle": [
+          {
+            "show": false
+          }
+        ],
+        "padding": [
+          {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          }
+        ],
+        "legend": "{{def.preset.labelled.legend}}",
+        "layout": [
+          {
+            "tilingMethod": "stableSquarified",
+            "innerPadding": 2,
+            "outerPadding": 0
+          }
+        ],
+        "categoryLabels": [
+          {
+            "show": true,
+            "fontFamily": "{{text.semiboldLabel.fontFace}}",
+            "fontSize": "{{font.sizes.xs}}",
+            "bold": false,
+            "color": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            }
+          }
+        ],
+        "labels": "{{def.preset.labelled.labels}}"
+      },
+      "Minimal": {
+        "title": [
+          {
+            "show": false
+          }
+        ],
+        "subTitle": [
+          {
+            "show": false
+          }
+        ],
+        "padding": [
+          {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          }
+        ],
+        "legend": "{{def.preset.minimal.legend}}",
+        "layout": [
+          {
+            "tilingMethod": "stableSquarified",
+            "innerPadding": 2,
+            "outerPadding": 0
+          }
+        ],
+        "categoryLabels": [
+          {
+            "show": true,
+            "fontFamily": "{{text.semiboldLabel.fontFace}}",
+            "fontSize": "{{font.sizes.xs}}",
+            "bold": false,
+            "color": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            }
+          }
+        ],
+        "labels": "{{def.preset.minimal.labels}}"
+      },
+      "Presentation": {
+        "title": [
+          {
+            "show": false
+          }
+        ],
+        "subTitle": [
+          {
+            "show": false
+          }
+        ],
+        "padding": [
+          {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          }
+        ],
+        "legend": "{{def.preset.presentation.legend}}",
+        "layout": [
+          {
+            "tilingMethod": "stableSquarified",
+            "innerPadding": 2,
+            "outerPadding": 0
+          }
+        ],
+        "categoryLabels": [
+          {
+            "show": true,
+            "fontFamily": "{{text.semiboldLabel.fontFace}}",
+            "fontSize": "{{font.sizes.xs}}",
+            "bold": false,
+            "color": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            }
+          }
+        ],
+        "labels": "{{def.preset.presentation.labels}}"
+      }
+    }
+  }
+}

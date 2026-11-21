@@ -1,0 +1,22 @@
+{
+  "values": [
+    {
+      "backColorPrimary": {
+        "solid": {
+          "color": "{{otherColors.white}}"
+        }
+      },
+      "backColorSecondary": {
+        "solid": {
+          "color": "{{otherColors.white}}"
+        }
+      },
+      "fontColor": {
+        "solid": {
+          "color": "{{otherColors.text}}"
+        }
+      },
+      "bold": false
+    }
+  ]
+}

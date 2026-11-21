@@ -1,0 +1,115 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/powerbi-desktop-samples/refs/heads/main/Report%20Theme%20JSON%20Schema/reportThemeSchema-2.159.json",
+  "name": "ganttChart",
+  "visualStyles": {
+    "ganttChart": {
+      "*": {
+        "row": [
+          {
+            "color": {
+              "solid": {
+                "color": "{{dataColors.primary}}"
+              }
+            },
+            "dividerShow": true,
+            "dividerColor": {
+              "solid": {
+                "color": "{{borders.color}}"
+              }
+            },
+            "dividerWidth": "{{borders.width}}",
+            "dividerStyle": "solid",
+            "expandCollapseIconColor": {
+              "solid": {
+                "color": "{{otherColors.text_muted}}"
+              }
+            }
+          }
+        ],
+        "bar": [
+          {
+            "cornerRadius": 3,
+            "borderShow": false,
+            "transparency": 65
+          }
+        ],
+        "progress": [
+          {
+            "show": true,
+            "cornerRadius": 3,
+            "customizeColor": true,
+            "color": {
+              "solid": {
+                "color": "{{dataColors.primary}}"
+              }
+            },
+            "transparency": 0,
+            "relativeHeight": 100
+          }
+        ],
+        "milestone": [
+          {
+            "show": true,
+            "shape": "diamond",
+            "size": 12
+          }
+        ],
+        "axis": [
+          {
+            "gridlineShow": "{{gridlines.gridlineShow}}",
+            "gridlineColor": {
+              "solid": {
+                "color": "{{otherColors.gray}}"
+              }
+            },
+            "gridlineStyle": "{{gridlines.gridlineStyle}}",
+            "gridlineDashArray": "{{gridlines.gridlineDashArray}}",
+            "gridlineDashCap": "{{gridlines.gridlineDashCap}}",
+            "gridlineThickness": "{{gridlines.gridlineThickness}}",
+            "gridlineTransparency": "{{gridlines.gridlineTransparency}}",
+            "shadingShow": false
+          }
+        ],
+        "axisTick": [
+          {
+            "fontSize": "{{font.sizes.xs}}",
+            "color": {
+              "solid": {
+                "color": "{{otherColors.text_muted}}"
+              }
+            },
+            "bold": false
+          }
+        ],
+        "columnHeaders": [
+          {
+            "fontFamily": "{{font.semibold.family}}",
+            "fontSize": "{{font.sizes.s}}",
+            "color": {
+              "solid": {
+                "color": "{{otherColors.black}}"
+              }
+            },
+            "backgroundColor": {
+              "solid": {
+                "color": "{{otherColors.white}}"
+              }
+            },
+            "bold": false
+          }
+        ],
+        "columnValue": [
+          {
+            "fontSize": "{{font.sizes.s}}",
+            "color": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            },
+            "bold": false
+          }
+        ]
+      }
+    }
+  }
+}

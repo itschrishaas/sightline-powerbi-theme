@@ -1,0 +1,41 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/powerbi-desktop-samples/refs/heads/main/Report%20Theme%20JSON%20Schema/reportThemeSchema-2.159.json",
+  "name": "clusteredColumnChart",
+  "visualStyles": {
+    "clusteredColumnChart": {
+      "*": {
+        "labels": "{{def.chart.labels}}"
+      },
+      "Labelled": {
+        "valueAxis": "{{def.preset.labelled.valueAxis}}",
+        "legend": "{{def.preset.labelled.legend}}",
+        "categoryAxis": "{{def.preset.labelled.categoryAxisBars}}",
+        "labels": "{{def.preset.labelled.labels}}"
+      },
+      "Minimal": {
+        "valueAxis": "{{def.preset.minimal.valueAxis}}",
+        "legend": "{{def.preset.minimal.legend}}",
+        "categoryAxis": "{{def.preset.minimal.categoryAxisBars}}",
+        "labels": "{{def.preset.minimal.labels}}"
+      },
+      "Dense": {
+        "valueAxis": "{{def.preset.dense.valueAxis}}",
+        "legend": "{{def.preset.dense.legend}}",
+        "categoryAxis": "{{def.preset.dense.categoryAxisBars}}",
+        "labels": "{{def.preset.dense.labels}}"
+      },
+      "Presentation": {
+        "valueAxis": "{{def.preset.presentation.valueAxis}}",
+        "legend": "{{def.preset.presentation.legend}}",
+        "categoryAxis": "{{def.preset.presentation.categoryAxisBars}}",
+        "labels": "{{def.preset.presentation.labels}}"
+      },
+      "Comparison": {
+        "valueAxis": "{{def.preset.comparison.valueAxis}}",
+        "legend": "{{def.preset.comparison.legend}}",
+        "categoryAxis": "{{def.preset.comparison.categoryAxisBars}}",
+        "labels": "{{def.preset.comparison.labels}}"
+      }
+    }
+  }
+}

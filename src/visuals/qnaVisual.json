@@ -1,0 +1,90 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/powerbi-desktop-samples/refs/heads/main/Report%20Theme%20JSON%20Schema/reportThemeSchema-2.159.json",
+  "name": "qnaVisual",
+  "visualStyles": {
+    "qnaVisual": {
+      "*": {
+        "title": [
+          {
+            "show": false
+          }
+        ],
+        "inputBox": [
+          {
+            "background": {
+              "solid": {
+                "color": "{{otherColors.white}}"
+              }
+            },
+            "questionFontFamily": "{{text.label.fontFace}}",
+            "questionFontSize": "{{text.label.fontSize}}",
+            "questionFontColor": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            },
+            "questionBold": false,
+            "restatementFontFamily": "{{text.smallLightLabel.fontFace}}",
+            "restatementFontSize": "{{text.smallLightLabel.fontSize}}",
+            "restatementFontColor": {
+              "solid": {
+                "color": "{{otherColors.text_muted}}"
+              }
+            },
+            "hoverColor": {
+              "solid": {
+                "color": "{{dataColors.primary}}"
+              }
+            },
+            "acceptedColor": {
+              "solid": {
+                "color": "{{dataColors.positive}}"
+              }
+            },
+            "warningColor": {
+              "solid": {
+                "color": "{{dataColors.yellow}}"
+              }
+            },
+            "errorColor": {
+              "solid": {
+                "color": "{{dataColors.negative}}"
+              }
+            },
+            "commitButtonBackgroundColor": {
+              "solid": {
+                "color": "{{dataColors.primary}}"
+              }
+            }
+          }
+        ],
+        "suggestions": [
+          {
+            "show": true,
+            "headerFontFamily": "{{text.semiboldLabel.fontFace}}",
+            "headerFontSize": "{{text.semiboldLabel.fontSize}}",
+            "headerFontColor": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            },
+            "headerBold": false,
+            "cardBackground": {
+              "solid": {
+                "color": "{{surfaces.card}}"
+              }
+            },
+            "cardFontFamily": "{{text.label.fontFace}}",
+            "cardFontSize": "{{text.label.fontSize}}",
+            "cardFontColor": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            },
+            "cardBold": false
+          }
+        ]
+      }
+    }
+  }
+}

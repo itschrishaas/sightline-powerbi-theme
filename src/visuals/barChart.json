@@ -1,0 +1,419 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/powerbi-desktop-samples/refs/heads/main/Report%20Theme%20JSON%20Schema/reportThemeSchema-2.159.json",
+  "name": "barChart",
+  "visualStyles": {
+    "barChart": {
+      "*": {
+        "labels": "{{def.chart.labels}}",
+        "totals": "{{def.chart.totals}}",
+        "xAxisReferenceLine": [
+          {
+            "show": false,
+            "lineColor": {
+              "solid": {
+                "color": "{{otherColors.gray}}"
+              }
+            },
+            "transparency": 0,
+            "style": "solid",
+            "position": "back",
+            "shadeRegion": "none",
+            "shadeColor": {
+              "solid": {
+                "color": "{{otherColors.black}}"
+              }
+            },
+            "shadeTransparency": 0,
+            "dataLabelShow": false,
+            "dataLabelColor": {
+              "solid": {
+                "color": "{{otherColors.text_muted}}"
+              }
+            },
+            "dataLabelText": "Value",
+            "dataLabelDecimalPoints": 2,
+            "dataLabelHorizontalPosition": "left",
+            "dataLabelVerticalPosition": "above",
+            "dataLabelDisplayUnits": 0
+          }
+        ],
+        "y1AxisReferenceLine": [
+          {
+            "show": false,
+            "lineColor": {
+              "solid": {
+                "color": "{{otherColors.gray}}"
+              }
+            },
+            "transparency": 0,
+            "style": "solid",
+            "position": "back",
+            "shadeRegion": "none",
+            "shadeColor": {
+              "solid": {
+                "color": "{{otherColors.black}}"
+              }
+            },
+            "shadeTransparency": 0,
+            "dataLabelShow": false,
+            "dataLabelColor": {
+              "solid": {
+                "color": "{{otherColors.text_muted}}"
+              }
+            },
+            "dataLabelText": "Value",
+            "dataLabelDecimalPoints": 2,
+            "dataLabelHorizontalPosition": "left",
+            "dataLabelVerticalPosition": "above",
+            "dataLabelDisplayUnits": 0
+          }
+        ]
+      },
+      "Labelled": {
+        "valueAxis": "{{def.preset.labelled.valueAxis}}",
+        "legend": "{{def.preset.labelled.legend}}",
+        "categoryAxis": "{{def.preset.labelled.categoryAxisBars}}",
+        "labels": "{{def.preset.labelled.labels}}",
+        "totals": "{{def.chart.totals}}",
+        "xAxisReferenceLine": [
+          {
+            "show": false,
+            "lineColor": {
+              "solid": {
+                "color": "{{otherColors.gray}}"
+              }
+            },
+            "transparency": 0,
+            "style": "solid",
+            "position": "back",
+            "shadeRegion": "none",
+            "shadeColor": {
+              "solid": {
+                "color": "{{otherColors.black}}"
+              }
+            },
+            "shadeTransparency": 0,
+            "dataLabelShow": false,
+            "dataLabelColor": {
+              "solid": {
+                "color": "{{otherColors.text_muted}}"
+              }
+            },
+            "dataLabelText": "Value",
+            "dataLabelDecimalPoints": 2,
+            "dataLabelHorizontalPosition": "left",
+            "dataLabelVerticalPosition": "above",
+            "dataLabelDisplayUnits": 0
+          }
+        ],
+        "y1AxisReferenceLine": [
+          {
+            "show": false,
+            "lineColor": {
+              "solid": {
+                "color": "{{otherColors.gray}}"
+              }
+            },
+            "transparency": 0,
+            "style": "solid",
+            "position": "back",
+            "shadeRegion": "none",
+            "shadeColor": {
+              "solid": {
+                "color": "{{otherColors.black}}"
+              }
+            },
+            "shadeTransparency": 0,
+            "dataLabelShow": false,
+            "dataLabelColor": {
+              "solid": {
+                "color": "{{otherColors.text_muted}}"
+              }
+            },
+            "dataLabelText": "Value",
+            "dataLabelDecimalPoints": 2,
+            "dataLabelHorizontalPosition": "left",
+            "dataLabelVerticalPosition": "above",
+            "dataLabelDisplayUnits": 0
+          }
+        ]
+      },
+      "Minimal": {
+        "valueAxis": "{{def.preset.minimal.valueAxis}}",
+        "legend": "{{def.preset.minimal.legend}}",
+        "categoryAxis": "{{def.preset.minimal.categoryAxisBars}}",
+        "labels": "{{def.preset.minimal.labels}}",
+        "totals": "{{def.chart.totals}}",
+        "xAxisReferenceLine": [
+          {
+            "show": false,
+            "lineColor": {
+              "solid": {
+                "color": "{{otherColors.gray}}"
+              }
+            },
+            "transparency": 0,
+            "style": "solid",
+            "position": "back",
+            "shadeRegion": "none",
+            "shadeColor": {
+              "solid": {
+                "color": "{{otherColors.black}}"
+              }
+            },
+            "shadeTransparency": 0,
+            "dataLabelShow": false,
+            "dataLabelColor": {
+              "solid": {
+                "color": "{{otherColors.text_muted}}"
+              }
+            },
+            "dataLabelText": "Value",
+            "dataLabelDecimalPoints": 2,
+            "dataLabelHorizontalPosition": "left",
+            "dataLabelVerticalPosition": "above",
+            "dataLabelDisplayUnits": 0
+          }
+        ],
+        "y1AxisReferenceLine": [
+          {
+            "show": false,
+            "lineColor": {
+              "solid": {
+                "color": "{{otherColors.gray}}"
+              }
+            },
+            "transparency": 0,
+            "style": "solid",
+            "position": "back",
+            "shadeRegion": "none",
+            "shadeColor": {
+              "solid": {
+                "color": "{{otherColors.black}}"
+              }
+            },
+            "shadeTransparency": 0,
+            "dataLabelShow": false,
+            "dataLabelColor": {
+              "solid": {
+                "color": "{{otherColors.text_muted}}"
+              }
+            },
+            "dataLabelText": "Value",
+            "dataLabelDecimalPoints": 2,
+            "dataLabelHorizontalPosition": "left",
+            "dataLabelVerticalPosition": "above",
+            "dataLabelDisplayUnits": 0
+          }
+        ]
+      },
+      "Dense": {
+        "valueAxis": "{{def.preset.dense.valueAxis}}",
+        "legend": "{{def.preset.dense.legend}}",
+        "categoryAxis": "{{def.preset.dense.categoryAxisBars}}",
+        "labels": "{{def.preset.dense.labels}}",
+        "totals": "{{def.chart.totals}}",
+        "xAxisReferenceLine": [
+          {
+            "show": false,
+            "lineColor": {
+              "solid": {
+                "color": "{{otherColors.gray}}"
+              }
+            },
+            "transparency": 0,
+            "style": "solid",
+            "position": "back",
+            "shadeRegion": "none",
+            "shadeColor": {
+              "solid": {
+                "color": "{{otherColors.black}}"
+              }
+            },
+            "shadeTransparency": 0,
+            "dataLabelShow": false,
+            "dataLabelColor": {
+              "solid": {
+                "color": "{{otherColors.text_muted}}"
+              }
+            },
+            "dataLabelText": "Value",
+            "dataLabelDecimalPoints": 2,
+            "dataLabelHorizontalPosition": "left",
+            "dataLabelVerticalPosition": "above",
+            "dataLabelDisplayUnits": 0
+          }
+        ],
+        "y1AxisReferenceLine": [
+          {
+            "show": false,
+            "lineColor": {
+              "solid": {
+                "color": "{{otherColors.gray}}"
+              }
+            },
+            "transparency": 0,
+            "style": "solid",
+            "position": "back",
+            "shadeRegion": "none",
+            "shadeColor": {
+              "solid": {
+                "color": "{{otherColors.black}}"
+              }
+            },
+            "shadeTransparency": 0,
+            "dataLabelShow": false,
+            "dataLabelColor": {
+              "solid": {
+                "color": "{{otherColors.text_muted}}"
+              }
+            },
+            "dataLabelText": "Value",
+            "dataLabelDecimalPoints": 2,
+            "dataLabelHorizontalPosition": "left",
+            "dataLabelVerticalPosition": "above",
+            "dataLabelDisplayUnits": 0
+          }
+        ]
+      },
+      "Presentation": {
+        "valueAxis": "{{def.preset.presentation.valueAxis}}",
+        "legend": "{{def.preset.presentation.legend}}",
+        "categoryAxis": "{{def.preset.presentation.categoryAxisBars}}",
+        "labels": "{{def.preset.presentation.labels}}",
+        "totals": "{{def.chart.totals}}",
+        "xAxisReferenceLine": [
+          {
+            "show": false,
+            "lineColor": {
+              "solid": {
+                "color": "{{otherColors.gray}}"
+              }
+            },
+            "transparency": 0,
+            "style": "solid",
+            "position": "back",
+            "shadeRegion": "none",
+            "shadeColor": {
+              "solid": {
+                "color": "{{otherColors.black}}"
+              }
+            },
+            "shadeTransparency": 0,
+            "dataLabelShow": false,
+            "dataLabelColor": {
+              "solid": {
+                "color": "{{otherColors.text_muted}}"
+              }
+            },
+            "dataLabelText": "Value",
+            "dataLabelDecimalPoints": 2,
+            "dataLabelHorizontalPosition": "left",
+            "dataLabelVerticalPosition": "above",
+            "dataLabelDisplayUnits": 0
+          }
+        ],
+        "y1AxisReferenceLine": [
+          {
+            "show": false,
+            "lineColor": {
+              "solid": {
+                "color": "{{otherColors.gray}}"
+              }
+            },
+            "transparency": 0,
+            "style": "solid",
+            "position": "back",
+            "shadeRegion": "none",
+            "shadeColor": {
+              "solid": {
+                "color": "{{otherColors.black}}"
+              }
+            },
+            "shadeTransparency": 0,
+            "dataLabelShow": false,
+            "dataLabelColor": {
+              "solid": {
+                "color": "{{otherColors.text_muted}}"
+              }
+            },
+            "dataLabelText": "Value",
+            "dataLabelDecimalPoints": 2,
+            "dataLabelHorizontalPosition": "left",
+            "dataLabelVerticalPosition": "above",
+            "dataLabelDisplayUnits": 0
+          }
+        ]
+      },
+      "Comparison": {
+        "valueAxis": "{{def.preset.comparison.valueAxis}}",
+        "legend": "{{def.preset.comparison.legend}}",
+        "categoryAxis": "{{def.preset.comparison.categoryAxisBars}}",
+        "labels": "{{def.preset.comparison.labels}}",
+        "totals": "{{def.chart.totals}}",
+        "xAxisReferenceLine": [
+          {
+            "show": false,
+            "lineColor": {
+              "solid": {
+                "color": "{{otherColors.gray}}"
+              }
+            },
+            "transparency": 0,
+            "style": "solid",
+            "position": "back",
+            "shadeRegion": "none",
+            "shadeColor": {
+              "solid": {
+                "color": "{{otherColors.black}}"
+              }
+            },
+            "shadeTransparency": 0,
+            "dataLabelShow": false,
+            "dataLabelColor": {
+              "solid": {
+                "color": "{{otherColors.text_muted}}"
+              }
+            },
+            "dataLabelText": "Value",
+            "dataLabelDecimalPoints": 2,
+            "dataLabelHorizontalPosition": "left",
+            "dataLabelVerticalPosition": "above",
+            "dataLabelDisplayUnits": 0
+          }
+        ],
+        "y1AxisReferenceLine": [
+          {
+            "show": false,
+            "lineColor": {
+              "solid": {
+                "color": "{{otherColors.gray}}"
+              }
+            },
+            "transparency": 0,
+            "style": "solid",
+            "position": "back",
+            "shadeRegion": "none",
+            "shadeColor": {
+              "solid": {
+                "color": "{{otherColors.black}}"
+              }
+            },
+            "shadeTransparency": 0,
+            "dataLabelShow": false,
+            "dataLabelColor": {
+              "solid": {
+                "color": "{{otherColors.text_muted}}"
+              }
+            },
+            "dataLabelText": "Value",
+            "dataLabelDecimalPoints": 2,
+            "dataLabelHorizontalPosition": "left",
+            "dataLabelVerticalPosition": "above",
+            "dataLabelDisplayUnits": 0
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,128 @@
+table _Measures
+	lineageTag: 0386e2f8-7bfc-4100-ba24-10a816d6f9d4
+
+	/// Sum of Sales across the current filter context
+	measure 'Total Sales' = SUM(Sales[Sales])
+		formatString: € #,##0
+		lineageTag: b8c6c6d0-e737-40a0-8c87-afd6ff673466
+
+	/// Sum of Cost across the current filter context
+	measure 'Total Cost' = SUM(Sales[Cost])
+		formatString: € #,##0
+		lineageTag: 0ee00a24-2cf1-4057-809e-f01fd34e4b2b
+
+	/// Total Sales minus Total Cost
+	measure 'Total Profit' = [Total Sales] - [Total Cost]
+		formatString: € #,##0
+		lineageTag: 27bf2346-f95b-4918-95bb-8ae570b63c12
+
+	/// Total Profit as a percentage of Total Sales
+	measure 'Profit Margin %' = DIVIDE([Total Profit], [Total Sales])
+		formatString: 0.0%
+		lineageTag: 9ddae8ec-e0f6-4149-aef7-ef0d58a3dd12
+
+	/// Sum of Units across the current filter context
+	measure 'Total Units' = SUM(Sales[Units])
+		formatString: #,##0
+		lineageTag: db252031-2b05-4730-ad13-666a004dce40
+
+	/// Average customer satisfaction score
+	measure 'Avg Satisfaction' = AVERAGE(Sales[SatisfactionScore])
+		formatString: #,##0.0
+		lineageTag: c33cabdf-f3e3-494d-92d6-2f1c0d88b254
+
+	/// Sum of Target across the current filter context
+	measure 'Total Target' = SUM(Sales[Target])
+		formatString: € #,##0
+		lineageTag: 142f16fb-75a0-4557-9be9-9421bacbe434
+
+	/// Total Sales as a percentage of Total Target
+	measure 'Sales vs Target %' = DIVIDE([Total Sales], [Total Target])
+		formatString: 0.0%
+		lineageTag: afc4889f-6faa-4908-bd80-ff1c08f00dfa
+
+	/// Total Sales minus Total Target
+	measure 'Sales vs Target' = [Total Sales] - [Total Target]
+		formatString: +€ #,##0;-€ #,##0;€ 0
+		lineageTag: 759d7001-52cf-4ea5-91d8-982039feee96
+
+	/// Total Sales of the previous year; needs exactly one year in context
+	measure 'Sales PY' =
+			VAR y = SELECTEDVALUE ( Sales[Year] )
+			RETURN IF ( NOT ISBLANK ( y ), CALCULATE ( [Total Sales], Sales[Year] = y - 1, REMOVEFILTERS ( Sales[Year] ) ) )
+		formatString: € #,##0
+		lineageTag: e043c752-b9f2-4d49-9fed-5d7bcbd70fe2
+
+	/// Change of Total Sales against the previous year
+	measure 'Sales YoY %' = DIVIDE ( [Total Sales] - [Sales PY], [Sales PY] )
+		formatString: +0.0%;-0.0%;0.0%
+		lineageTag: 24928b56-286d-4f00-91da-30ba8cd9e463
+
+	/// Total Profit of the previous year; needs exactly one year in context
+	measure 'Profit PY' =
+			VAR y = SELECTEDVALUE ( Sales[Year] )
+			RETURN IF ( NOT ISBLANK ( y ), CALCULATE ( [Total Profit], Sales[Year] = y - 1, REMOVEFILTERS ( Sales[Year] ) ) )
+		formatString: € #,##0
+		lineageTag: b759663b-682d-47dc-94f9-1feb91374249
+
+	/// Total Profit divided by Total Units
+	measure 'Profit per Unit' = DIVIDE ( [Total Profit], [Total Units] )
+		formatString: € #,##0
+		lineageTag: 9e040039-11ee-4b9e-bfa3-5a0bef083b23
+
+	/// Sum of opportunity value
+	measure 'Pipeline Value' = SUM ( Pipeline[Value] )
+		formatString: € #,##0
+		lineageTag: d8673a12-0fad-40de-8534-5b4c7aeade18
+
+	/// Number of opportunities
+	measure Deals = SUM ( Pipeline[Count] )
+		formatString: #,##0
+		lineageTag: 7e93b196-f54f-4456-8f28-b7235f1f9197
+
+	/// Pipeline Value per opportunity
+	measure 'Avg Deal Size' = DIVIDE ( [Pipeline Value], [Deals] )
+		formatString: € #,##0
+		lineageTag: 7aabd27e-b7c9-49ae-8a0a-2296e60fdeb7
+
+	/// Deals in this stage as a share of the previous stage
+	measure 'Stage Conversion %' =
+			VAR o = MAX ( Pipeline[StageOrder] )
+			RETURN IF ( ISINSCOPE ( Pipeline[Stage] ) && o > 1, DIVIDE ( [Deals], CALCULATE ( [Deals], Pipeline[StageOrder] = o - 1, REMOVEFILTERS ( Pipeline ) ) ) )
+		formatString: 0%
+		lineageTag: ba509684-25dd-411b-a7e4-12f9a2f3599e
+
+	/// Value of won opportunities
+	measure 'Won Value' = CALCULATE ( [Pipeline Value], Pipeline[Stage] = "Won", REMOVEFILTERS ( Pipeline ) )
+		formatString: € #,##0
+		lineageTag: 83d3aca3-06d9-47a6-a014-6ed8c3feec55
+
+	/// Won deals as a share of all leads
+	measure 'Win Rate %' = DIVIDE ( CALCULATE ( [Deals], Pipeline[Stage] = "Won", REMOVEFILTERS ( Pipeline ) ), CALCULATE ( [Deals], Pipeline[Stage] = "Leads", REMOVEFILTERS ( Pipeline ) ) )
+		formatString: 0.0%
+		lineageTag: a68bcea8-fd62-40a7-a2b0-ac84ec5bebf4
+
+	/// Value still in play: every stage except Leads and Won
+	measure 'Open Pipeline' = CALCULATE ( [Pipeline Value], NOT Pipeline[Stage] IN { "Leads", "Won" }, REMOVEFILTERS ( Pipeline ) )
+		formatString: € #,##0
+		lineageTag: 56908648-c288-453b-a6f8-3a5bb0e9cdc8
+
+	/// Change of Total Profit against the previous year
+	measure 'Profit YoY %' = DIVIDE ( [Total Profit] - [Profit PY], [Profit PY] )
+		formatString: +0.0%;-0.0%;0.0%
+		lineageTag: 1ee4163e-9666-458b-90b6-ea84a407ead6
+
+	/// Profit margin of the previous year
+	measure 'Margin PY' = DIVIDE ( [Profit PY], [Sales PY] )
+		formatString: 0.0%
+		lineageTag: 977b36f8-e199-4b02-8caf-06429c013ab3
+
+	column Dummy
+		isHidden
+		lineageTag: 796702e6-9214-4c45-a024-8cd5f0fdb073
+		sourceColumn: [Dummy]
+
+	partition _Measures = calculated
+		mode: import
+		source = ROW("Dummy", BLANK())
+

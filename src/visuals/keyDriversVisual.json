@@ -1,0 +1,57 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/powerbi-desktop-samples/refs/heads/main/Report%20Theme%20JSON%20Schema/reportThemeSchema-2.159.json",
+  "name": "keyDriversVisual",
+  "visualStyles": {
+    "keyDriversVisual": {
+      "*": {
+        "title": [
+          {
+            "show": false
+          }
+        ],
+        "padding": [
+          {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          }
+        ],
+        "keyInfluencersVisual": [
+          {
+            "canvasColor": {
+              "solid": {
+                "color": "{{surfaces.card}}"
+              }
+            },
+            "primaryColor": {
+              "solid": {
+                "color": "{{dataColors.primary}}"
+              }
+            },
+            "primaryFontColor": {
+              "solid": {
+                "color": "{{otherColors.white}}"
+              }
+            },
+            "secondaryColor": {
+              "solid": {
+                "color": "{{otherColors.gray_light}}"
+              }
+            },
+            "secondaryFontColor": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": "{{otherColors.text}}"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

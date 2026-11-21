@@ -1,0 +1,24 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/powerbi-desktop-samples/refs/heads/main/Report%20Theme%20JSON%20Schema/reportThemeSchema-2.159.json",
+  "name": "funnel",
+  "visualStyles": {
+    "funnel": {
+      "*": {
+        "categoryAxis": "{{def.chart.categoryAxisFunnel}}",
+        "labels": "{{def.chart.labels}}"
+      },
+      "Labelled": {
+        "categoryAxis": "{{def.chart.categoryAxisFunnel}}",
+        "labels": "{{def.preset.labelled.labels}}"
+      },
+      "Minimal": {
+        "categoryAxis": "{{def.chart.categoryAxisFunnel}}",
+        "labels": "{{def.preset.minimal.labels}}"
+      },
+      "Presentation": {
+        "categoryAxis": "{{def.chart.categoryAxisFunnel}}",
+        "labels": "{{def.preset.presentation.labels}}"
+      }
+    }
+  }
+}

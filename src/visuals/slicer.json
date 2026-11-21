@@ -1,0 +1,116 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/powerbi-desktop-samples/refs/heads/main/Report%20Theme%20JSON%20Schema/reportThemeSchema-2.159.json",
+  "name": "slicer",
+  "visualStyles": {
+    "slicer": {
+      "*": {
+        "header": [
+          {
+            "show": false,
+            "fontFamily": "{{font.semibold.family}}",
+            "textSize": "{{font.sizes.s}}",
+            "bold": false
+          }
+        ],
+        "title": [
+          {
+            "show": false,
+            "fontFamily": "{{font.semibold.family}}",
+            "fontSize": "{{font.sizes.s}}",
+            "bold": false
+          }
+        ],
+        "background": [
+          {
+            "show": false
+          }
+        ],
+        "border": [
+          {
+            "show": false
+          }
+        ],
+        "padding": [
+          {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          }
+        ],
+        "selection": [
+          {
+            "selectAllCheckboxEnabled": true
+          }
+        ],
+        "items": [
+          {
+            "textSize": "{{font.sizes.s}}"
+          }
+        ],
+        "dateRangeText": [
+          {
+            "fontSize": "{{font.sizes.s}}",
+            "color": {
+              "solid": {
+                "color": "{{otherColors.text_muted}}"
+              }
+            }
+          }
+        ],
+        "relativeText": [
+          {
+            "fontSize": "{{font.sizes.s}}",
+            "color": {
+              "solid": {
+                "color": "{{otherColors.text_muted}}"
+              }
+            }
+          }
+        ],
+        "slider": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "{{dataColors.primary}}"
+              }
+            },
+            "secondaryLineColor": {
+              "solid": {
+                "color": "{{borders.color}}"
+              }
+            },
+            "handleFillColor": {
+              "solid": {
+                "color": "{{otherColors.white}}"
+              }
+            },
+            "handleBorderColor": {
+              "solid": {
+                "color": "{{dataColors.primary}}"
+              }
+            }
+          }
+        ],
+        "dropdown": [
+          {
+            "borderColor": {
+              "solid": {
+                "color": "{{borders.color}}"
+              }
+            },
+            "borderRadius": "{{borders.controlCorners}}",
+            "accentBarShow": false,
+            "iconColor": {
+              "solid": {
+                "color": "{{otherColors.text_muted}}"
+              }
+            },
+            "iconTransparency": 0
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "comparison": {
+    "categoryAxis": [
+      {
+        "show": true,
+        "showAxisTitle": false,
+        "preferredCategoryWidth": 40,
+        "maxMarginFactor": 30,
+        "gridlineShow": false,
+        "labelColor": {
+          "solid": {
+            "color": "{{otherColors.text}}"
+          }
+        },
+        "fontSize": "{{font.sizes.xs}}"
+      }
+    ],
+    "valueAxis": [
+      {
+        "show": true,
+        "showAxisTitle": false,
+        "gridlineShow": "{{gridlines.gridlineShow}}",
+        "gridlineColor": "{{gridlines.gridlineColor}}",
+        "gridlineStyle": "{{gridlines.gridlineStyle}}",
+        "gridlineThickness": "{{gridlines.gridlineThickness}}",
+        "gridlineTransparency": "{{gridlines.gridlineTransparency}}",
+        "gridlineDashArray": "{{gridlines.gridlineDashArray}}",
+        "gridlineDashCap": "{{gridlines.gridlineDashCap}}",
+        "labelColor": {
+          "solid": {
+            "color": "{{otherColors.text}}"
+          }
+        },
+        "fontSize": "{{font.sizes.xs}}"
+      }
+    ],
+    "legend": [
+      {
+        "show": true,
+        "position": "Bottom",
+        "showTitle": false,
+        "fontSize": "{{font.sizes.xs}}",
+        "labelColor": {
+          "solid": {
+            "color": "{{otherColors.text}}"
+          }
+        }
+      }
+    ],
+    "labels": [
+      {
+        "show": false
+      }
+    ],
+    "categoryAxisPlain": [
+      {
+        "show": true,
+        "showAxisTitle": false,
+        "preferredCategoryWidth": 40,
+        "maxMarginFactor": 30,
+        "labelColor": {
+          "solid": {
+            "color": "{{otherColors.text}}"
+          }
+        },
+        "fontSize": "{{font.sizes.xs}}"
+      }
+    ],
+    "categoryAxisBars": [
+      {
+        "show": true,
+        "showAxisTitle": false,
+        "preferredCategoryWidth": 40,
+        "maxMarginFactor": 30,
+        "gridlineShow": false,
+        "labelColor": {
+          "solid": {
+            "color": "{{otherColors.text}}"
+          }
+        },
+        "fontSize": "{{font.sizes.xs}}"
+      }
+    ]
+  }
+}

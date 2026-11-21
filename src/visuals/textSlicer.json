@@ -1,0 +1,120 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/powerbi-desktop-samples/refs/heads/main/Report%20Theme%20JSON%20Schema/reportThemeSchema-2.159.json",
+  "name": "textSlicer-search-default",
+  "visualStyles": {
+    "textSlicer": {
+      "*": {
+        "title": [
+          {
+            "show": false,
+            "fontFamily": "{{font.semibold.family}}",
+            "fontSize": "{{font.sizes.s}}",
+            "bold": false
+          }
+        ],
+        "background": [
+          {
+            "show": false
+          }
+        ],
+        "border": [
+          {
+            "show": false
+          }
+        ],
+        "spacing": [
+          {
+            "verticalSpacing": 4
+          }
+        ],
+        "inputText": [
+          {
+            "placeholder": "Search...",
+            "backTransparency": 1,
+            "backColor": {
+              "solid": {
+                "color": "{{otherColors.white}}"
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": "{{otherColors.text_muted}}"
+              }
+            },
+            "dismissColor": {
+              "solid": {
+                "color": "{{otherColors.text_muted}}"
+              }
+            },
+            "dismissSize": 14,
+            "dismissSpacing": 2,
+            "dismissTransparency": 0.4
+          }
+        ],
+        "applyButton": [
+          {
+            "iconSize": 16,
+            "iconColor": {
+              "solid": {
+                "color": "{{otherColors.text_muted}}"
+              }
+            },
+            "paddingTop": 6
+          }
+        ],
+        "filterOperator": [
+          {
+            "iconColor": {
+              "solid": {
+                "color": "{{otherColors.text_muted}}"
+              }
+            },
+            "backShow": true,
+            "backColor": {
+              "solid": {
+                "color": "{{otherColors.white}}"
+              }
+            },
+            "borderShow": true,
+            "borderColor": {
+              "solid": {
+                "color": "{{borders.color}}"
+              }
+            },
+            "borderWidth": "{{borders.width}}",
+            "cornerRadius": "{{borders.controlCorners}}"
+          }
+        ],
+        "inputTextBox": [
+          {
+            "accentBarShow": false,
+            "accentBarColor": {
+              "solid": {
+                "color": "{{dataColors.primary}}"
+              }
+            },
+            "accentBarPosition": "--accent-bar-bottom",
+            "accentBarTransparency": 0,
+            "accentBarWidth": 2,
+            "borderColor": {
+              "solid": {
+                "color": "{{borders.color}}"
+              }
+            },
+            "borderWidth": "{{borders.width}}",
+            "containerCornerRadius": "{{borders.controlCorners}}",
+            "placeholder": "Search..."
+          }
+        ],
+        "padding": [
+          {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+table Pipeline
+	lineageTag: cd38fab1-c5fa-4572-bc9b-7ab109ca0a01
+
+	column Stage
+		dataType: string
+		lineageTag: 6168bb1e-ec44-4d73-9d32-584bf2b7f188
+		sourceColumn: Stage
+		sortByColumn: StageOrder
+
+	/// Hidden sort helper for Stage (funnel order)
+	column StageOrder
+		dataType: int64
+		isHidden
+		lineageTag: 96159558-6242-469f-a35c-e015209aa8f6
+		summarizeBy: none
+		sourceColumn: StageOrder
+
+	column Value
+		dataType: double
+		formatString: € #,##0
+		lineageTag: 00d629ff-edd3-4dd5-ae4e-76db533964a2
+		summarizeBy: sum
+		sourceColumn: Value
+
+	column Count
+		dataType: int64
+		formatString: #,##0
+		lineageTag: 3bc5338a-46fc-4050-8bf3-54403bc11396
+		summarizeBy: sum
+		sourceColumn: Count
+
+	partition Pipeline = m
+		mode: import
+		source =
+				let
+					Source = #table(
+						{"Stage","StageOrder","Value","Count"},
+						{
+							{"Leads", 1, 2400000, 640},
+							{"Qualified", 2, 1500000, 320},
+							{"Proposal", 3, 850000, 140},
+							{"Negotiation", 4, 420000, 62},
+							{"Won", 5, 210000, 34}
+						}
+					),
+				#"Changed Type" = Table.TransformColumnTypes(Source, {
+					{"StageOrder", Int64.Type}, {"Value", type number}, {"Count", Int64.Type}
+				})
+				in
+					#"Changed Type"
+

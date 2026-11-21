@@ -1,0 +1,70 @@
+{
+  "callout": {
+    "fontFace": "{{font.bold.family}}",
+    "fontWeight": "{{font.bold.weight}}",
+    "fontSize": "{{font.sizes.xxl}}",
+    "color": "{{dataColors.primary}}"
+  },
+  "title": {
+    "fontFace": "{{font.semibold.family}}",
+    "fontWeight": "{{font.semibold.weight}}",
+    "fontSize": "{{font.sizes.xl}}",
+    "color": "{{otherColors.text}}"
+  },
+  "largeTitle": {
+    "fontFace": "{{font.semibold.family}}",
+    "fontWeight": "{{font.semibold.weight}}",
+    "fontSize": "{{font.sizes.l}}",
+    "color": "{{otherColors.text}}"
+  },
+  "header": {
+    "fontFace": "{{font.semibold.family}}",
+    "fontWeight": "{{font.semibold.weight}}",
+    "fontSize": "{{font.sizes.m}}",
+    "color": "{{otherColors.text}}"
+  },
+  "boldLabel": {
+    "fontFace": "{{font.bold.family}}",
+    "fontWeight": "{{font.bold.weight}}",
+    "fontSize": "{{font.sizes.s}}",
+    "color": "{{otherColors.text}}"
+  },
+  "semiboldLabel": {
+    "fontFace": "{{font.semibold.family}}",
+    "fontWeight": "{{font.semibold.weight}}",
+    "fontSize": "{{font.sizes.s}}",
+    "color": "{{otherColors.text}}"
+  },
+  "largeLabel": {
+    "fontFace": "{{font.semibold.family}}",
+    "fontWeight": "{{font.semibold.weight}}",
+    "fontSize": "{{font.sizes.m}}",
+    "color": "{{otherColors.text}}"
+  },
+  "label": {
+    "fontFace": "{{font.family}}",
+    "fontSize": "{{font.sizes.s}}",
+    "color": "{{otherColors.text}}"
+  },
+  "smallLabel": {
+    "fontFace": "{{font.family}}",
+    "fontSize": "{{font.sizes.xs}}",
+    "color": "{{otherColors.text_muted}}"
+  },
+  "largeLightLabel": {
+    "fontFace": "{{font.family}}",
+    "fontSize": "{{font.sizes.m}}",
+    "color": "{{otherColors.text_muted}}"
+  },
+  "lightLabel": {
+    "fontFace": "{{font.smaller.family}}",
+    "fontWeight": "{{font.smaller.weight}}",
+    "fontSize": "{{font.sizes.s}}",
+    "color": "{{otherColors.text_muted}}"
+  },
+  "smallLightLabel": {
+    "fontFace": "{{font.family}}",
+    "fontSize": "{{font.sizes.xs}}",
+    "color": "{{otherColors.text_muted}}"
+  }
+}

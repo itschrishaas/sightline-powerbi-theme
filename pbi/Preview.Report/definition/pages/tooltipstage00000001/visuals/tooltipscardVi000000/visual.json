@@ -1,0 +1,98 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "tooltipscardVi000000",
+  "position": {
+    "x": 8,
+    "y": 8,
+    "z": 0,
+    "width": 504,
+    "height": 152,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Deals"
+                }
+              },
+              "queryRef": "_Measures.Deals",
+              "nativeQueryRef": "Deals",
+              "displayName": "Deals"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Pipeline Value"
+                }
+              },
+              "queryRef": "_Measures.Pipeline Value",
+              "nativeQueryRef": "Pipeline Value",
+              "displayName": "Value"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Avg Deal Size"
+                }
+              },
+              "queryRef": "_Measures.Avg Deal Size",
+              "nativeQueryRef": "Avg Deal Size",
+              "displayName": "Avg deal"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Stage Conversion %"
+                }
+              },
+              "queryRef": "_Measures.Stage Conversion %",
+              "nativeQueryRef": "Stage Conversion %",
+              "displayName": "From previous stage"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "stylePreset": [
+        {
+          "properties": {
+            "name": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Info Panel'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
