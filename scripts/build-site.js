@@ -18,6 +18,12 @@ const { loadTokens } = require("./lib/tokens")
 
 const ROOT = path.join(__dirname, "..")
 const OUT = path.join(ROOT, "_site")
+
+/** width="…" height="…" read from the PNG header, so the attributes always match the file. */
+function size(name) {
+  const b = fs.readFileSync(path.join(ROOT, "docs/img", name))
+  return `width="${b.readUInt32BE(16)}" height="${b.readUInt32BE(20)}"`
+}
 const REPO = "https://github.com/itschrishaas/sightline-powerbi-theme"
 const RELEASE = `${REPO}/releases/latest/download`
 const pkg = require(path.join(ROOT, "package.json"))
@@ -126,7 +132,7 @@ body { margin: 0; background: var(--bg); color: var(--text);
   font: 16px/1.6 "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
   -webkit-font-smoothing: antialiased; }
 a { color: var(--accent); text-underline-offset: 3px; }
-img { max-width: 100%; display: block; }
+img { max-width: 100%; height: auto; display: block; }
 code, pre { font-family: ui-monospace, "Cascadia Code", "SF Mono", Consolas, monospace; font-size: .875em; }
 :not(pre) > code { background: var(--muted-bg); border: 1px solid var(--border); border-radius: 6px; padding: .1em .35em; }
 pre { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 16px; overflow-x: auto; line-height: 1.5; }
@@ -378,7 +384,7 @@ function landing() {
 </div>
 <div class="shot"><picture>
 <source srcset="img/sales-performance-dark.png" media="(prefers-color-scheme: dark)">
-<img src="img/sales-performance.png" width="1600" height="900" alt="A sales dashboard styled with Sightline: KPI cards, a column chart against target, a bar chart, a table and a waterfall chart">
+<img src="img/sales-performance.png" ${size("sales-performance.png")} alt="A sales dashboard styled with Sightline: KPI cards, a column chart against target, a bar chart, a table and a waterfall chart">
 </picture></div>
 </div>
 
@@ -405,9 +411,9 @@ ${swatches()}
 <h2 class="section-title">Every visual type, on fictional data.</h2>
 <p class="section-lead">The repository includes a Power BI project with a page per visual family. Presets: ${presets.map((p) => `<code>${p}</code>`).join(", ")}.</p>
 <div class="gallery">
-<figure><img src="img/charts.png" width="1200" height="675" loading="lazy" alt="Line and area charts with their style presets"><figcaption><b>Charts.</b> Line, area and ribbon charts, one preset per chart.</figcaption></figure>
-<figure><img src="img/tables.png" width="1200" height="675" loading="lazy" alt="A table and three matrices"><figcaption><b>Tables.</b> A table on Bordered, and the matrix presets.</figcaption></figure>
-<figure><img src="img/slicers.png" width="1200" height="675" loading="lazy" alt="A dashboard with tabs slicers"><figcaption><b>Slicers.</b> Tile slicers drawn as segmented tabs.</figcaption></figure>
+<figure><img src="img/charts.png" ${size("charts.png")} loading="lazy" alt="Line and area charts with their style presets"><figcaption><b>Charts.</b> Line, area and ribbon charts, one preset per chart.</figcaption></figure>
+<figure><img src="img/tables.png" ${size("tables.png")} loading="lazy" alt="A table and three matrices"><figcaption><b>Tables.</b> A table on Bordered, and the matrix presets.</figcaption></figure>
+<figure><img src="img/slicers.png" ${size("slicers.png")} loading="lazy" alt="A dashboard with tabs slicers"><figcaption><b>Slicers.</b> Tile slicers drawn as segmented tabs.</figcaption></figure>
 </div>
 </div></section>
 
