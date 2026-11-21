@@ -5,6 +5,12 @@ All notable changes to this theme are listed here. The format follows
 [Semantic Versioning](https://semver.org/): a change to how existing reports look is a
 major version, a new preset or token is a minor version.
 
+## [Unreleased]
+
+- Documentation site on GitHub Pages: overview, palette with live contrast values, gallery, FAQ,
+  and the reference, changelog and agent guide rendered from the Markdown in the repository.
+- CI runs on Node 24 with `actions/checkout` and `actions/setup-node` v7.
+
 ## [1.0.0]
 
 First public release.

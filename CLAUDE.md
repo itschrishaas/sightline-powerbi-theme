@@ -140,5 +140,8 @@ it, and remove the page again (folder under `definition/pages/` plus its entry i
   `dist/schema.json` is not.
 - Keep the PBIP paths short. Windows stops at 260 characters, and Desktop then reports a
   missing `visual.json` that is actually there.
+- The documentation site (GitHub Pages) is generated from `README.md`, `docs/reference.md`,
+  `CHANGELOG.md` and this file by `scripts/build-site.js` on every push to `main`. Edit the Markdown,
+  not the site. Check the output with `npm run site` (`_site/`, git-ignored).
 - Update `docs/reference.md` when you add a preset, a token group or an accepted finding, and
   `CHANGELOG.md` for anything a report author would notice.
