@@ -11,6 +11,7 @@
  * site cannot drift from the theme it documents.
  */
 
+const crypto = require("crypto")
 const fs = require("fs")
 const path = require("path")
 const { marked } = require("marked")
@@ -241,6 +242,9 @@ tr:last-child td { border-bottom: 0; }
 }
 `
 
+// Pages serves files with a 10-minute cache; a content hash makes a changed stylesheet load at once.
+const CSS_VERSION = crypto.createHash("sha256").update(css).digest("hex").slice(0, 8)
+
 // ------------------------------------------------------------------ layout
 
 const ICON = {
@@ -277,7 +281,7 @@ function page({ title, description, current, body }) {
 <meta name="theme-color" content="${light.surfaces.canvas}" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="${dark.surfaces.canvas}" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="data:image/svg+xml,${encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='${light.dataColors.primary}'/><path d='M10 9v13h13' stroke='white' stroke-width='4' fill='none'/></svg>`)}">
-<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="site.css?v=${CSS_VERSION}">
 </head>
 <body>
 <header class="site-header"><div class="wrap">
