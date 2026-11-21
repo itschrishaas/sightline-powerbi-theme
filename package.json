@@ -32,10 +32,12 @@
     "validate": "node scripts/fetch-schema.js && node scripts/validate.js && node scripts/validate.js --variant dark",
     "lint": "node scripts/lint-design.js && node scripts/lint-design.js --variant dark",
     "format": "prettier --write \"src/**/*.json\" \"scripts/**/*.js\"",
-    "format:check": "prettier --check \"src/**/*.json\" \"scripts/**/*.js\""
+    "format:check": "prettier --check \"src/**/*.json\" \"scripts/**/*.js\"",
+    "site": "node scripts/build-site.js"
   },
   "devDependencies": {
     "ajv": "^8.17.1",
+    "marked": "^18.2.1",
     "prettier": "^3.6.2"
   },
   "engines": {

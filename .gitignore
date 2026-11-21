@@ -27,3 +27,6 @@ dist/schema.json
 # Claude Code: personal settings and notes (shared .claude/ settings may be committed)
 .claude/settings.local.json
 CLAUDE.local.md
+
+# Built documentation site (scripts/build-site.js)
+_site/

@@ -115,6 +115,7 @@ pull request.
 
 ## Documentation
 
+- [Documentation site](https://itschrishaas.github.io/sightline-powerbi-theme/): overview, palette, gallery and FAQ.
 - [Reference](docs/reference.md): tokens, gates, template syntax, wildcards, every preset,
   known limitations.
 - [CLAUDE.md](CLAUDE.md): working rules and Power BI traps, written for agents and useful for people.

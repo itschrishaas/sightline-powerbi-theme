@@ -11,6 +11,7 @@ Everything about how the theme is built and why it looks the way it does. For a 
 | `npm run build:dark` | `dist/theme.dark.json` only |
 | `npm run validate` | JSON schema check of both built themes |
 | `npm run lint` | design gate on both variants (contrast, palette, type steps, surfaces) |
+| `npm run site` | build the documentation site into `_site/` (published to GitHub Pages by `.github/workflows/pages.yml`) |
 | `npm run format` | Prettier across `src/**/*.json` and `scripts/**/*.js` (`format:check` in CI) |
 
 
